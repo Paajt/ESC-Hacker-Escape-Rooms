@@ -5,36 +5,49 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: #011827;
+  background-color: #FFFFFF;
+  text-align: center;
 }
 
 .containerTop {
+  background-color: #011827;
   display: flex;
-  width: auto;
 }
-
 .containerTop img {
-  display: block;
-  width: 128px;
-  height: 82px;
-  padding: 20px;
+  max-width: 128px;
+  max-height: 82px;
+  margin: 20px 8px 20px 20px;
+  padding: 0;
 }
-
-.containerTop h2 {
-  display: inline-block;
+.containerTop h3 {
+  max-width: 5rem;
   color: #FFFFFF;
-  margin: 10px;
-  padding-top: 40px;
-  font-size: 2rem;
+  font-size: 1.3rem;
+  margin-top: 1.4rem;
+  font-weight: bold;
 }
-
-.topNav {
+.containerTop nav {
   display: none;
 }
 
-.onSiteBtn {
+.containerMiddle {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.containerMiddle img {
+  max-width: 100%;
+  height: auto;
+}
+.containerMiddle .onlineBtn {
+  display: none;
   background-color: #8ACFE5;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-size: 5rem;
   font-weight: bold;
   text-align: center;
@@ -42,6 +55,155 @@ body {
   border: none;
   padding: 10px;
   border-radius: 3px;
+}
+.containerMiddle .onsiteBtn {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #8ACFE5;
+  font-family: "Roboto";
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 3px;
+}
+.containerMiddle .onlineLink {
+  display: block;
+  margin-bottom: 2rem;
+  color: #36769D;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.containerReviews {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.containerReviews .review1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.containerReviews .review1 img {
+  margin: 2rem 1.5rem;
+  max-width: 4rem;
+  flex-grow: 0;
+}
+.containerReviews .review1 article {
+  margin-top: 1.5rem;
+  margin-right: 5rem;
+  flex-grow: 1;
+  text-align: left;
+  display: block;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+.containerReviews .review1 span {
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
+}
+.containerReviews .review2 {
+  display: none;
+}
+
+.roomContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.roomContainer h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+.roomContainer .hackerImg {
+  padding: 0;
+  margin: 0;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  max-width: 80%;
+  height: auto;
+}
+.roomContainer .roomIndividual {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.roomContainer .roomIndividual h4 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  align-items: start;
+  text-align: left;
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+.roomContainer .roomIndividual .imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  margin-left: 1.2rem;
+}
+.roomContainer .roomIndividual .imgContainer img {
+  max-width: 20%;
+  height: auto;
+  margin-right: 0.5rem;
+  text-align: left;
+  align-items: left;
+}
+.roomContainer .roomIndividual span {
+  font-size: 0.8rem;
+  margin-left: 0.8rem;
+}
+.roomContainer .roomIndividual p {
+  width: 100%;
+  font-size: 1.1em;
+}
+.roomContainer .roomIndividual button {
+  display: block;
+  margin: 1rem 1rem 1rem 1rem;
+  background-color: #E3170A;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  border: none;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 4px;
+  align-self: flex-end;
+}
+
+.playWithFriendsImg {
+  max-width: 100%;
+}
+
+.playOnlineImg {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
