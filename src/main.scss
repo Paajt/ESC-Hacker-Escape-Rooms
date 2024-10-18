@@ -1,0 +1,45 @@
+html {
+    font-family: Roboto;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #011827;
+}
+
+.containerTop {
+    display: flex;
+    width: auto;
+}
+
+.containerTop img {
+    display: block;
+    width: 128px;
+    height: 82px;
+    padding: 20px;
+}
+
+.containerTop h2 {
+    display: inline-block;
+    color: #FFFFFF;
+    margin: 10px;
+    padding-top: 40px;
+    font-size: 2rem;
+}
+
+.topNav {
+    display: none;
+}
+
+.onSiteBtn {
+    background-color: #8ACFE5;
+    font-family: Roboto;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+}
