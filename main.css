@@ -64,11 +64,18 @@ body {
   padding: 10px;
   border-radius: 3px;
 }
+.onlineBtn a:link,
+.onlineBtn a:visited,
+.onlineBtn a:active {
+  color: #FFFFFF;
+  text-decoration: none;
+}
 
 .onsiteBtn {
   display: block;
   margin: 2rem auto 2rem auto;
   background-color: #8ACFE5;
+  color: #011827;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: 750;
@@ -77,12 +84,20 @@ body {
   padding: 1rem 3rem 1rem 3rem;
   border-radius: 3px;
 }
+.onsiteBtn a:link,
+.onsiteBtn a:visited,
+.onsiteBtn a:active {
+  color: #011827;
+  text-decoration: none;
+}
 
-.onlineLink {
+.onlineLink:link,
+.onlineLink:visited,
+.onlineLink:active {
   display: block;
   margin-bottom: 3rem;
   color: #36769D;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -93,7 +108,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 4rem;
-  /* Works */
 }
 .containerReviews .review1 {
   display: flex;
@@ -171,7 +185,6 @@ body {
   margin: 0;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
-  min-width: auto;
   max-width: 100%;
   height: auto;
 }
@@ -200,19 +213,21 @@ body {
 }
 .roomContainer .roomIndividual button {
   display: block;
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 1rem 1.5rem 1rem 1rem;
   background-color: #E3170A;
   color: #FFFFFF;
   font-family: "Roboto";
-  font-size: 1rem;
-  font-weight: bolder;
+  font-size: 1em;
+  font-weight: 500;
   text-align: center;
   border: none;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 2.5rem 1rem 2.5rem;
   border-radius: 4px;
   align-self: flex-end;
 }
-.roomContainer .roomIndividual button a:link, .roomContainer .roomIndividual button a:visited, .roomContainer .roomIndividual button a:active {
+.roomContainer .roomIndividual button a:link,
+.roomContainer .roomIndividual button a:visited,
+.roomContainer .roomIndividual button a:active {
   color: #FFFFFF;
   text-decoration: none;
 }
@@ -237,7 +252,9 @@ body {
   padding: 1rem 3rem 1rem 3rem;
   border-radius: 3px;
 }
-.storyContainer button a:link, .storyContainer button a:visited, .storyContainer button a:active {
+.storyContainer button a:link,
+.storyContainer button a:visited,
+.storyContainer button a:active {
   color: #8ACFE5;
   text-decoration: none;
 }
@@ -259,9 +276,9 @@ body {
 }
 .playOrBuildContainer p {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0.5rem;
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 2rem 1rem 1rem;
 }
 .playOrBuildContainer button {
   display: block;
@@ -273,7 +290,7 @@ body {
   font-weight: bold;
   text-align: center;
   border: none;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 2.8rem 1rem 2.8rem;
   border-radius: 4px;
   align-self: flex-end;
 }
@@ -287,7 +304,7 @@ footer {
 footer h5 {
   margin-bottom: 0;
   padding-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 footer p {
   padding-top: 0.5rem;
@@ -302,6 +319,9 @@ footer ul {
   list-style: none;
   text-align: left;
   padding-left: 0;
+}
+footer li {
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
