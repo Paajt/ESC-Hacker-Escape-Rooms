@@ -31,3 +31,36 @@
     font-style: normal;
     font-size: 1rem;
 }
+
+@mixin flexWrapColumn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@mixin onlineBtn {
+    display: none;
+    background-color: #8ACFE5;
+    font-family: "Roboto";
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+@mixin onsiteBtn {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #8ACFE5;
+    font-family: "Roboto";
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 3px;
+}
