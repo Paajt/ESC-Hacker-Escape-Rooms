@@ -40,11 +40,10 @@ body {
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include flexWrapColumn();
 
     img {
         max-width: 100%;
@@ -52,31 +51,11 @@ body {
     }
 
     .onlineBtn {
-        display: none;
-        background-color: #8ACFE5;
-        font-family: "Roboto";
-        font-size: 5rem;
-        font-weight: bold;
-        text-align: center;
-        font-size: 1rem;
-        border: none;
-        padding: 10px;
-        border-radius: 3px;
-
+        @include onlineBtn();
     }
 
     .onsiteBtn {
-        display: block;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        background-color: #8ACFE5;
-        font-family: "Roboto";
-        font-size: 1.4rem;
-        font-weight: bold;
-        text-align: center;
-        border: none;
-        padding: 1rem 3rem 1rem 3rem;
-        border-radius: 3px;
+        @include onsiteBtn();
     }
 
     .onlineLink {
@@ -111,7 +90,7 @@ body {
             @include reviewSpan();
         }
     }
-    /* --------- Add more reviews with @include here below ---------- */
+    /* --------- Add more reviews below with all @include's from above ---------- */
 
     .review2 {
         display: none;

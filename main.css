@@ -35,11 +35,11 @@ body {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .containerMiddle img {
   max-width: 100%;
@@ -86,7 +86,7 @@ body {
   align-items: center;
   margin-bottom: 4rem;
   /* Works */
-  /* --------- Add more reviews with @include here below ---------- */
+  /* --------- Add more reviews below with all @include's from above ---------- */
 }
 .containerReviews .review1 {
   display: flex;
