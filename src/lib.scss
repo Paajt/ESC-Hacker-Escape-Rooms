@@ -1,0 +1,33 @@
+/* Put all mixin's in a seperate file */
+@mixin reviewContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+@mixin reviewImage {
+    margin: 2rem 1.5rem;
+    max-width: 4rem;
+    flex-grow: 0;
+}
+
+@mixin reviewArticle {
+    margin-top: 1.5rem;
+    margin-right: 5rem;
+    flex-grow: 1;
+    text-align: left;
+    display: block;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+@mixin reviewSpan {
+    width: 100%;
+    text-align: left;
+    margin-top: 0.5rem;
+    display: block;
+    font-style: normal;
+    font-size: 1rem;
+}
