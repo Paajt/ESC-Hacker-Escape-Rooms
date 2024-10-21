@@ -41,6 +41,7 @@ body {
     }
 
 }
+
 .containerMiddle {
     height: auto;
     max-width: 100%;
@@ -60,15 +61,29 @@ body {
 
 .onlineBtn {
     @include onlineBtn();
+
+    a:link,
+    a:visited,
+    a:active {
+        @include linkStyle(#FFFFFF, none);
+    }
 }
 
 .onsiteBtn {
     @include onsiteBtn();
+
+    a:link,
+    a:visited,
+    a:active {
+        @include linkStyle(#011827, none);
+    }
 }
 
-.onlineLink {
+.onlineLink:link,
+.onlineLink:visited,
+.onlineLink:active {
     @include onlineLink();
-   }
+}
 
 
 .containerReviews {
@@ -76,15 +91,17 @@ body {
     align-items: center;
     margin-bottom: 4rem;
 
-    /* Works */
     .review1 {
-@include reviewContainer();
+        @include reviewContainer();
+
         img {
             @include reviewImage();
         }
+
         article {
             @include reviewArticle();
         }
+
         span {
             @include reviewSpan();
         }
@@ -138,18 +155,17 @@ body {
             margin: 0;
             border-top-left-radius: 0.5em;
             border-top-right-radius: 0.5em;
-            min-width: auto;
             max-width: 100%;
             height: auto;
         }
 
         .imgContainer {
-           display: flex;
-           align-items: center;
-           justify-content: flex-start;
-           flex-wrap: wrap;
-           margin-bottom: 1rem;
-           margin-left: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            margin-left: 1.2rem;
 
             img {
                 max-width: 20%;
@@ -172,19 +188,21 @@ body {
 
         button {
             display: block;
-            margin: 1rem 1rem 1rem 1rem;
+            margin: 1rem 1.5rem 1rem 1rem;
             background-color: #E3170A;
             color: #FFFFFF;
             font-family: "Roboto";
-            font-size: 1rem;
-            font-weight: bolder;
+            font-size: 1em;
+            font-weight: 500;
             text-align: center;
             border: none;
-            padding: 1rem 2rem 1rem 2rem;
+            padding: 1rem 2.5rem 1rem 2.5rem;
             border-radius: 4px;
             align-self: flex-end;
 
-            a:link, a:visited, a:active {
+            a:link,
+            a:visited,
+            a:active {
                 @include linkStyle(#FFFFFF, none);
             }
         }
@@ -211,7 +229,9 @@ body {
         padding: 1rem 3rem 1rem 3rem;
         border-radius: 3px;
 
-        a:link, a:visited, a:active {
+        a:link,
+        a:visited,
+        a:active {
             @include linkStyle(#8ACFE5, none);
         }
     }
@@ -220,8 +240,8 @@ body {
 .playOrBuildContainer {
 
     .flexContainer {
-    display: flex;
-    flex-wrap: wrap-reverse;
+        display: flex;
+        flex-wrap: wrap-reverse;
     }
 
     .playWithFriendsImg {
@@ -237,11 +257,12 @@ body {
         margin: 2rem 1rem 1rem 1.5rem;
         text-align: left;
     }
+
     p {
         text-align: left;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin: 0.5rem;
-        padding: 0 1rem 1rem 1rem;
+        padding: 0 2rem 1rem 1rem;
     }
 
     button {
@@ -254,12 +275,13 @@ body {
         font-weight: bold;
         text-align: center;
         border: none;
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 1rem 2.8rem 1rem 2.8rem;
         border-radius: 4px;
         align-self: flex-end;
     }
 
 }
+
 footer {
     padding: 2rem 2.5rem 4rem 1rem;
     background-color: #011827;
@@ -269,7 +291,7 @@ footer {
     h5 {
         margin-bottom: 0;
         padding-bottom: 0;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     p {
@@ -287,5 +309,9 @@ footer {
         list-style: none;
         text-align: left;
         padding-left: 0;
+    }
+
+    li {
+        font-size: 1.2rem;
     }
 }
