@@ -1,4 +1,3 @@
-/* Put all mixin's in a seperate file */
 @mixin reviewContainer {
     display: flex;
     flex-direction: row;
@@ -42,7 +41,7 @@
     display: none;
     background-color: #8ACFE5;
     font-family: "Roboto";
-    font-size: 5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     text-align: center;
     font-size: 1rem;
@@ -53,14 +52,27 @@
 
 @mixin onsiteBtn {
     display: block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem auto 2rem auto;
     background-color: #8ACFE5;
     font-family: "Roboto";
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 750;
     text-align: center;
     border: none;
     padding: 1rem 3rem 1rem 3rem;
     border-radius: 3px;
+}
+
+@mixin onlineLink {
+    display: block;
+    margin-bottom: 3rem;
+    color: #36769D;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@mixin linkStyle($color, $text-decoration) {
+    color: $color;
+    text-decoration: $text-decoration;
 }
