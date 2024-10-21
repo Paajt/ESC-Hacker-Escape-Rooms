@@ -15,6 +15,12 @@ body {
     background-color: #011827;
     display: flex;
 
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+    }
+
     img {
         max-width: 128px;
         max-height: 82px;
@@ -35,45 +41,38 @@ body {
     }
 
 }
-
 .containerMiddle {
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 
     @include flexWrapColumn();
 
     img {
-        max-width: 100%;
         height: auto;
-    }
-
-    .onlineBtn {
-        @include onlineBtn();
-    }
-
-    .onsiteBtn {
-        @include onsiteBtn();
-    }
-
-    .onlineLink {
-        display: block;
-        margin-bottom: 2rem;
-        color: #36769D;
-        font-size: 1rem;
-        font-weight: bold;
-        text-decoration: underline;
+        max-width: 100%;
+        object-fit: cover;
+        margin: 0;
+        padding: 0;
     }
 }
 
+.onlineBtn {
+    @include onlineBtn();
+}
+
+.onsiteBtn {
+    @include onsiteBtn();
+}
+
+.onlineLink {
+    @include onlineLink();
+   }
 
 
 .containerReviews {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    @include flexWrapColumn();
     align-items: center;
     margin-bottom: 4rem;
 
@@ -90,7 +89,6 @@ body {
             @include reviewSpan();
         }
     }
-    /* --------- Add more reviews below with all @include's from above ---------- */
 
     .review2 {
         display: none;
@@ -98,43 +96,34 @@ body {
 
 }
 
+.popular {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
 .roomContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     max-width: 100%;
-    margin: 0 auto;
+    margin-left: 3rem;
     padding: 1rem;
-
-    h3 {
-        font-size: 1.8rem;
-        font-weight: 400;
-        margin-bottom: 3rem;
-    }
-
-    .hackerImg {
-        padding: 0;
-        margin: 0;
-        border-top-left-radius: 0.5em;
-        border-top-right-radius: 0.5em;
-        max-width: 80%;
-        height: auto;
-    }
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 
     .roomIndividual {
+        @include flexWrapColumn();
         box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 0.5em;
-        border-bottom-right-radius: 0.5em;
-        max-width: 80%;
-        display: flex;
-        flex-direction: column;
+        border-radius: 0.5em;
+        max-width: 100%;
+        min-width: 90%;
         padding: 0;
-        flex-wrap: wrap;
         margin-bottom: 2rem;
-
+        margin-right: 2rem;
+        scroll-snap-align: start;
+        scroll-margin-left: 1rem;
 
         h4 {
             font-size: 1.8rem;
@@ -142,6 +131,16 @@ body {
             align-items: start;
             text-align: left;
             margin: 0.5rem 0 0.5rem 1rem;
+        }
+
+        .hackerImg {
+            padding: 0;
+            margin: 0;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+            min-width: auto;
+            max-width: 100%;
+            height: auto;
         }
 
         .imgContainer {
@@ -178,20 +177,115 @@ body {
             color: #FFFFFF;
             font-family: "Roboto";
             font-size: 1rem;
-            font-weight: normal;
+            font-weight: bolder;
             text-align: center;
             border: none;
             padding: 1rem 2rem 1rem 2rem;
             border-radius: 4px;
             align-self: flex-end;
+
+            a:link, a:visited, a:active {
+                @include linkStyle(#FFFFFF, none);
+            }
         }
     }
 }
 
-.playWithFriendsImg {
-    max-width: 100%;
+.storyContainer {
+    background-color: #011827;
+    margin: auto;
+    padding: 2rem;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+
+    button {
+        display: block;
+        margin: 3rem auto 3rem auto;
+        background-color: #011827;
+        color: #8ACFE5;
+        font-family: "Roboto";
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+        border: 2px solid #8ACFE5;
+        padding: 1rem 3rem 1rem 3rem;
+        border-radius: 3px;
+
+        a:link, a:visited, a:active {
+            @include linkStyle(#8ACFE5, none);
+        }
+    }
 }
 
-.playOnlineImg {
-    max-width: 100%;
+.playOrBuildContainer {
+
+    .flexContainer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    }
+
+    .playWithFriendsImg {
+        max-width: 100%;
+    }
+
+    .playOnlineImg {
+        max-width: 100%;
+    }
+
+    h4 {
+        font-size: 2rem;
+        margin: 2rem 1rem 1rem 1.5rem;
+        text-align: left;
+    }
+    p {
+        text-align: left;
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    button {
+        display: block;
+        margin: 2rem 0 3rem 1.5rem;
+        background-color: #E3170A;
+        color: #FFFFFF;
+        font-family: "Roboto";
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+        border: none;
+        padding: 1rem 2rem 1rem 2rem;
+        border-radius: 4px;
+        align-self: flex-end;
+    }
+
+}
+footer {
+    padding: 2rem 2.5rem 4rem 1rem;
+    background-color: #011827;
+    text-align: left;
+    color: #FFFFFF;
+
+    h5 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        font-size: 1.2rem;
+    }
+
+    p {
+        padding-top: 0.5rem;
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+
+    a {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        text-align: left;
+        padding-left: 0;
+    }
 }
