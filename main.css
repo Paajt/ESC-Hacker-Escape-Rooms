@@ -1,3 +1,4 @@
+/* Put all mixin's in a seperate file */
 html {
   font-family: Roboto;
 }
@@ -84,6 +85,8 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 4rem;
+  /* Works */
+  /* --------- Add more reviews with @include here below ---------- */
 }
 .containerReviews .review1 {
   display: flex;
