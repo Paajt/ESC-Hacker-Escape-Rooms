@@ -443,14 +443,14 @@ footer li {
     gap: 1rem;
   }
   .playOrBuildContainer h4 {
-    font-size: 1.5rem;
-    margin: 1rem;
+    font-size: 2rem;
+    margin: 2rem;
   }
   .playOrBuildContainer p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   .playOrBuildContainer button {
-    margin: 1rem 0;
+    margin: 1rem 1rem;
   }
   footer {
     padding: 1rem;
