@@ -102,7 +102,22 @@ body {
     }
 
     .review2 {
-        display: none;
+        @include reviewContainer();
+
+        img {
+            @include reviewImage();
+            display: none;
+        }
+
+        article {
+            @include reviewArticle();
+            display: none;
+        }
+
+        span {
+            @include reviewSpan();
+            display: none;
+        }
     }
 
 }
@@ -389,10 +404,11 @@ footer {
     .roomContainer {
         display: grid;
         grid-template-columns: auto auto auto;
-        padding: 1rem 0;
+        padding: 1rem 0 1rem 1rem;
         margin: 0 1rem;
         gap: 1rem;
         align-items: center;
+        justify-content: space-evenly;
     }
 
     .roomIndividual {
@@ -457,4 +473,91 @@ footer {
 
 @media screen and (min-width: 1280px) {
 
+    header {
+        background-color: #011827;
+    }
+
+    .containerTop {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto 1fr;
+        gap: 1rem;
+
+        nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 6px;
+            margin: 0 7rem;
+        }
+    }
+
+    .bannerHacker {
+        width: 100%;
+        max-width: 1280px;
+        height: 768px;
+        max-height: auto;
+        margin: 0 auto;
+    }
+
+    .containerReviews {
+        display: grid;
+        grid-template-columns: auto auto;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .review1 {
+            grid-column: 1;
+        }
+
+        .review2 {
+            grid-column: 2;
+            @include reviewContainer();
+
+            img {
+                @include reviewImage();
+                display: inline;
+            }
+
+            article {
+                @include reviewArticle();
+            }
+
+            span {
+                @include reviewSpan();
+            }
+        }
+    }
+
+    .popular {
+        margin-top: 6rem;
+        font-size: 2.3rem;
+    }
+
+    .roomContainer {
+        margin: 0 auto;
+        padding: 0 auto;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+
+    .storyContainer {
+        max-width: 1280px;
+        height: auto;
+        margin: 2rem auto 0 auto;
+        background-color: #011827;
+
+        p {
+            max-width: 550px;
+            margin: 0 auto;
+            padding-top: 6rem;
+        }
+
+        button {
+            margin-bottom: 7rem;
+        }
+    }
 }
