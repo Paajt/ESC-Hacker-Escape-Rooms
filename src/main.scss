@@ -181,17 +181,7 @@ body {
         }
 
         button {
-            display: block;
-            margin: 1rem 1.4rem;
-            background-color: #E3170A;
-            color: #FFFFFF;
-            font-family: "Roboto";
-            font-size: 1em;
-            font-weight: 500;
-            text-align: center;
-            border: none;
-            padding: 0;
-            border-radius: 4px;
+            @include bookBtn();
             align-self: flex-end;
 
             a:link,
@@ -212,17 +202,7 @@ body {
     font-size: 1.6rem;
 
     button {
-        background-color: #011827;
-        color: #8ACFE5;
-        font-family: "Roboto";
-        font-size: 1.6rem;
-        font-weight: bold;
-        text-align: center;
-        border: 2px solid #8ACFE5;
-        border-radius: 3px;
-        padding: 0;
-        margin: 2.5rem;
-
+        @include storyBtn();
 
         a:link,
         a:visited,
@@ -276,7 +256,7 @@ body {
             @include btnClickArea();
         }
 
-        
+
     }
 
 }
@@ -366,6 +346,7 @@ footer {
         display: inline-block;
         margin-inline: 0.4rem;
         margin-top: -3rem;
+
         a {
             font-size: 1.4rem;
         }
@@ -376,11 +357,13 @@ footer {
             display: inline-block;
             margin-inline: 0.4rem;
             margin-top: 2rem;
+
             a {
                 font-size: 1.4rem;
             }
+        }
     }
-}
+
     .containerReviews {
         margin: 0 1rem 0 3rem;
         padding-left: 2rem;
@@ -427,16 +410,16 @@ footer {
         }
 
         h4 {
-            font-size: 1.5rem;
-            margin: 1rem;
+            font-size: 2rem;
+            margin: 2rem;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         button {
-            margin: 1rem 0;
+            margin: 1rem 1rem;
         }
     }
 
@@ -457,3 +440,5 @@ footer {
     }
 
 }
+
+@media screen and (min-width: 1280px) {}
