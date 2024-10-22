@@ -38,30 +38,37 @@
 }
 
 @mixin onlineBtn {
-    display: none;
-    background-color: #8ACFE5;
+    background-color: #E3170A;
+    color: #FFFFFF;
     font-family: "Roboto";
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
     text-align: center;
-    font-size: 1rem;
     border: none;
-    padding: 10px;
     border-radius: 3px;
+    margin: 2.5rem;
+    padding: 0;
 }
 
 @mixin onsiteBtn {
-    display: block;
-    margin: 2rem auto 2rem auto;
     background-color: #8ACFE5;
     color: #011827;
     font-family: "Roboto";
-    font-size: 1.5rem;
-    font-weight: 750;
+    font-size: 1.6rem;
+    font-weight: bold;
     text-align: center;
     border: none;
-    padding: 1rem 3rem 1rem 3rem;
     border-radius: 3px;
+    margin: 2.5rem;
+    padding: 0;
+}
+
+@mixin btnClickArea {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 1rem 3rem;
+    margin: 0;
 }
 
 @mixin onlineLink {
