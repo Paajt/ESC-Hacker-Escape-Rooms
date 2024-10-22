@@ -274,10 +274,12 @@ body {
   flex-wrap: wrap-reverse;
 }
 .playOrBuildContainer .playWithFriendsImg {
-  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
 }
 .playOrBuildContainer .playOnlineImg {
-  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
 }
 .playOrBuildContainer h4 {
   font-size: 2rem;
@@ -291,22 +293,35 @@ body {
   padding: 0 2rem 1rem 1rem;
 }
 .playOrBuildContainer button {
-  display: block;
-  margin: 2rem 0 3rem 1.5rem;
   background-color: #E3170A;
   color: #FFFFFF;
   font-family: "Roboto";
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
   border: none;
-  padding: 1rem 2.8rem 1rem 2.8rem;
-  border-radius: 4px;
-  align-self: flex-end;
+  border-radius: 3px;
+  margin: 2.5rem;
+  padding: 0;
+  display: flex;
+  margin-left: 1.5rem;
+  margin-bottom: 3rem;
+}
+.playOrBuildContainer button a:link,
+.playOrBuildContainer button a:visited,
+.playOrBuildContainer button a:active {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 3rem;
+  margin: 0;
 }
 
 footer {
-  padding: 2rem 2.5rem 4rem 1rem;
+  padding: 0.5rem 2.5rem 4rem 1rem;
+  margin-top: 5rem;
   background-color: #011827;
   text-align: left;
   color: #FFFFFF;
@@ -326,6 +341,7 @@ footer a {
   text-decoration: none;
 }
 footer ul {
+  margin-top: 0.5em;
   list-style: none;
   text-align: left;
   padding-left: 0;
@@ -381,6 +397,18 @@ footer li {
   .onsiteBtn a {
     font-size: 1.4rem;
   }
+  .btnContainer button {
+    display: inline-block;
+    margin-inline: 0.4rem;
+    margin-top: 2rem;
+  }
+  .btnContainer button a {
+    font-size: 1.4rem;
+  }
+  .containerReviews {
+    margin: 0 1rem 0 3rem;
+    padding-left: 2rem;
+  }
   .onlineLink:link,
   .onlineLink:visited,
   .onlineLink:active {
@@ -411,6 +439,7 @@ footer li {
   .playOrBuildContainer .flexContainer {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
     gap: 1rem;
   }
   .playOrBuildContainer h4 {
