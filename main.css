@@ -140,6 +140,35 @@ body {
   font-size: 1rem;
 }
 .containerReviews .review2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.containerReviews .review2 img {
+  margin: 2rem 1.5rem;
+  max-width: 4rem;
+  flex-grow: 0;
+  display: none;
+}
+.containerReviews .review2 article {
+  margin-top: 1.5rem;
+  margin-right: 5rem;
+  flex-grow: 1;
+  text-align: left;
+  display: block;
+  font-size: 1.3rem;
+  font-style: italic;
+  display: none;
+}
+.containerReviews .review2 span {
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
   display: none;
 }
 
@@ -426,10 +455,11 @@ footer li {
   .roomContainer {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 1rem;
     margin: 0 1rem;
     gap: 1rem;
     align-items: center;
+    justify-content: space-evenly;
   }
   .roomIndividual {
     margin: 1rem auto;
@@ -476,6 +506,98 @@ footer li {
   }
   footer li {
     font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  header {
+    background-color: #011827;
+  }
+  .containerTop {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 1rem;
+  }
+  .containerTop nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 6px;
+    margin: 0 7rem;
+  }
+  .bannerHacker {
+    width: 100%;
+    max-width: 1280px;
+    height: 768px;
+    max-height: auto;
+    margin: 0 auto;
+  }
+  .containerReviews {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .containerReviews .review1 {
+    grid-column: 1;
+  }
+  .containerReviews .review2 {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+  .containerReviews .review2 img {
+    margin: 2rem 1.5rem;
+    max-width: 4rem;
+    flex-grow: 0;
+    display: inline;
+  }
+  .containerReviews .review2 article {
+    margin-top: 1.5rem;
+    margin-right: 5rem;
+    flex-grow: 1;
+    text-align: left;
+    display: block;
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+  .containerReviews .review2 span {
+    width: 100%;
+    text-align: left;
+    margin-top: 0.5rem;
+    display: block;
+    font-style: normal;
+    font-size: 1rem;
+  }
+  .popular {
+    margin-top: 6rem;
+    font-size: 2.3rem;
+  }
+  .roomContainer {
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+  .storyContainer {
+    max-width: 1280px;
+    height: auto;
+    margin: 2rem auto 0 auto;
+    background-color: #011827;
+  }
+  .storyContainer p {
+    max-width: 550px;
+    margin: 0 auto;
+    padding-top: 6rem;
+  }
+  .storyContainer button {
+    margin-bottom: 7rem;
   }
 }
 
