@@ -35,60 +35,61 @@ body {
   display: none;
 }
 
-.containerMiddle {
-  height: auto;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-.containerMiddle img {
+.bannerHacker {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  margin: 0;
-  padding: 0;
 }
 
 .onlineBtn {
-  display: none;
-  background-color: #8ACFE5;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
-  font-size: 1rem;
   border: none;
-  padding: 10px;
   border-radius: 3px;
+  margin: 2.5rem;
+  padding: 0;
 }
 .onlineBtn a:link,
 .onlineBtn a:visited,
 .onlineBtn a:active {
   color: #FFFFFF;
   text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 3rem;
+  margin: 0;
+}
+
+.onlineBtn {
+  display: none;
 }
 
 .onsiteBtn {
-  display: block;
-  margin: 2rem auto 2rem auto;
   background-color: #8ACFE5;
   color: #011827;
   font-family: "Roboto";
-  font-size: 1.5rem;
-  font-weight: 750;
+  font-size: 1.6rem;
+  font-weight: bold;
   text-align: center;
   border: none;
-  padding: 1rem 3rem 1rem 3rem;
   border-radius: 3px;
+  margin: 2.5rem;
+  padding: 0;
 }
 .onsiteBtn a:link,
 .onsiteBtn a:visited,
 .onsiteBtn a:active {
   color: #011827;
   text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 3rem;
+  margin: 0;
 }
 
 .onlineLink:link,
@@ -165,8 +166,8 @@ body {
   flex-wrap: wrap;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 0.5em;
-  max-width: 100%;
-  min-width: 90%;
+  max-width: 360px;
+  min-width: 344px;
   padding: 0;
   margin-bottom: 2rem;
   margin-right: 2rem;
@@ -213,7 +214,7 @@ body {
 }
 .roomContainer .roomIndividual button {
   display: block;
-  margin: 1rem 1.5rem 1rem 1rem;
+  margin: 1rem 1.4rem;
   background-color: #E3170A;
   color: #FFFFFF;
   font-family: "Roboto";
@@ -221,7 +222,7 @@ body {
   font-weight: 500;
   text-align: center;
   border: none;
-  padding: 1rem 2.5rem 1rem 2.5rem;
+  padding: 0;
   border-radius: 4px;
   align-self: flex-end;
 }
@@ -230,6 +231,11 @@ body {
 .roomContainer .roomIndividual button a:active {
   color: #FFFFFF;
   text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 3rem;
+  margin: 0;
 }
 
 .storyContainer {
@@ -240,23 +246,27 @@ body {
   font-size: 1.6rem;
 }
 .storyContainer button {
-  display: block;
-  margin: 3rem auto 3rem auto;
   background-color: #011827;
   color: #8ACFE5;
   font-family: "Roboto";
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
   border: 2px solid #8ACFE5;
-  padding: 1rem 3rem 1rem 3rem;
   border-radius: 3px;
+  padding: 0;
+  margin: 2.5rem;
 }
 .storyContainer button a:link,
 .storyContainer button a:visited,
 .storyContainer button a:active {
   color: #8ACFE5;
   text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 3rem;
+  margin: 0;
 }
 
 .playOrBuildContainer .flexContainer {
@@ -322,6 +332,109 @@ footer ul {
 }
 footer li {
   font-size: 1.2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .containerTop {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 1rem;
+  }
+  .containerTop h3 {
+    max-width: 100%;
+    font-size: 2rem;
+    margin-top: 1.9em;
+    text-align: left;
+  }
+  .containerTop img {
+    max-width: 128px;
+    max-height: 82px;
+    margin-top: 1rem;
+  }
+  .containerTop nav {
+    grid-column: span 2;
+    display: block;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+  .containerTop a:link,
+  .containerTop a:visited,
+  .containerTop a:active {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .containerTop a:hover {
+    color: #8ACFE5;
+  }
+  .onlineBtn,
+  .onsiteBtn {
+    display: inline-block;
+    margin-inline: 0.4rem;
+    margin-top: -3rem;
+  }
+  .onlineBtn a,
+  .onsiteBtn a {
+    font-size: 1.4rem;
+  }
+  .onlineLink:link,
+  .onlineLink:visited,
+  .onlineLink:active {
+    display: none;
+  }
+  .containerMiddle {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .containerMiddle img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .roomContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    gap: 1rem;
+    align-items: center;
+  }
+  .roomIndividual {
+    margin: 1rem auto;
+    max-width: 360px;
+    height: auto;
+  }
+  .playOrBuildContainer .flexContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .playOrBuildContainer h4 {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  .playOrBuildContainer p {
+    font-size: 1.2rem;
+  }
+  .playOrBuildContainer button {
+    margin: 1rem 0;
+  }
+  footer {
+    padding: 1rem;
+  }
+  footer h5 {
+    font-size: 1.2rem;
+  }
+  footer p {
+    font-size: 1rem;
+  }
+  footer li {
+    font-size: 1rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
