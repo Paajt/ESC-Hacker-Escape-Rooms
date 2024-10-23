@@ -24,7 +24,7 @@ body {
   margin: 20px 8px 20px 20px;
   padding: 0;
 }
-.containerTop h3 {
+.containerTop h1 {
   max-width: 5rem;
   color: #FFFFFF;
   font-size: 1.3rem;
@@ -35,7 +35,7 @@ body {
   display: none;
 }
 
-.bannerHacker {
+.bannerTop {
   width: 100%;
   height: 100%;
 }
@@ -111,6 +111,7 @@ body {
   margin-bottom: 4rem;
 }
 .containerReviews .review1 {
+  max-width: 750px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -172,7 +173,7 @@ body {
   display: none;
 }
 
-.popular {
+.popularHeading {
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 2rem;
@@ -183,7 +184,7 @@ body {
   flex-direction: row;
   align-items: center;
   text-align: center;
-  max-width: 100%;
+  max-width: 1280px;
   margin-left: 3rem;
   padding: 1rem;
   overflow-x: scroll;
@@ -247,8 +248,8 @@ body {
   background-color: #E3170A;
   color: #FFFFFF;
   font-family: "Roboto";
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: bold;
   text-align: center;
   border: none;
   padding: 0;
@@ -381,12 +382,10 @@ footer li {
 
 @media screen and (min-width: 800px) {
   .containerTop {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
   }
-  .containerTop h3 {
+  .containerTop h1 {
     max-width: 100%;
     font-size: 2rem;
     margin-top: 1.9em;
@@ -398,10 +397,10 @@ footer li {
     margin-top: 1rem;
   }
   .containerTop nav {
-    grid-column: span 2;
+    margin: 2rem auto;
+    width: 100%;
     display: block;
     text-align: center;
-    justify-content: space-evenly;
   }
   .containerTop a:link,
   .containerTop a:visited,
@@ -411,10 +410,17 @@ footer li {
     margin-right: 1.5rem;
     margin-left: 1.5rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .containerTop a:hover {
     color: #8ACFE5;
+  }
+  .bannerTop {
+    width: 100%;
+    max-width: 1280px;
+    height: 468px;
+    margin: 0 auto;
+    object-fit: cover;
   }
   .onlineBtn,
   .onsiteBtn {
@@ -444,8 +450,8 @@ footer li {
     display: none;
   }
   .containerMiddle {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
   .containerMiddle img {
     max-width: 100%;
@@ -453,11 +459,10 @@ footer li {
     object-fit: cover;
   }
   .roomContainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: wrap;
     padding: 1rem 0 1rem 1rem;
     margin: 0 1rem;
-    gap: 1rem;
     align-items: center;
     justify-content: space-evenly;
   }
@@ -466,46 +471,55 @@ footer li {
     max-width: 360px;
     height: auto;
   }
+  .storyContainer {
+    height: auto;
+    margin: 2rem auto 0 auto;
+    background-color: #011827;
+  }
+  .storyContainer p {
+    max-width: 550px;
+    margin: 0 auto;
+    padding-top: 6rem;
+  }
+  .storyContainer button {
+    margin-bottom: 7rem;
+  }
   .playOrBuildContainer .bottomContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr;
-    gap: 1rem;
-    align-content: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 100%;
   }
   .playOrBuildContainer h4 {
     font-size: 2rem;
-    margin: 2rem 5rem;
-    text-align: center;
+    margin: 2rem auto;
+    padding-left: 1rem;
+    text-align: left;
+    max-width: 800px;
   }
   .playOrBuildContainer p {
     font-size: 1.4rem;
-    text-align: center;
-    padding: 0 5rem;
-    margin: 0 2rem;
+    margin: 0 auto;
+    max-width: 770px;
   }
   .playOrBuildContainer button {
     display: inline-block;
-    margin: 1rem 1rem;
+    margin: 2rem 1rem;
+    align-self: flex-start;
   }
   .playOrBuildContainer img {
     display: block;
-    grid-row: 1;
     margin: 0 auto;
+    order: -1;
   }
   footer {
+    max-width: 100%;
+  }
+  footer div {
     padding: 1rem;
-  }
-  footer h5 {
-    font-size: 1.2rem;
-  }
-  footer p {
-    font-size: 1rem;
-  }
-  footer li {
-    font-size: 1rem;
+    max-width: 770px;
+    margin: auto;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -516,24 +530,21 @@ footer li {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto 1fr;
-    gap: 1rem;
   }
   .containerTop nav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 6px;
-    margin: 0 7rem;
+    display: flex;
+    justify-content: center;
+    gap: 6.8rem;
   }
-  .bannerHacker {
+  .containerTop nav a {
+    align-items: center;
+  }
+  .bannerTop {
     width: 100%;
     max-width: 1280px;
-    height: 768px;
-    max-height: auto;
-    margin: 0 auto;
+    height: 468px;
+    margin: -4px auto;
+    object-fit: cover;
   }
   .containerReviews {
     display: grid;
@@ -575,7 +586,7 @@ footer li {
     font-style: normal;
     font-size: 1rem;
   }
-  .popular {
+  .popularHeading {
     margin-top: 6rem;
     font-size: 2.3rem;
   }
@@ -584,20 +595,6 @@ footer li {
     padding: 0 auto;
     justify-content: space-evenly;
     overflow: hidden;
-  }
-  .storyContainer {
-    max-width: 1280px;
-    height: auto;
-    margin: 2rem auto 0 auto;
-    background-color: #011827;
-  }
-  .storyContainer p {
-    max-width: 550px;
-    margin: 0 auto;
-    padding-top: 6rem;
-  }
-  .storyContainer button {
-    margin-bottom: 7rem;
   }
 }
 
