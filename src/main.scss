@@ -362,6 +362,10 @@ footer {
         object-fit: cover;
     }
 
+    main {
+        margin-top: -0.5rem;
+    }
+
     .onlineBtn,
     .onsiteBtn {
         display: inline-block;
@@ -509,7 +513,7 @@ footer {
         }
 
     }
-
+    
     .bannerTop {
         width: 100%;
         max-width: 1280px;
