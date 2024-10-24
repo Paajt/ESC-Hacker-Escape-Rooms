@@ -5,9 +5,11 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>ESC - Hacker Escape Rooms</title>
+    <meta name="description"
+        content="The webpage where you can book hacker themed escape rooms on-site or complete challenges online" />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script defer src='main.js'></script>
+    <!-- <script defer src='main.js'></script> -->
     <!-- Font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,118 +36,120 @@
             alt="Hacker with hoodie from behind, facing computer screens">
     </header>
     <main>
-        <button type="button" class="onlineBtn"><a href="#online.html">Online challenges</a></button>
-        <button type="button" class="onsiteBtn"><a href="#on-site.html">On-site challenges</a></button>
+        <a href="#online.html" class="onlineBtn" id="noShowBtn">Online challenges</a>
+        <a href="#on-site.html" class="onsiteBtn">On-site challenges</a>
         <a href="#online.html" class="onlineLink">Online challenges</a>
         <section class="containerReviews">
             <!-- Review 1 -->
             <div class="review1">
-                <img src="img/johnDoe.png" title="Profile picture" alt="Face of a man">
-                <article>This is a quote about how amazing this place is
-                    and how much fun me and my friends had when we tried it
-                    <span>John Doe, visited us in September 2021</span>
-                </article>
+                <img src="img/johnDoe.png" srcset="img/johnDoe.png 480w" title="Profile picture" alt="Face of a man">
+                <div class="reviewText">
+                    <q>This is a quote about how amazing this place is
+                        and how much fun me and my friends had when we tried it
+                    </q>
+                    <p>John Doe, visited us in September 2021</p>
+                </div>
             </div>
             <!-- Review 2 -->
             <div class="review2">
                 <img src="img/johnDoe.png" title="Profile picture" alt="Face of a man">
-                <article>This is a quote about how amazing this place is
+                <q>This is a quote about how amazing this place is
                     and how much fun me and my friends had when we tried it
-                    <span>John Doe, visited us in September 2021</span>
-                </article>
+                </q>
+                <p>John Doe, visited us in September 2021</p>
             </div>
         </section>
         <section>
-            <h3 class="popularHeading">Popular challenges right now</h3>
+            <h2 class="popularHeading">Popular challenges right now</h2>
+            <div class="roomContainer">
+                <!-- Room 1 -->
+                <div class="roomIndividual">
+                    <img src="img/hacker.png" class="hackerImg" title="Hacker and computer screens"
+                        alt="Hacker with hoodie from behind, facing computer screens">
+                    <h3>Title of room (on-site)</h3>
+                    <div class="imgContainer">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarEmpty.png" title="Hollow red star" alt="Hollow red star">
+
+                        <span>2-6 participants</span>
+                    </div>
+                    <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
+                        Nemo nocere tibi erit, et non inimicos, et</p>
+                    <a href="#on-site.html" class="bookBtn">Book this room</a>
+                </div>
+                <!-- Room 2 -->
+                <div class="roomIndividual">
+                    <img src="img/hacker.png" class="hackerImg" title="Hacker and computer screens"
+                        alt="Hacker with hoodie from behind, facing computer screens">
+                    <h3>Title of room (on-site)</h3>
+                    <div class="imgContainer">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarEmpty.png" title="Hollow red star" alt="Hollow red star">
+
+                        <span>2-6 participants</span>
+                    </div>
+                    <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
+                        Nemo nocere tibi erit, et non inimicos, et</p>
+                    <a href="#on-site.html" class="bookBtn">Book this room</a>
+                </div>
+                <!-- Room 3 -->
+                <div class="roomIndividual">
+                    <img src="img/hacker.png" class="hackerImg" title="Hacker and computer screens"
+                        alt="Hacker with hoodie from behind, facing computer screens">
+                    <h3>Title of room (on-site)</h3>
+                    <div class="imgContainer">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarFull.png" title="Full red star" alt="Full red star">
+                        <img src="img/StarEmpty.png" title="Hollow red star" alt="Hollow red star">
+
+                        <span>2-6 participants</span>
+                    </div>
+                    <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
+                        Nemo nocere tibi erit, et non inimicos, et</p>
+                    <a href="#on-site.html" class="bookBtn">Book this room</a>
+                </div>
+            </div>
         </section>
-        <div class="roomContainer">
-            <!-- Room 1 -->
-            <div class="roomIndividual">
-                <img src="img/hacker.png" class="hackerImg" title="Hacker and computer screens"
-                    alt="Hacker with hoodie from behind, facing computer screens">
-                <h4>Title of room (on-site)</h4>
-                <div class="imgContainer">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarEmpty.png" title="Hollow red star" alt="Hollow red star">
-
-                    <span>2-6 participants</span>
-                </div>
-                <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
-                    Nemo nocere tibi erit, et non inimicos, et</p>
-                <button type="button"><a href="#on-site.html">Book this room</a></button>
-            </div>
-            <!-- Room 2 -->
-            <div class="roomIndividual">
-                <img src="img/hacker.png" class="hackerImg" title="Hacker and computer screens"
-                    alt="Hacker with hoodie from behind, facing computer screens">
-                <h4>Title of room (on-site)</h4>
-                <div class="imgContainer">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarEmpty.png" title="Hollow red star" alt="Hollow red star">
-
-                    <span>2-6 participants</span>
-                </div>
-                <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
-                    Nemo nocere tibi erit, et non inimicos, et</p>
-                <button type="button"><a href="#on-site.html">Book this room</a></button>
-            </div>
-            <!-- Room 3 -->
-            <div class="roomIndividual">
-                <img src="img/hacker.png" class="hackerImg" title="Hacker and computer screens"
-                    alt="Hacker with hoodie from behind, facing computer screens">
-                <h4>Title of room (on-site)</h4>
-                <div class="imgContainer">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarFull.png" title="Full red star" alt="Full red star">
-                    <img src="img/StarEmpty.png" title="Hollow red star" alt="Hollow red star">
-
-                    <span>2-6 participants</span>
-                </div>
-                <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.
-                    Nemo nocere tibi erit, et non inimicos, et</p>
-                <button type="button"><a href="#on-site.html">Book this room</a></button>
-            </div>
-        </div>
         <div class="btnContainer">
-            <button type="button" class="onlineBtn"><a href="#online.html">Online challenges</a></button>
-            <button type="button" class="onsiteBtn"><a href="#on-site.html">On-site challenges</a></button>
+            <a href="#online.html" class="onlineBtn">Online challenges</a>
+            <a href="#on-site.html" class="onsiteBtn">On-site challenges</a>
             <a href="#online.html" class="onlineLink">Online challenges</a>
         </div>
-    </main>
     <section class="storyContainer">
         <p>Quodsi haberent magnalia inter potentiam et divitias,
             et non illam quidem haec eo spectant haec quoque vos omnino
             desit illud quo solo felicitatis libertatisque perficiuntur.
         </p>
-        <button type="button"><a href="#story.html">Read the full story</a></button>
+        <a href="#story.html" class="storyBtn">Read the full story</a>
     </section>
     <section class="playOrBuildContainer">
         <div class="bottomContainer">
-            <h4>Play with your friends or build your team stronger at work</h4>
+            <h4 class="playFriendsHeading">Play with your friends or build your team stronger at work</h4>
             <img src="img/playWithFriends.png" class="playWithFriendsImg"
                 alt="People in office enviroment looking att computer screens">
         </div>
-        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum.
+        <p class="firstBottomParagraph">Praeterea, ex culpa non invenies unum aut non accusatis unum.
             Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
         </p>
-        <button type="button"><a href="#on-site.html">Book on-site today</a></button>
+        <a href="#on-site.html" class="bookOnsiteBtn">Book on-site today</a>
         <div class="bottomContainer">
-            <h4>Play online or visit our venue for one of our 25 escape rooms</h4>
-            <img src="img/playOnline.png" class="playOnlineImg">
+            <h4 class="playOnlineHeading">Play online or visit our venue for one of our 25 escape rooms</h4>
+            <img src="img/playOnline.png" class="playOnlineImg" alt="Person looking at code on computer screen">
         </div>
-        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum.
+        <p class="secondBottomParagraph">Praeterea, ex culpa non invenies unum aut non accusatis unum.
             Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
         </p>
-        <button type="button"><a href="#on-site.html">See all challenges</a></button>
+        <a href="#on-site.html" class="challengesBtn">See all challenges</a>
     </section>
+</main>
     <footer>
         <div>
             <h5>[Esc] Hacker Escape Rooms</h5>
@@ -159,8 +163,7 @@
                     <li><a href="#story.html">The Story</a></li>
                     <li><a href="#contact.html">Contact Us</a></li>
                     <li><a href="#legal.html">Legal</a></li>
-                    <br>
-                    <li><a href="#online.html">Play online</a></li>
+                    <li class="aTopMargin"><a href="#online.html">Play online</a></li>
                     <li><a href="#on-site.html">Play on-site</a></li>
                 </ul>
             </nav>
