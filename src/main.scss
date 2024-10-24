@@ -9,9 +9,11 @@ body {
     margin: 0;
     background-color: #FFFFFF;
     text-align: center;
+    width: 100%;
 }
 
 .containerTop {
+    width: 100%;
     background-color: #011827;
     display: flex;
 
@@ -44,33 +46,34 @@ body {
 
 .bannerTop {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
-.onlineBtn {
-    @include onlineBtn();
-
-    a:link,
-    a:visited,
-    a:active {
-        @include linkStyle(#FFFFFF, none);
-        @include btnClickArea();
-    }
-}
-
-.onlineBtn {
+#noShowBtn {
     display: none;
 }
 
+main {
+a:link,
+a:visited,
+a:active {
+    .onsiteBtn{
+    @include onsiteBtn();
+}
+}
+
+
+
+
+
 .onsiteBtn {
     @include onsiteBtn();
-
     a:link,
     a:visited,
     a:active {
         @include linkStyle(#011827, none);
-        @include btnClickArea();
-    }
+        //@include btnClickArea();
+            }
 }
 
 .onlineLink:link,
@@ -78,27 +81,41 @@ body {
 .onlineLink:active {
     @include onlineLink();
 }
+}
 
 
 .containerReviews {
-    @include flexWrapColumn();
-    align-items: center;
-    margin-bottom: 4rem;
+    margin: 4rem 2rem 4rem 0;
 
     .review1 {
-        max-width: 750px;
-        @include reviewContainer();
+        max-width: 440px;
+        margin: 0 auto;
+        overflow: hidden;
 
         img {
             @include reviewImage();
+            float: left;
+            max-width: 96px;
+            height: auto;
         }
 
-        article {
-            @include reviewArticle();
+        .reviewText {
+            text-align: left;
+            overflow: hidden;
+        }
+        q {
+            font-size: 1.4rem;
+            quotes: none;
+            font-style: italic;
+            display: block;
+            padding: 0;
+            margin: 0;
         }
 
-        span {
-            @include reviewSpan();
+        p {
+            margin: 0.5em 0;
+            padding: 0;
+            text-align: left;
         }
     }
 
@@ -110,12 +127,13 @@ body {
             display: none;
         }
 
-        article {
+        q {
             @include reviewArticle();
             display: none;
+            quotes: none;
         }
 
-        span {
+        p {
             @include reviewSpan();
             display: none;
         }
@@ -152,7 +170,7 @@ body {
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
 
-        h4 {
+        h3 {
             font-size: 1.8rem;
             font-weight: normal;
             align-items: start;
@@ -192,24 +210,26 @@ body {
         }
 
         p {
-            width: 100%;
-            font-size: 1.1em;
+            max-width: 100%;
+            font-size: 1rem;
+            text-align: left;
+            margin: 0 1em;
         }
 
-        button {
+
+        a:link,
+        a:visited,
+        a:active {
             @include bookBtn();
             align-self: flex-end;
-
-            a:link,
-            a:visited,
-            a:active {
-                @include linkStyle(#FFFFFF, none);
-                @include btnClickArea();
-            }
+            @include linkStyle(#FFFFFF, none);
         }
+
     }
 }
-
+.onlineBtn {
+    display: none;
+}
 .storyContainer {
     background-color: #011827;
     margin: auto;
@@ -217,69 +237,66 @@ body {
     color: #FFFFFF;
     font-size: 1.6rem;
 
-    button {
+    a:link,
+    a:visited,
+    a:active {
         @include storyBtn();
-
-        a:link,
-        a:visited,
-        a:active {
-            @include linkStyle(#8ACFE5, none);
-            @include btnClickArea();
-        }
+        @include linkStyle(#8ACFE5, none);
     }
 }
 
 .playOrBuildContainer {
-
+    text-align: left;
+    margin-bottom: 2rem;
     .bottomContainer {
         display: flex;
         flex-wrap: wrap-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 2rem;
     }
 
     .playWithFriendsImg {
         width: 100%;
         max-width: 800px;
+        height: auto;
     }
 
     .playOnlineImg {
         width: 100%;
         max-width: 800px;
+        height: auto;
+        margin-top: 2rem;
+
     }
 
     h4 {
         font-size: 2rem;
-        margin: 2rem 1rem 1rem 1.5rem;
+        margin: 1.5rem 1rem 0 1rem;
         text-align: left;
     }
 
     p {
         text-align: left;
-        font-size: 1.4rem;
-        margin: 0.5rem;
-        padding: 0 2rem 1rem 1rem;
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding: 0 0.5rem 0.5rem 0.51rem;
     }
 
-    button {
+    a:link,
+    a:visited,
+    a:active {
+        display: inline-block;
         @include onlineBtn();
-        display: flex;
-        margin-left: 1.5rem;
-        margin-bottom: 3rem;
-
-        a:link,
-        a:visited,
-        a:active {
-            @include linkStyle(#FFFFFF, none);
-            @include btnClickArea();
-        }
-
-
+        @include linkStyle(#FFFFFF, none);
     }
 
 }
 
 footer {
     padding: 0.5rem 2.5rem 4rem 1rem;
-    margin-top: 5rem;
+    margin-top: 1rem;
     background-color: #011827;
     text-align: left;
     color: #FFFFFF;
@@ -287,7 +304,7 @@ footer {
     h5 {
         margin-bottom: 0;
         padding-bottom: 0;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     p {
@@ -306,11 +323,17 @@ footer {
         list-style: none;
         text-align: left;
         padding-left: 0;
+
+        li {
+            font-size: 1.5rem;
+        }
+
+        .aTopMargin {
+            margin-top: 2rem;
+        }
     }
 
-    li {
-        font-size: 1.2rem;
-    }
+
 }
 
 @media screen and (min-width: 800px) {
@@ -389,11 +412,6 @@ footer {
         }
     }
 
-    .containerReviews {
-        margin: 0 1rem 0 3rem;
-        padding-left: 2rem;
-    }
-
     .onlineLink:link,
     .onlineLink:visited,
     .onlineLink:active {
@@ -424,6 +442,7 @@ footer {
         margin: 1rem auto;
         max-width: 360px;
         height: auto;
+        
     }
 
     .storyContainer {
@@ -502,18 +521,13 @@ footer {
         margin: 0 auto;
 
         nav {
-
             display: flex;
             justify-content: center;
             gap: 6.8rem;
-
-            a {
-                align-items: center;
-            }
         }
 
     }
-    
+
     .bannerTop {
         width: 100%;
         max-width: 1280px;
@@ -562,6 +576,5 @@ footer {
         justify-content: space-evenly;
         overflow: hidden;
     }
-
 
 }
