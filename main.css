@@ -7,9 +7,11 @@ body {
   margin: 0;
   background-color: #FFFFFF;
   text-align: center;
+  width: 100%;
 }
 
 .containerTop {
+  width: 100%;
   background-color: #011827;
   display: flex;
 }
@@ -37,38 +39,17 @@ body {
 
 .bannerTop {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-.onlineBtn {
-  background-color: #E3170A;
-  color: #FFFFFF;
-  font-family: "Roboto";
-  font-size: 1.6rem;
-  font-weight: bold;
-  text-align: center;
-  border: none;
-  border-radius: 3px;
-  margin: 2.5rem;
-  padding: 0;
-}
-.onlineBtn a:link,
-.onlineBtn a:visited,
-.onlineBtn a:active {
-  color: #FFFFFF;
-  text-decoration: none;
-  display: block;
-  position: relative;
-  z-index: 1;
-  padding: 1rem 3rem;
-  margin: 0;
-}
-
-.onlineBtn {
+#noShowBtn {
   display: none;
 }
 
-.onsiteBtn {
+main a:link .onsiteBtn,
+main a:visited .onsiteBtn,
+main a:active .onsiteBtn {
+  display: inline-block;
   background-color: #8ACFE5;
   color: #011827;
   font-family: "Roboto";
@@ -77,24 +58,33 @@ body {
   text-align: center;
   border: none;
   border-radius: 3px;
-  margin: 2.5rem;
-  padding: 0;
+  margin: 2rem;
+  padding: 1rem 3rem;
+  text-decoration: none;
 }
-.onsiteBtn a:link,
-.onsiteBtn a:visited,
-.onsiteBtn a:active {
+main .onsiteBtn {
+  display: inline-block;
+  background-color: #8ACFE5;
+  color: #011827;
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  margin: 2rem;
+  padding: 1rem 3rem;
+  text-decoration: none;
+}
+main .onsiteBtn a:link,
+main .onsiteBtn a:visited,
+main .onsiteBtn a:active {
   color: #011827;
   text-decoration: none;
-  display: block;
-  position: relative;
-  z-index: 1;
-  padding: 1rem 3rem;
-  margin: 0;
 }
-
-.onlineLink:link,
-.onlineLink:visited,
-.onlineLink:active {
+main .onlineLink:link,
+main .onlineLink:visited,
+main .onlineLink:active {
   display: block;
   margin-bottom: 3rem;
   color: #36769D;
@@ -104,41 +94,36 @@ body {
 }
 
 .containerReviews {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 4rem;
+  margin: 4rem 2rem 4rem 0;
 }
 .containerReviews .review1 {
-  max-width: 750px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 .containerReviews .review1 img {
-  margin: 2rem 1.5rem;
-  max-width: 4rem;
+  margin: 0 1.5rem;
   flex-grow: 0;
+  float: left;
+  max-width: 96px;
+  height: auto;
 }
-.containerReviews .review1 article {
-  margin-top: 1.5rem;
-  margin-right: 5rem;
-  flex-grow: 1;
+.containerReviews .review1 .reviewText {
   text-align: left;
-  display: block;
-  font-size: 1.3rem;
+  overflow: hidden;
+}
+.containerReviews .review1 q {
+  font-size: 1.4rem;
+  quotes: none;
   font-style: italic;
-}
-.containerReviews .review1 span {
-  width: 100%;
-  text-align: left;
-  margin-top: 0.5rem;
   display: block;
-  font-style: normal;
-  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.containerReviews .review1 p {
+  margin: 0.5em 0;
+  padding: 0;
+  text-align: left;
 }
 .containerReviews .review2 {
   display: flex;
@@ -148,12 +133,11 @@ body {
   width: 100%;
 }
 .containerReviews .review2 img {
-  margin: 2rem 1.5rem;
-  max-width: 4rem;
+  margin: 0 1.5rem;
   flex-grow: 0;
   display: none;
 }
-.containerReviews .review2 article {
+.containerReviews .review2 q {
   margin-top: 1.5rem;
   margin-right: 5rem;
   flex-grow: 1;
@@ -162,8 +146,9 @@ body {
   font-size: 1.3rem;
   font-style: italic;
   display: none;
+  quotes: none;
 }
-.containerReviews .review2 span {
+.containerReviews .review2 p {
   width: 100%;
   text-align: left;
   margin-top: 0.5rem;
@@ -204,7 +189,7 @@ body {
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
 }
-.roomContainer .roomIndividual h4 {
+.roomContainer .roomIndividual h3 {
   font-size: 1.8rem;
   font-weight: normal;
   align-items: start;
@@ -239,33 +224,33 @@ body {
   margin-left: 0.8rem;
 }
 .roomContainer .roomIndividual p {
-  width: 100%;
-  font-size: 1.1em;
+  max-width: 100%;
+  font-size: 1rem;
+  text-align: left;
+  margin: 0 1em;
 }
-.roomContainer .roomIndividual button {
+.roomContainer .roomIndividual a:link,
+.roomContainer .roomIndividual a:visited,
+.roomContainer .roomIndividual a:active {
   display: block;
-  margin: 1rem 1.4rem;
+  margin: 2rem 1rem;
   background-color: #E3170A;
   color: #FFFFFF;
   font-family: "Roboto";
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
   border: none;
-  padding: 0;
+  padding: 1rem 3rem;
   border-radius: 4px;
+  text-decoration: none;
   align-self: flex-end;
-}
-.roomContainer .roomIndividual button a:link,
-.roomContainer .roomIndividual button a:visited,
-.roomContainer .roomIndividual button a:active {
   color: #FFFFFF;
   text-decoration: none;
-  display: block;
-  position: relative;
-  z-index: 1;
-  padding: 1rem 3rem;
-  margin: 0;
+}
+
+.onlineBtn {
+  display: none;
 }
 
 .storyContainer {
@@ -275,7 +260,10 @@ body {
   color: #FFFFFF;
   font-size: 1.6rem;
 }
-.storyContainer button {
+.storyContainer a:link,
+.storyContainer a:visited,
+.storyContainer a:active {
+  display: inline-block;
   background-color: #011827;
   color: #8ACFE5;
   font-family: "Roboto";
@@ -284,45 +272,51 @@ body {
   text-align: center;
   border: 2px solid #8ACFE5;
   border-radius: 3px;
-  padding: 0;
+  padding: 1rem 3rem;
   margin: 2.5rem;
-}
-.storyContainer button a:link,
-.storyContainer button a:visited,
-.storyContainer button a:active {
+  text-decoration: none;
   color: #8ACFE5;
   text-decoration: none;
-  display: block;
-  position: relative;
-  z-index: 1;
-  padding: 1rem 3rem;
-  margin: 0;
 }
 
+.playOrBuildContainer {
+  text-align: left;
+  margin-bottom: 2rem;
+}
 .playOrBuildContainer .bottomContainer {
   display: flex;
   flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
 .playOrBuildContainer .playWithFriendsImg {
   width: 100%;
   max-width: 800px;
+  height: auto;
 }
 .playOrBuildContainer .playOnlineImg {
   width: 100%;
   max-width: 800px;
+  height: auto;
+  margin-top: 2rem;
 }
 .playOrBuildContainer h4 {
   font-size: 2rem;
-  margin: 2rem 1rem 1rem 1.5rem;
+  margin: 1.5rem 1rem 0 1rem;
   text-align: left;
 }
 .playOrBuildContainer p {
   text-align: left;
-  font-size: 1.4rem;
-  margin: 0.5rem;
-  padding: 0 2rem 1rem 1rem;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0 0.5rem 0.5rem 0.51rem;
 }
-.playOrBuildContainer button {
+.playOrBuildContainer a:link,
+.playOrBuildContainer a:visited,
+.playOrBuildContainer a:active {
+  display: inline-block;
   background-color: #E3170A;
   color: #FFFFFF;
   font-family: "Roboto";
@@ -331,27 +325,16 @@ body {
   text-align: center;
   border: none;
   border-radius: 3px;
-  margin: 2.5rem;
-  padding: 0;
-  display: flex;
-  margin-left: 1.5rem;
-  margin-bottom: 3rem;
-}
-.playOrBuildContainer button a:link,
-.playOrBuildContainer button a:visited,
-.playOrBuildContainer button a:active {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
   color: #FFFFFF;
   text-decoration: none;
-  display: block;
-  position: relative;
-  z-index: 1;
-  padding: 1rem 3rem;
-  margin: 0;
 }
 
 footer {
   padding: 0.5rem 2.5rem 4rem 1rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
   background-color: #011827;
   text-align: left;
   color: #FFFFFF;
@@ -359,7 +342,7 @@ footer {
 footer h5 {
   margin-bottom: 0;
   padding-bottom: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 footer p {
   padding-top: 0.5rem;
@@ -376,8 +359,11 @@ footer ul {
   text-align: left;
   padding-left: 0;
 }
-footer li {
-  font-size: 1.2rem;
+footer ul li {
+  font-size: 1.5rem;
+}
+footer ul .aTopMargin {
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -422,6 +408,9 @@ footer li {
     margin: 0 auto;
     object-fit: cover;
   }
+  main {
+    margin-top: -0.5rem;
+  }
   .onlineBtn,
   .onsiteBtn {
     display: inline-block;
@@ -439,10 +428,6 @@ footer li {
   }
   .btnContainer button a {
     font-size: 1.4rem;
-  }
-  .containerReviews {
-    margin: 0 1rem 0 3rem;
-    padding-left: 2rem;
   }
   .onlineLink:link,
   .onlineLink:visited,
@@ -536,9 +521,6 @@ footer li {
     justify-content: center;
     gap: 6.8rem;
   }
-  .containerTop nav a {
-    align-items: center;
-  }
   .bannerTop {
     width: 100%;
     max-width: 1280px;
@@ -564,8 +546,7 @@ footer li {
     width: 100%;
   }
   .containerReviews .review2 img {
-    margin: 2rem 1.5rem;
-    max-width: 4rem;
+    margin: 0 1.5rem;
     flex-grow: 0;
     display: inline;
   }
