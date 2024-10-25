@@ -37,7 +37,7 @@
     </header>
     <main>
         <a href="#online.html" class="onlineBtn" id="toggleBtn">Online challenges</a>
-        <a href="#on-site.html" class="onsiteBtn">On-site challenges</a>
+        <a href="#on-site.html" class="onsiteBtn" id="absoluteBtn">On-site challenges</a>
         <a href="#online.html" class="onlineLink">Online challenges</a>
         <section class="containerReviews">
             <!-- Review 1 -->
@@ -52,11 +52,13 @@
             </div>
             <!-- Review 2 -->
             <div class="review2">
-                <img src="img/johnDoe.png" title="Profile picture" alt="Face of a man">
-                <q>This is a quote about how amazing this place is
-                    and how much fun me and my friends had when we tried it
-                </q>
-                <p>John Doe, visited us in September 2021</p>
+                <img src="img/johnDoe.png" srcset="img/johnDoe.png 480w" title="Profile picture" alt="Face of a man">
+                <div class="reviewText">
+                    <q>This is a quote about how amazing this place is
+                        and how much fun me and my friends had when we tried it
+                    </q>
+                    <p>John Doe, visited us in September 2021</p>
+                </div>
             </div>
         </section>
         <section>
@@ -123,33 +125,33 @@
             <a href="#on-site.html" class="onsiteBtn">On-site challenges</a>
             <a href="#online.html" class="onlineLink">Online challenges</a>
         </div>
-    <section class="storyContainer">
-        <p>Quodsi haberent magnalia inter potentiam et divitias,
-            et non illam quidem haec eo spectant haec quoque vos omnino
-            desit illud quo solo felicitatis libertatisque perficiuntur.
-        </p>
-        <a href="#story.html" class="storyBtn">Read the full story</a>
-    </section>
-    <section class="playOrBuildContainer">
-        <div class="bottomContainer">
-            <h4 class="playFriendsHeading">Play with your friends or build your team stronger at work</h4>
-            <img src="img/playWithFriends.png" class="playWithFriendsImg"
-                alt="People in office enviroment looking att computer screens">
-        </div>
-        <p class="firstBottomParagraph">Praeterea, ex culpa non invenies unum aut non accusatis unum.
-            Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-        </p>
-        <a href="#on-site.html" class="bookOnsiteBtn">Book on-site today</a>
-        <div class="bottomContainer">
-            <h4 class="playOnlineHeading">Play online or visit our venue for one of our 25 escape rooms</h4>
-            <img src="img/playOnline.png" class="playOnlineImg" alt="Person looking at code on computer screen">
-        </div>
-        <p class="secondBottomParagraph">Praeterea, ex culpa non invenies unum aut non accusatis unum.
-            Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-        </p>
-        <a href="#on-site.html" class="challengesBtn">See all challenges</a>
-    </section>
-</main>
+        <section class="storyContainer">
+            <p>Quodsi haberent magnalia inter potentiam et divitias,
+                et non illam quidem haec eo spectant haec quoque vos omnino
+                desit illud quo solo felicitatis libertatisque perficiuntur.
+            </p>
+            <a href="#story.html" class="storyBtn">Read the full story</a>
+        </section>
+        <section class="playOrBuildContainer">
+            <div class="bottomContainer">
+                <h4 class="playFriendsHeading">Play with your friends or build your team stronger at work</h4>
+                <img src="img/playWithFriends.png" class="playWithFriendsImg"
+                    alt="People in office enviroment looking att computer screens">
+            </div>
+            <p class="firstBottomParagraph">Praeterea, ex culpa non invenies unum aut non accusatis unum.
+                Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
+            </p>
+            <a href="#on-site.html" class="bookOnsiteBtn">Book on-site today</a>
+            <div class="bottomContainer">
+                <h4 class="playOnlineHeading">Play online or visit our venue for one of our 25 escape rooms</h4>
+                <img src="img/playOnline.png" class="playOnlineImg" alt="Person looking at code on computer screen">
+            </div>
+            <p class="secondBottomParagraph">Praeterea, ex culpa non invenies unum aut non accusatis unum.
+                Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
+            </p>
+            <a href="#on-site.html" class="challengesBtn">See all challenges</a>
+        </section>
+    </main>
     <footer>
         <div>
             <h5>[Esc] Hacker Escape Rooms</h5>
