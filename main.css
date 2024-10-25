@@ -527,11 +527,21 @@ footer ul .aTopMargin {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    background-color: #011827;
+  }
+  .containerTop div {
+    max-width: 100%;
+  }
+  .containerTop div h1 {
+    font-size: 2.5em;
+    margin-top: 1.3em;
+    margin-left: 0.3em;
   }
   .containerTop nav {
     display: flex;
     justify-content: center;
-    gap: 6.8rem;
+    gap: 5rem;
+    margin-bottom: 1em;
   }
   .bannerTop {
     width: 100%;
@@ -540,47 +550,89 @@ footer ul .aTopMargin {
     margin: -4px auto;
     object-fit: cover;
   }
+  main #toggleBtn {
+    display: inline-block;
+    background-color: #E3170A;
+    color: #FFFFFF;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    margin: 1rem 1.2rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    position: absolute;
+    translate: -20.1rem -4.5rem;
+  }
+  main #absoluteBtn {
+    display: inline-block;
+    background-color: #8ACFE5;
+    color: #011827;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    margin: 2rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    position: absolute;
+    translate: -2rem -5.5rem;
+  }
+  main .onlineLink:link,
+  main .onlineLink:visited,
+  main .onlineLink:active {
+    display: none;
+  }
   .containerReviews {
     display: grid;
     grid-template-columns: auto auto;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding-top: 8rem;
   }
   .containerReviews .review1 {
     grid-column: 1;
+    max-width: 550px;
   }
   .containerReviews .review2 {
     grid-column: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
+    max-width: 550px;
+    margin: 0 1rem;
+    overflow: hidden;
   }
   .containerReviews .review2 img {
+    display: inline;
     margin: 0 1.5rem;
     flex-grow: 0;
-    display: inline;
+    float: left;
+    max-width: 80px;
+    height: auto;
   }
-  .containerReviews .review2 article {
-    margin-top: 1.5rem;
-    margin-right: 5rem;
-    flex-grow: 1;
+  .containerReviews .review2 .reviewText {
     text-align: left;
-    display: block;
-    font-size: 1.3rem;
+    overflow: hidden;
+  }
+  .containerReviews .review2 q {
+    font-size: 1.4rem;
+    quotes: none;
     font-style: italic;
-  }
-  .containerReviews .review2 span {
-    width: 100%;
-    text-align: left;
-    margin-top: 0.5rem;
     display: block;
-    font-style: normal;
-    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+  .containerReviews .review2 p {
+    display: block;
+    margin: 0.5em 0;
+    padding: 0;
+    text-align: left;
   }
   .popularHeading {
     margin-top: 6rem;
+    margin-bottom: 4rem;
     font-size: 2.3rem;
   }
   .roomContainer {
@@ -588,6 +640,44 @@ footer ul .aTopMargin {
     padding: 0 auto;
     justify-content: space-evenly;
     overflow: hidden;
+  }
+  .roomContainer .roomIndividual .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .roomContainer .roomIndividual img {
+    margin-right: 4px;
+  }
+  .roomContainer .roomIndividual span {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  .btnContainer {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+  }
+  .btnContainer .onlineBtn {
+    background-color: #E3170A;
+    color: #FFFFFF;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    margin: 1rem 1.2rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    display: flex;
+    margin: 0;
+  }
+  .btnContainer .onsiteBtn {
+    margin: 0;
   }
 }
 
