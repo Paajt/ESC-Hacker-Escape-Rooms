@@ -16,6 +16,7 @@ body {
     width: 100%;
     background-color: #011827;
     display: flex;
+    padding-bottom: 1rem;
 
     div {
         display: flex;
@@ -49,7 +50,7 @@ body {
     height: auto;
 }
 
-#noShowBtn {
+#toggleBtn {
     display: none;
 }
 
@@ -95,7 +96,7 @@ a:active {
         img {
             @include reviewImage();
             float: left;
-            max-width: 96px;
+            max-width: 80px;
             height: auto;
         }
 
@@ -142,7 +143,7 @@ a:active {
 }
 
 .popularHeading {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 400;
     margin-bottom: 2rem;
 }
@@ -153,19 +154,20 @@ a:active {
     align-items: center;
     text-align: center;
     max-width: 1280px;
-    margin-left: 3rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
     padding: 1rem;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
 
     .roomIndividual {
         @include flexWrapColumn();
-        box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+        box-shadow: 0 0 5px rgba($color: #B6BDB5, $alpha: 1);
         border-radius: 0.5em;
-        max-width: 360px;
-        min-width: 344px;
+        max-width: 400px;
+        min-width: 360px;
         padding: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
         margin-right: 2rem;
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
@@ -211,9 +213,12 @@ a:active {
 
         p {
             max-width: 100%;
-            font-size: 1rem;
+            font-size: 1.1em;
+            font-weight: 500;
             text-align: left;
-            margin: 0 1em;
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+            margin-right: 0.8rem;
         }
 
 
@@ -227,9 +232,16 @@ a:active {
 
     }
 }
-.onlineBtn {
-    display: none;
+
+.btnContainer {
+    margin-top: 0;
+    margin-bottom: 4rem;
+
+    .onlineBtn {
+        display: none;
+    }
 }
+
 .storyContainer {
     background-color: #011827;
     margin: auto;
@@ -266,7 +278,7 @@ a:active {
         width: 100%;
         max-width: 800px;
         height: auto;
-        margin-top: 2rem;
+        margin-top: 3rem;
 
     }
 
@@ -295,8 +307,8 @@ a:active {
 }
 
 footer {
-    padding: 0.5rem 2.5rem 4rem 1rem;
-    margin-top: 1rem;
+    padding: 2rem 2.5rem 4rem 1rem;
+    margin-top: 5rem;
     background-color: #011827;
     text-align: left;
     color: #FFFFFF;
@@ -304,13 +316,16 @@ footer {
     h5 {
         margin-bottom: 0;
         padding-bottom: 0;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 500;
     }
 
     p {
         padding-top: 0.5rem;
         margin-top: 0;
+        margin-right: 0.3em;
         font-size: 1.1rem;
+        font-weight: 300;
     }
 
     a {
@@ -325,7 +340,7 @@ footer {
         padding-left: 0;
 
         li {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
         }
 
         .aTopMargin {
