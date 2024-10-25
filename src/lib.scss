@@ -40,13 +40,13 @@
     background-color: #E3170A;
     color: #FFFFFF;
     font-family: "Roboto";
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 500;
     text-align: center;
     border: none;
     border-radius: 3px;
-    margin: 1rem;
-    padding: 1rem 2rem;
+    margin: 1rem 1.2rem;
+    padding: 1rem 3rem;
     text-decoration: none;
 }
 
@@ -55,7 +55,7 @@
     background-color: #8ACFE5;
     color: #011827;
     font-family: "Roboto";
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     border: none;
@@ -67,15 +67,15 @@
 
 @mixin bookBtn {
     display: block;
-    margin: 2rem 1rem;
+    margin: 1rem 1.2rem;
     background-color: #E3170A;
     color: #FFFFFF;
     font-family: "Roboto";
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 500;
     text-align: center;
     border: none;
-    padding: 1rem 3rem;
+    padding: 1rem 2.5rem;
     border-radius: 4px;
     text-decoration: none;
 }
@@ -85,7 +85,7 @@
     background-color: #011827;
     color: #8ACFE5;
     font-family: "Roboto";
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     border: 2px solid #8ACFE5;
