@@ -167,7 +167,6 @@ main {
         @include flexWrapColumn();
         box-shadow: 0 0 5px rgba($color: #B6BDB5, $alpha: 1);
         border-radius: 0.5em;
-        max-width: 400px;
         min-width: 360px;
         padding: 0;
         margin-bottom: 0.5rem;
@@ -217,11 +216,11 @@ main {
         p {
             max-width: 100%;
             font-size: 1.1em;
-            font-weight: 500;
             text-align: left;
             margin-top: 0.5rem;
             margin-left: 1rem;
             margin-right: 0.8rem;
+            padding-right: 0.2em;
         }
 
 
@@ -341,7 +340,7 @@ footer {
     h5 {
         margin-bottom: 0;
         padding-bottom: 0;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         font-weight: 500;
     }
 
@@ -349,7 +348,7 @@ footer {
         padding-top: 0.5rem;
         margin-top: 0;
         margin-right: 0.3em;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 300;
     }
 
@@ -365,7 +364,8 @@ footer {
         padding-left: 0;
 
         li {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-top: 0.2em;
         }
 
         .aTopMargin {
@@ -514,6 +514,9 @@ footer {
             max-width: 770px;
             margin: auto;
         }
+        a:hover {
+            color: #8ACFE5;
+        }
     }
 
 }
@@ -635,18 +638,21 @@ footer {
     .roomContainer {
         margin: 0 auto;
         padding: 0 auto;
-        justify-content: space-evenly;
+        justify-content: space-between;
         overflow: hidden;
 
         .roomIndividual {
+            margin-left: 1rem;
             .imgContainer {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                max-width: 360px;
             }
 
             img {
                 margin-right: 4px;
+                
             }
 
             span {
@@ -674,6 +680,10 @@ footer {
         .onsiteBtn {
             margin: 0;
         }
+        .onsiteBtn:hover {
+            color: #011827;
+        }
+
     }
     .playOrBuildContainer {
         display: flex;
@@ -765,4 +775,76 @@ footer {
             padding: 0 0.5rem;
         }
     }
+
+    footer {
+        padding: 8rem 2rem;
+        background-color: #011827;
+        text-align: center; // Centrerar innehållet
+    }
+
+    .footerWrap {
+        display: flex;
+        justify-content: space-around; // Justerar jämnt utrymme mellan kolumner
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 1rem;
+
+        div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+    }
+
+    .h5P {
+        flex-grow: 2;       
+    }
+
+    footer .h5P, footer .h5Map, footer .H5SoMe {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+
+        h5 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        p {
+            margin-right: -4rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+        }
+    }
+
+    footer .h5Map h5, ul {
+        margin-left: 15rem;
+        text-align: left;
+    }
+    
+    footer .H5SoMe {
+        margin: 0 2.4rem 0 0;
+        padding: 0;
+        text-align: left;
+        flex-shrink: 1;
+
+        h5 {
+            margin-left: 6rem;
+        }
+
+        ul {
+            margin-left: 6rem;
+        }
+    }
+
 }
+
