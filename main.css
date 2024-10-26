@@ -299,16 +299,34 @@ main .onlineLink:active {
   align-items: flex-start;
   margin-bottom: 2rem;
 }
-.playOrBuildContainer .playWithFriendsImg {
+.playOrBuildContainer .bottomContainer .playWithFriendsImg {
   width: 100%;
-  max-width: 800px;
   height: auto;
+  flex-direction: row;
 }
-.playOrBuildContainer .playOnlineImg {
+.playOrBuildContainer .bottomContainer .textContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  order: -1;
+}
+.playOrBuildContainer .bottomContainer2 {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.playOrBuildContainer .bottomContainer2 .playOnlineImg {
   width: 100%;
-  max-width: 800px;
   height: auto;
   margin-top: 3rem;
+}
+.playOrBuildContainer .bottomContainer2 .textContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  order: -1;
 }
 .playOrBuildContainer h4 {
   font-size: 2rem;
@@ -335,7 +353,7 @@ main .onlineLink:active {
   border: none;
   border-radius: 3px;
   margin: 1rem 1.2rem;
-  padding: 1rem 3rem;
+  padding: 1rem 3.6rem;
   text-decoration: none;
   color: #FFFFFF;
   text-decoration: none;
@@ -481,34 +499,9 @@ footer ul .aTopMargin {
   .storyContainer button {
     margin-bottom: 7rem;
   }
-  .playOrBuildContainer .bottomContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .playOrBuildContainer h4 {
-    font-size: 2rem;
-    margin: 2rem auto;
-    padding-left: 1rem;
-    text-align: left;
+  .playOrBuildContainer {
     max-width: 800px;
-  }
-  .playOrBuildContainer p {
-    font-size: 1.4rem;
     margin: 0 auto;
-    max-width: 770px;
-  }
-  .playOrBuildContainer button {
-    display: inline-block;
-    margin: 2rem 1rem;
-    align-self: flex-start;
-  }
-  .playOrBuildContainer img {
-    display: block;
-    margin: 0 auto;
-    order: -1;
   }
   footer {
     max-width: 100%;
@@ -561,10 +554,10 @@ footer ul .aTopMargin {
     border: none;
     border-radius: 3px;
     margin: 1rem 1.2rem;
-    padding: 1rem 3rem;
+    padding: 1rem 3.6rem;
     text-decoration: none;
     position: absolute;
-    translate: -20.1rem -4.5rem;
+    translate: -20.5rem -4.5rem;
   }
   main #absoluteBtn {
     display: inline-block;
@@ -580,7 +573,7 @@ footer ul .aTopMargin {
     padding: 1rem 3rem;
     text-decoration: none;
     position: absolute;
-    translate: -2rem -5.5rem;
+    translate: -1.2rem -5.5rem;
   }
   main .onlineLink:link,
   main .onlineLink:visited,
@@ -656,7 +649,8 @@ footer ul .aTopMargin {
   }
   .btnContainer {
     display: flex;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
     justify-content: center;
     align-items: center;
     gap: 1.1rem;
@@ -671,13 +665,90 @@ footer ul .aTopMargin {
     border: none;
     border-radius: 3px;
     margin: 1rem 1.2rem;
-    padding: 1rem 3rem;
+    padding: 1rem 3.6rem;
     text-decoration: none;
     display: flex;
     margin: 0;
   }
   .btnContainer .onsiteBtn {
     margin: 0;
+  }
+  .playOrBuildContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    margin-bottom: 0;
+  }
+  .playOrBuildContainer .bottomContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .playOrBuildContainer .bottomContainer .playWithFriendsImg {
+    max-width: 50%;
+    height: auto;
+    order: -1;
+  }
+  .playOrBuildContainer .bottomContainer .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 50%;
+    margin: 4rem 7rem 0 7rem;
+  }
+  .playOrBuildContainer .bottomContainer .textContainer p {
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-left: -0.4rem;
+    margin-bottom: 1rem;
+    padding-right: 0;
+  }
+  .playOrBuildContainer .bottomContainer .textContainer a {
+    margin-left: 0;
+  }
+  .playOrBuildContainer .bottomContainer2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .playOrBuildContainer .bottomContainer2 .playOnlineImg {
+    max-width: 50%;
+    height: auto;
+    order: 1;
+    margin-top: 0;
+  }
+  .playOrBuildContainer .bottomContainer2 .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 50%;
+    order: -1;
+    margin: 4rem 6rem 0 7rem;
+  }
+  .playOrBuildContainer .bottomContainer2 p {
+    margin: 1rem 0 1rem -0.4rem;
+    padding-right: 0;
+  }
+  .playOrBuildContainer .bottomContainer2 a {
+    margin-left: 0;
+  }
+  .playOrBuildContainer h4 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: left;
+  }
+  .playOrBuildContainer p {
+    text-align: left;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
   }
 }
 
