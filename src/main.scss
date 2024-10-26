@@ -270,20 +270,41 @@ main {
         justify-content: flex-start;
         align-items: flex-start;
         margin-bottom: 2rem;
+
+        .playWithFriendsImg {
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+        }
+
+        .textContainer {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            order: -1;
+        }
     }
 
-    .playWithFriendsImg {
-        width: 100%;
-        max-width: 800px;
-        height: auto;
-    }
+    .bottomContainer2 {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 2rem;
 
-    .playOnlineImg {
-        width: 100%;
-        max-width: 800px;
-        height: auto;
-        margin-top: 3rem;
+        .playOnlineImg {
+            width: 100%;
+            height: auto;
+            margin-top: 3rem;
+    
+        }
 
+        .textContainer {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            order: -1;
+        }
     }
 
     h4 {
@@ -481,39 +502,8 @@ footer {
     }
 
     .playOrBuildContainer {
-        .bottomContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            width: 100%;
-        }
-
-        h4 {
-            font-size: 2rem;
-            margin: 2rem auto;
-            padding-left: 1rem;
-            text-align: left;
-            max-width: 800px;
-        }
-
-        p {
-            font-size: 1.4rem;
-            margin: 0 auto;
-            max-width: 770px;
-        }
-
-        button {
-            display: inline-block;
-            margin: 2rem 1rem;
-            align-self: flex-start;
-        }
-
-        img {
-            display: block;
-            margin: 0 auto;
-            order: -1;
-        }
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     footer {
@@ -571,13 +561,13 @@ footer {
             display: inline-block;
             @include onlineBtn();
             position: absolute;
-            translate: -20.1rem -4.5rem;
+            translate: -20.5rem -4.5rem;
         }
 
         #absoluteBtn {
             @include onsiteBtn();
             position: absolute;
-            translate: -2rem -5.5rem;
+            translate: -1.2rem -5.5rem;
         }
 
         .onlineLink:link,
@@ -669,7 +659,8 @@ footer {
 
     .btnContainer {
         display: flex;
-        margin-top: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
         justify-content: center;
         align-items: center;
         gap: 1.1rem;
@@ -684,5 +675,94 @@ footer {
             margin: 0;
         }
     }
+    .playOrBuildContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1280px;
+        margin-bottom: 0;
+        
+        .bottomContainer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            width: 100%;
+            margin-bottom: 0;
 
+            .playWithFriendsImg {
+                max-width: 50%;
+                height: auto;
+                order: -1;
+            }
+
+            .textContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                max-width: 50%;
+                margin: 4rem 7rem 0 7rem;
+
+                p {
+                    margin-top: 1rem;
+                    margin-right: 0;
+                    margin-left: -0.4rem;
+                    margin-bottom: 1rem;
+                    padding-right: 0;
+                }
+
+                a {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .bottomContainer2 {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 5rem;
+
+            .playOnlineImg {
+                max-width: 50%;
+                height: auto;
+                order: 1;
+                margin-top: 0;
+            }
+
+            .textContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                max-width: 50%;
+                order: -1;
+                margin: 4rem 6rem 0 7rem;
+                
+            }
+
+            p {
+                margin: 1rem 0 1rem -0.4rem;
+                padding-right: 0;
+            }
+
+            a {
+                margin-left: 0;
+            }
+        }
+
+        h4 {
+            font-size: 2rem;
+            margin: 0;
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            padding: 0 0.5rem;
+        }
+    }
 }
