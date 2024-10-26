@@ -779,12 +779,12 @@ footer {
     footer {
         padding: 8rem 2rem;
         background-color: #011827;
-        text-align: center; // Centrerar innehållet
+        text-align: center;
     }
 
     .footerWrap {
         display: flex;
-        justify-content: space-around; // Justerar jämnt utrymme mellan kolumner
+        justify-content: space-around;
         max-width: 1200px;
         margin: 0 auto;
         gap: 1rem;
