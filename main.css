@@ -183,7 +183,6 @@ main .onlineLink:active {
   flex-wrap: wrap;
   box-shadow: 0 0 5px #b6bdb5;
   border-radius: 0.5em;
-  max-width: 400px;
   min-width: 360px;
   padding: 0;
   margin-bottom: 0.5rem;
@@ -228,11 +227,11 @@ main .onlineLink:active {
 .roomContainer .roomIndividual p {
   max-width: 100%;
   font-size: 1.1em;
-  font-weight: 500;
   text-align: left;
   margin-top: 0.5rem;
   margin-left: 1rem;
   margin-right: 0.8rem;
+  padding-right: 0.2em;
 }
 .roomContainer .roomIndividual a:link,
 .roomContainer .roomIndividual a:visited,
@@ -369,14 +368,14 @@ footer {
 footer h5 {
   margin-bottom: 0;
   padding-bottom: 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 footer p {
   padding-top: 0.5rem;
   margin-top: 0;
   margin-right: 0.3em;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 footer a {
@@ -390,7 +389,8 @@ footer ul {
   padding-left: 0;
 }
 footer ul li {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-top: 0.2em;
 }
 footer ul .aTopMargin {
   margin-top: 2rem;
@@ -510,6 +510,9 @@ footer ul .aTopMargin {
     padding: 1rem;
     max-width: 770px;
     margin: auto;
+  }
+  footer a:hover {
+    color: #8ACFE5;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -631,13 +634,17 @@ footer ul .aTopMargin {
   .roomContainer {
     margin: 0 auto;
     padding: 0 auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     overflow: hidden;
+  }
+  .roomContainer .roomIndividual {
+    margin-left: 1rem;
   }
   .roomContainer .roomIndividual .imgContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 360px;
   }
   .roomContainer .roomIndividual img {
     margin-right: 4px;
@@ -672,6 +679,9 @@ footer ul .aTopMargin {
   }
   .btnContainer .onsiteBtn {
     margin: 0;
+  }
+  .btnContainer .onsiteBtn:hover {
+    color: #011827;
   }
   .playOrBuildContainer {
     display: flex;
@@ -749,6 +759,64 @@ footer ul .aTopMargin {
     font-size: 1.5rem;
     margin: 0.5rem 0;
     padding: 0 0.5rem;
+  }
+  footer {
+    padding: 8rem 2rem;
+    background-color: #011827;
+    text-align: center;
+  }
+  .footerWrap {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  .footerWrap div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .h5P {
+    flex-grow: 2;
+  }
+  footer .h5P, footer .h5Map, footer .H5SoMe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  footer .h5P h5, footer .h5Map h5, footer .H5SoMe h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  footer .h5P p, footer .h5Map p, footer .H5SoMe p {
+    margin-right: -4rem;
+  }
+  footer .h5P ul, footer .h5Map ul, footer .H5SoMe ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  footer .h5Map h5, ul {
+    margin-left: 15rem;
+    text-align: left;
+  }
+  footer .H5SoMe {
+    margin: 0 2.4rem 0 0;
+    padding: 0;
+    text-align: left;
+    flex-shrink: 1;
+  }
+  footer .H5SoMe h5 {
+    margin-left: 6rem;
+  }
+  footer .H5SoMe ul {
+    margin-left: 6rem;
   }
 }
 
