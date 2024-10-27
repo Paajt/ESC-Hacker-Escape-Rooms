@@ -95,14 +95,6 @@
     text-decoration: none;
 }
 
-@mixin btnClickArea {
-    display: block;
-    position: relative;
-    z-index: 1;
-    padding: 1rem 3rem;
-    margin: 0;
-}
-
 @mixin onlineLink {
     display: block;
     margin-bottom: 3rem;
