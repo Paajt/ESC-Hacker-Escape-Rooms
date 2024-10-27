@@ -64,10 +64,6 @@ main {
         }
     }
 
-
-
-
-
     .onsiteBtn {
         @include onsiteBtn();
 
@@ -75,7 +71,6 @@ main {
         a:visited,
         a:active {
             @include linkStyle(#011827, none);
-            //@include btnClickArea();
         }
     }
 
@@ -85,7 +80,6 @@ main {
         @include onlineLink();
     }
 }
-
 
 .containerReviews {
     margin: 4rem 2rem 4rem 0;
