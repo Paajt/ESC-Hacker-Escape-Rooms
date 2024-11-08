@@ -75,7 +75,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2rem 3rem;
+    padding: 1.5rem;
   }
   .containerTop .mobileMenu img {
     width: 2.5rem;
@@ -92,7 +92,8 @@ body {
     list-style-type: none;
   }
   .containerTop .mobileItem {
-    margin-bottom: 5rem;
+    margin-bottom: 0.5rem;
+    padding-top: 3rem;
   }
   .containerTop .mobileLink:link,
   .containerTop .mobileLink:visited,
