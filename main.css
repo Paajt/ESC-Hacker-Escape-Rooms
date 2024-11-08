@@ -10,11 +10,20 @@ body {
   width: 100%;
 }
 
+@media (width < 800px) {
+  .noScroll {
+    overflow: hidden;
+  }
+}
+
 .containerTop {
   width: 100%;
   background-color: #011827;
   display: flex;
   padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 .containerTop div {
   display: flex;
@@ -34,8 +43,91 @@ body {
   margin-top: 1.4rem;
   font-weight: bold;
 }
-.containerTop nav {
+.containerTop .topNav {
   display: none;
+}
+.containerTop button {
+  background: none;
+  border: none;
+  padding-right: 1em;
+}
+.containerTop .mobileOpenBtn[aria-expanded=true] + .mobileMenu {
+  translate: 0;
+  opacity: 1;
+}
+@media (width < 800px) {
+  .containerTop .mobileMenu {
+    width: 95%;
+    height: 98%;
+    margin: 0.4em auto 0.4em auto;
+    position: fixed;
+    inset: 0;
+    background-color: #011827;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    translate: 100vw 0;
+    opacity: 0;
+    transition: translate 1ms ease-in-out;
+    transition: opacity 0.3s ease-in;
+    z-index: 20;
+  }
+  .containerTop .mobileMenu .mobileCloseBtn {
+    display: block;
+    margin-inline-start: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem 3rem;
+  }
+  .containerTop .mobileMenu img {
+    width: 2.5rem;
+  }
+}
+.containerTop .mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.containerTop .mobileItem {
+  list-style-type: none;
+}
+.containerTop .mobileItem {
+  margin-bottom: 5rem;
+}
+.containerTop .mobileLink:link,
+.containerTop .mobileLink:visited,
+.containerTop .mobileLink:active {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: Roboto;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+@media (width < 800px) {
+  .blurBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+  }
+}
+
+.blurBG.active {
+  backdrop-filter: blur(3px);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .bannerTop {
@@ -412,15 +504,13 @@ footer ul .aTopMargin {
     max-height: 82px;
     margin-top: 1rem;
   }
-  .containerTop nav {
+  .containerTop .topNav {
     margin: 2rem auto;
     width: 100%;
     display: block;
     text-align: center;
   }
-  .containerTop a:link,
-  .containerTop a:visited,
-  .containerTop a:active {
+  .containerTop .topNavLink {
     color: #FFFFFF;
     text-decoration: none;
     margin-right: 1.5rem;
@@ -428,8 +518,14 @@ footer ul .aTopMargin {
     font-weight: bold;
     font-size: 1.5rem;
   }
-  .containerTop a:hover {
+  .containerTop .topNavLink:hover {
     color: #8ACFE5;
+  }
+  .mobileNav {
+    display: none;
+  }
+  .mobileMenu {
+    display: none;
   }
   .bannerTop {
     width: 100%;
@@ -533,7 +629,7 @@ footer ul .aTopMargin {
     margin-top: 1.3em;
     margin-left: 0.3em;
   }
-  .containerTop nav {
+  .containerTop .topNav {
     display: flex;
     justify-content: center;
     gap: 5rem;
