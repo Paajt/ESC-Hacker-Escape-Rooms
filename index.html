@@ -9,7 +9,6 @@
         content="The webpage where you can book hacker themed escape rooms on-site or complete challenges online" />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <!-- <script defer src='main.js'></script> -->
     <!-- Font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +18,31 @@
 </head>
 
 <body>
+    <div class="blurBG" id="blurBG"></div>
     <header>
         <section class="containerTop">
             <div class="containerHeader">
                 <h1 class="headerTitle">Hacker Escape Rooms</h1>
                 <img src="img/escLogo.png" class="headerLogo" alt="Logo of letters 'ESC' in a rounded square">
             </div>
+            <nav class="mobileNav">
+                <span id="navLabel" hidden>Navigation</span>
+                <button id="openBtn" class="mobileOpenBtn" aria-expanded="false" aria-labelledby="navLabel"><img src="img/menuBtn.png" alt="" width="50" height="30"></button>
+                <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
+                    <button id="closeBtn" class="mobileCloseBtn" aria-label="Close"><img src="img/closeBtn.png" alt="" width="55" height="40"></button>
+                    <ul class="mobileLinks">
+                        <li class="mobileItem"><a href="#online.html" class="mobileLink">Play online</a></li>
+                        <li class="mobileItem"><a href="#on-site.html" class="mobileLink">Play on-site</a></li>
+                        <li class="mobileItem"><a href="#story.html" class="mobileLink">The story</a></li>
+                        <li class="mobileItem"><a href="#contact.html" class="mobileLink">Contact us</a></li>
+                    </ul>
+                </div>
+            </nav>
             <nav class="topNav">
-                <a href="#online.html">Play online</a>
-                <a href="#on-site.html">Play on-site</a>
-                <a href="#story.html">The Story</a>
-                <a href="#contact">Contact us</a>
+                <a href="#online.html" class="topNavLink">Play online</a>
+                <a href="#on-site.html" class="topNavLink">Play on-site</a>
+                <a href="#story.html" class="topNavLink">The Story</a>
+                <a href="#contact" class="topNavLink">Contact us</a>
             </nav>
         </section>
         <img src="img/hacker.png" class="bannerTop" title="Hacker and computer screens"
@@ -188,6 +201,7 @@
         </div>
     </footer>
 
+    <script src='main.js'></script>
 </body>
 
 </html>
