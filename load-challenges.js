@@ -8,5 +8,4 @@ async function fetchChallenges() {
 
 }
 
-
-
+//for-loop to build cards?
