@@ -20,53 +20,86 @@ closeBtn.addEventListener('click', closeMobileMenu);
 
 /* API STUFF */
 
-// Load api //
-async function loadAPI() {
-    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
-    const data = await res.json();
-
-    originalDataArray = Array.isArray(data.challenges) ? data.challenges : [];
-    dataArray = [...originalDataArray]
-    console.log('Hämtad data:', dataArray);
-
-}
-
-//Variables
+// Variables
 const apiBtn = document.querySelector('#apiFetch');
 const onlineSortBtn = document.querySelector('#onlineSortBtn');
 const ratingPlus3Btn = document.querySelector('#ratingPlus3');
+const dataContainer = document.querySelector('#dataContainer');
 
-let dataArray = [];
-let originalDataArray = [];
+let originalData = {};
+let filteredDataArray = [];
 
-//Event listeners with IF-statements
+// Event listeners
+
 apiBtn.addEventListener('click', loadAPI);
 
 onlineSortBtn.addEventListener('change', () => {
     if (onlineSortBtn.checked) {
-        dataArray = filterOnline(originalDataArray);
+        filteredDataArray = filterOnline(originalData.challenges);
+        console.log('Filtered online:', filteredDataArray);
     } else {
-        dataArray = [...originalDataArray];
+        filteredDataArray = [...originalData.challenges];
+        console.log('Removed online filter:', filteredDataArray);
     }
-    console.log('Filtered online:', dataArray);
+    displayData(filteredDataArray);
 });
 
 ratingPlus3Btn.addEventListener('click', () => {
-    if (dataArray.length === 0) {
-        console.log('Empty array');
+    if (filteredDataArray.length === 0) {
+        console.log('Nothing to filter');
     } else {
-    const filtered3Stars = filter3Stars(dataArray);
-    console.log('Filtered +3 stars:', filtered3Stars);
+        const filtered3Stars = filter3Stars(filteredDataArray);
+        console.log('Filtered +3 stars:', filtered3Stars);
+        displayData(filtered3Stars);
     }
 });
 
+// Load API
+async function loadAPI() {
+    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
+    const data = await res.json();
 
+    originalData = data;
+    filteredDataArray = [...data.challenges];
+    console.log('Received data:', originalData);
 
-    //Functions
-    function filterOnline(dataArray) {
-        return dataArray.filter(item => item.type === 'online');
+    displayData(filteredDataArray);
+}
+
+// Filter functions
+function filterOnline (dataArray) {
+    return dataArray.filter(item => item.type === 'online');
+}
+
+function filter3Stars(dataArray) {
+    return dataArray.filter(item => item.rating >= 3);
+}
+
+// Show data on page
+function displayData(dataArray) {
+    dataContainer.innerHTML = '';
+
+    if (dataArray.length === 0) {
+        dataContainer.innerHTML = '<p>No data.</p>';
+        return;
     }
 
-    function filter3Stars(dataArray) {
-        return dataArray.filter(item => item.rating >= 3);
-    }
+    dataArray.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('data-item');
+
+        const title = document.createElement('h3');
+        title.textContent = item.title;
+        div.appendChild(title);
+
+        const type = document.createElement('p');
+        type.textContent = `Typ: ${item.type}`;
+        div.appendChild(type);
+
+        const rating = document.createElement('p');
+        rating.textContent = `Rating: ${item.rating}`;
+        div.appendChild(rating);
+
+        dataContainer.appendChild(div);
+    });
+}
