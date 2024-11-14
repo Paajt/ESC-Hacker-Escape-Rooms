@@ -94,6 +94,7 @@ function bookingWindowStep1(challengeId) {
         emailInput.setAttribute("type", "email");
         emailInput.setAttribute("id", "emailValue")
         emailInput.setAttribute("name", "emailValue");
+        emailInput.setAttribute("pattern", "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
 
         //What time? input with label
         const timeLabel = document.createElement("label");
@@ -136,6 +137,40 @@ function bookingWindowStep1(challengeId) {
         bookingWindow.appendChild(timeLabel);
         bookingWindow.appendChild(amountOfPeopleLabel);
         bookingWindow.appendChild(submitButton);
+
+        submitButton.addEventListener("click", () => {
+            const nameValue = nameInput.value.trim();
+            const emailValue = emailInput.value.trim();
+            const emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const timeValue = timeInput.value.trim();
+            const amountOfPeopleValue = amountOfPeopleSelect.value.trim();
+
+            if (!nameValue || !emailValue || !timeValue) {
+                if (!emptyDateWarning) {
+                    emptyDateWarning = document.createElement("span");
+                    emptyDateWarning.classList.add("emptyDateWarning")
+                    emptyDateWarning.innerHTML = "Please fill out all the fields."
+                    bookingWindow.appendChild(emptyDateWarning);
+                }
+                return;
+
+            } else if (!emailFormat.test(emailValue)) {
+                alert("Please enter a valid email address.");
+                emailInput.focus();
+                return;
+            } else {
+                if (emptyDateWarning) {
+                    emptyDateWarning.remove();
+                }
+            }
+
+            roomTitle.remove();
+            nameLabel.remove();
+            emailLabel.remove();
+            timeLabel.remove();
+            amountOfPeopleLabel.remove();
+            submitButton.remove();
+        })
 
     })
 }
