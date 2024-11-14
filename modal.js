@@ -2,7 +2,7 @@
 const bodyBox = document.querySelector("body");
 const placeHolderButton = document.querySelector(".onsiteBtn");
 
-function openBookingWindow() {
+function openBookingWindow(challengeId) {
 
     //Creating the <div> that will contain the booking window
     const bookingWindow = document.createElement("div")
@@ -25,23 +25,46 @@ function openBookingWindow() {
 
     //Creating a date <input> 
     const bookingInput = document.createElement("input");
+    bookingInput.classList.add("bookingInput");
     bookingInput.placeholder = ("YY/MM/DD");
-    bookingInput.type = "number";
-    bookingInput.maxLength = 7;
-
-    //Prevents user from typing more than 6 numbers
-    bookingInput.addEventListener("input", () => {
-        const value = bookingInput.value.toString();
-
-        if (bookingInput.value.length >= 6) {
-            bookingInput.value = value.substring(0, 6);
-        }
-    })
+    bookingInput.type = "date";
 
     //Creating a button to search for available times
     const searchButton = document.createElement("button");
     searchButton.classList.add("searchButton");
     searchButton.innerHTML = "Search available times";
+
+    searchButton.addEventListener("click", async () => {
+        const selectedDate = bookingInput.value;
+        let emptyDateWarning;
+
+        if (!selectedDate){
+            emptyDateWarning = document.createElement("span");
+            emptyDateWarning.classList.add("emptyDateWarning");
+            emptyDateWarning.innerHTML = "Please select a date.";
+            bookingWindow.appendChild(emptyDateWarning);
+            return;
+        } else {
+            emptyDateWarning = document.querySelector(".emptyDateWarning");
+            if (emptyDateWarning) {
+                emptyDateWarning.remove();
+            }
+        }
+
+        console.log("Selected Date: ", selectedDate);
+
+        // if (selectedDate && challengeId) {
+        //     const apiURL = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${selectedDate}&challenge=${challengeId}`
+
+        //     fetch(apiURL, {
+        //         method: "GET",
+        //         headers: {
+        //             "Content-Type:" 
+        //         }
+
+        //     })
+        // }
+    })
 
     //Append elements to the booking window and body
     bookingWindow.appendChild(roomTitle);
