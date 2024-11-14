@@ -2,7 +2,8 @@
 const bodyBox = document.querySelector("body");
 const placeHolderButton = document.querySelector(".onsiteBtn");
 
-function openBookingWindow(challengeId) {
+//Creating the step 1 window
+function bookingWindowStep1(challengeId) {
 
     //Creating the <div> that will contain the booking window
     const bookingWindow = document.createElement("div")
@@ -34,38 +35,6 @@ function openBookingWindow(challengeId) {
     searchButton.classList.add("searchButton");
     searchButton.innerHTML = "Search available times";
 
-    searchButton.addEventListener("click", async () => {
-        const selectedDate = bookingInput.value;
-        let emptyDateWarning;
-
-        if (!selectedDate){
-            emptyDateWarning = document.createElement("span");
-            emptyDateWarning.classList.add("emptyDateWarning");
-            emptyDateWarning.innerHTML = "Please select a date.";
-            bookingWindow.appendChild(emptyDateWarning);
-            return;
-        } else {
-            emptyDateWarning = document.querySelector(".emptyDateWarning");
-            if (emptyDateWarning) {
-                emptyDateWarning.remove();
-            }
-        }
-
-        console.log("Selected Date: ", selectedDate);
-
-        // if (selectedDate && challengeId) {
-        //     const apiURL = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${selectedDate}&challenge=${challengeId}`
-
-        //     fetch(apiURL, {
-        //         method: "GET",
-        //         headers: {
-        //             "Content-Type:" 
-        //         }
-
-        //     })
-        // }
-    })
-
     //Append elements to the booking window and body
     bookingWindow.appendChild(roomTitle);
     bookingWindow.appendChild(dateTitle);
@@ -73,8 +42,104 @@ function openBookingWindow(challengeId) {
     bookingWindow.appendChild(bookingInput);
     bookingWindow.appendChild(searchButton);
     bodyBox.appendChild(bookingWindow);
+
+    //Runs when "Search available times" is clicked
+    searchButton.addEventListener("click", async () => {
+
+        //Prevents the user from continuing without selecting a date
+        const selectedDate = bookingInput.value;
+        let emptyDateWarning = document.querySelector(".emptyDateWarning");
+
+        if (!selectedDate) {
+            if (!emptyDateWarning) {
+                emptyDateWarning = document.createElement("span");
+                emptyDateWarning.classList.add("emptyDateWarning");
+                emptyDateWarning.innerHTML = "Please select a date.";
+                bookingWindow.appendChild(emptyDateWarning);
+            }
+            return;
+        } else {
+            if (emptyDateWarning) {
+                emptyDateWarning.remove();
+            }
+        }
+
+        //Updating the window for step 2
+        dateTitle.remove();
+        inputLabel.remove();
+        bookingInput.remove();
+        searchButton.remove();
+
+        //Updating the title
+        roomTitle.innerHTML = "Book room '${challenge.title}' (step 2)";
+
+        //Name input with label
+        const nameLabel = document.createElement("label");
+        nameLabel.setAttribute("for", "name");
+
+        nameLabel.textContent = "Name:"
+
+        const nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        nameInput.setAttribute("id", "nameValue")
+        nameInput.setAttribute("name", "nameValue");
+
+        //Email input with label
+        const emailLabel = document.createElement("label");
+        emailLabel.setAttribute("for", "email");
+
+        emailLabel.textContent = "E-mail:"
+
+        const emailInput = document.createElement("input");
+        emailInput.setAttribute("type", "email");
+        emailInput.setAttribute("id", "emailValue")
+        emailInput.setAttribute("name", "emailValue");
+
+        //What time? input with label
+        const timeLabel = document.createElement("label");
+        timeLabel.setAttribute("for", "time");
+
+        timeLabel.textContent = "What time?"
+
+        const timeInput = document.createElement("input");
+        timeInput.setAttribute("type", "time");
+        timeInput.setAttribute("id", "timeValue")
+        timeInput.setAttribute("name", "timeValue");
+
+        //How many participants= input with label
+        const amountOfPeopleLabel = document.createElement("label");
+        amountOfPeopleLabel.setAttribute("for", "amountOfPeople");
+
+        amountOfPeopleLabel.textContent = "How many participants?"
+
+        const amountOfPeopleSelect = document.createElement("select");
+        amountOfPeopleSelect.classList.add("amountOfPeopleSelect");
+
+        const amountOfPeopleOption = document.createElement("option");
+        amountOfPeopleOption.classList.add("amountOfPeopleOption");
+        amountOfPeopleOption.textContent = "Test Placeholder";
+
+        //Creating a button to search for available times
+        const submitButton = document.createElement("button");
+        submitButton.classList.add("submitButton");
+        submitButton.innerHTML = "Submit booking";
+
+        //Append elements to the booking window and body
+        nameLabel.appendChild(nameInput);
+        emailLabel.appendChild(emailInput)
+        timeLabel.appendChild(timeInput);
+        amountOfPeopleSelect.appendChild(amountOfPeopleOption);
+        amountOfPeopleLabel.appendChild(amountOfPeopleSelect);
+
+        bookingWindow.appendChild(nameLabel);
+        bookingWindow.appendChild(emailLabel);
+        bookingWindow.appendChild(timeLabel);
+        bookingWindow.appendChild(amountOfPeopleLabel);
+        bookingWindow.appendChild(submitButton);
+
+    })
 }
 
 //Function that opens up a "Modal" box when pressing on a "Book this room" <button>
 //Currently only a placeholder button to try the function
-placeHolderButton.addEventListener("click", openBookingWindow);
+placeHolderButton.addEventListener("click", bookingWindowStep1);
