@@ -23,16 +23,18 @@ closeBtn.addEventListener('click', closeMobileMenu);
 // Variables
 const apiBtn = document.querySelector('#apiFetch');
 const onlineSortBtn = document.querySelector('#onlineSortBtn');
+const onsiteSortBtn = document.querySelector('#onsiteSortBtn');
 const ratingPlus3Btn = document.querySelector('#ratingPlus3');
 const dataContainer = document.querySelector('#dataContainer');
 
 let originalData = {};
 let filteredDataArray = [];
 
-// Event listeners
-
+/* Event listeners */
+// API button
 apiBtn.addEventListener('click', loadAPI);
 
+// Sort online
 onlineSortBtn.addEventListener('change', () => {
     if (onlineSortBtn.checked) {
         filteredDataArray = filterOnline(originalData.challenges);
@@ -44,6 +46,19 @@ onlineSortBtn.addEventListener('change', () => {
     displayData(filteredDataArray);
 });
 
+// Sort onsite
+onsiteSortBtn.addEventListener('change', () => {
+    if (onsiteSortBtn.checked) {
+        filteredDataArray = filterOnsite(originalData.challenges);
+        console.log('Filtered on-site:', filteredDataArray);
+    } else {
+        filteredDataArray = [...originalData.challenges];
+        console.log('Removed on-site filter:', filteredDataArray);
+    }
+    displayData(filteredDataArray);
+});
+
+// Sort +3 rating
 ratingPlus3Btn.addEventListener('click', () => {
     if (filteredDataArray.length === 0) {
         console.log('Nothing to filter');
@@ -71,8 +86,29 @@ function filterOnline (dataArray) {
     return dataArray.filter(item => item.type === 'online');
 }
 
+function filterOnsite (dataArray) {
+    return dataArray.filter(item => item.type === 'onsite');
+}
+
 function filter3Stars(dataArray) {
     return dataArray.filter(item => item.rating >= 3);
+}
+
+// Filter online & onsite
+function onlineOnsiteFilter() {
+    let filtered = [...originalData.challenges];
+
+    if (onlineSortBtn.checked && !onsiteSortBtn.checked) {
+        filtered = filterOnline(filtered);
+    } else if (!onlineSortBtn.checked && onsiteSortBtn.checked) {
+        filtered = filterOnsite(filtered);
+    } else if (onlineSortBtn.checked && onsiteSortBtn.checked) {
+        filtered = [...filterOnline(originalData.challenges), ...filterOnsite(originalData.challenges)];
+    }
+
+    filteredDataArray = filtered;
+    console.log('Filtered data:', filteredDataArray);
+    displayData(filteredDataArray);
 }
 
 // Show data on page
