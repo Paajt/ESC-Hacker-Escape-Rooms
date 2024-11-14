@@ -170,6 +170,21 @@ function bookingWindowStep1(challengeId) {
             timeLabel.remove();
             amountOfPeopleLabel.remove();
             submitButton.remove();
+
+            const submittedTitle = document.createElement("h1");
+            submittedTitle.classList.add("submittedTitle");
+            submittedTitle.innerHTML = "Thank you!"
+
+            const submittedButton = document.createElement("button");
+            submittedButton.classList.add("submittedButton");
+            submittedButton.innerHTML = "Back to challenges";
+
+            bookingWindow.appendChild(submittedTitle);
+            bookingWindow.appendChild(submittedButton);
+
+            submittedButton.addEventListener("click", () => {
+                bookingWindow.remove();
+            })
         })
 
     })
