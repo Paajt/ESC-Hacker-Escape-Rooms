@@ -83,15 +83,15 @@ async function loadAPI() {
 
 // Filter functions
 function filterOnline (dataArray) {
-    return dataArray.filter(item => item.type === 'online');
+    return dataArray.filter(room => room.type === 'online');
 }
 
 function filterOnsite (dataArray) {
-    return dataArray.filter(item => item.type === 'onsite');
+    return dataArray.filter(room => room.type === 'onsite');
 }
 
 function filter3Stars(dataArray) {
-    return dataArray.filter(item => item.rating >= 3);
+    return dataArray.filter(room => room.rating >= 3);
 }
 
 // Filter online & onsite
@@ -102,8 +102,11 @@ function onlineOnsiteFilter() {
         filtered = filterOnline(filtered);
     } else if (!onlineSortBtn.checked && onsiteSortBtn.checked) {
         filtered = filterOnsite(filtered);
+    } else if (!onlineSortBtn.checked && !onsiteSortBtn.checked) {
+        filtered = filtered = filterOnline(filtered), filterOnsite(filtered);
+
     } else if (onlineSortBtn.checked && onsiteSortBtn.checked) {
-        filtered = [...filterOnline(originalData.challenges), ...filterOnsite(originalData.challenges)];
+        filtered = originalData.challenges;
     }
 
     filteredDataArray = filtered;
@@ -120,20 +123,20 @@ function displayData(dataArray) {
         return;
     }
 
-    dataArray.forEach(item => {
+    dataArray.forEach(room => {
         const div = document.createElement('div');
         div.classList.add('data-item');
 
         const title = document.createElement('h3');
-        title.textContent = item.title;
+        title.textContent = room.title;
         div.appendChild(title);
 
         const type = document.createElement('p');
-        type.textContent = `Typ: ${item.type}`;
+        type.textContent = `Typ: ${room.type}`;
         div.appendChild(type);
 
         const rating = document.createElement('p');
-        rating.textContent = `Rating: ${item.rating}`;
+        rating.textContent = `Rating: ${room.rating}`;
         div.appendChild(rating);
 
         dataContainer.appendChild(div);
