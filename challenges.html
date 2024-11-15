@@ -54,13 +54,34 @@
             <button id="apiFetch">Press for API</button><br><br>
             <label>
                 <input type="checkbox" id="onlineSortBtn">
-                Sortera online
+                Sort online
             </label>
             <label>
                 <input type="checkbox" id="onsiteSortBtn">
-                Sortera on-site
+                Sort on-site
             </label><br><br>
-            <button id="ratingPlus3">+3 Stars</button>
+            <p>By rating:</p>
+            <input type="radio" id="rating1" name="minimumRating" value="1" checked>
+            <label for="rating1">1</label>
+            <input type="radio" id="rating2" name="minimumRating" value="2">
+            <label for="rating2">2</label>
+            <input type="radio" id="rating3" name="minimumRating" value="3">
+            <label for="rating3">3</label>
+            <input type="radio" id="rating4" name="minimumRating" value="4">
+            <label for="rating4">4</label>
+            <input type="radio" id="rating5" name="minimumRating" value="5">
+            <label for="rating5">5</label>
+            <span>and</span>
+            <input type="radio" id="rating1max" name="maximumRating" value="1">
+            <label for="rating1max">1</label>
+            <input type="radio" id="rating2max" name="maximumRating" value="2">
+            <label for="rating2max">2</label>
+            <input type="radio" id="rating3max" name="maximumRating" value="3">
+            <label for="rating3max">3</label>
+            <input type="radio" id="rating4max" name="maximumRating" value="4">
+            <label for="rating4max">4</label>
+            <input type="radio" id="rating5max" name="maximumRating" value="5" checked>
+            <label for="rating5max">5</label>
         </div>
         <div id="dataContainer"></div>
     </main>
