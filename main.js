@@ -78,10 +78,11 @@ function filterOnsite (dataArray) {
     return dataArray.filter(room => room.type === 'onsite');
 }
 
-// Filter online & onsite
+// Filters
 function applyFilter() {
     let filtered = [...originalData.challenges];
 
+    // Filter online/on-site
     if (onlineSortBtn.checked && !onsiteSortBtn.checked) {
         filtered = filterOnline(filtered);
     } else if (!onlineSortBtn.checked && onsiteSortBtn.checked) {
@@ -92,18 +93,23 @@ function applyFilter() {
         filtered = [...new Set([...onlineFiltered, ...onsiteFiltered])];
     }
 
-    // Get current values on radio buttons
+    // Filter radio buttons min & max rating
     const minRating = parseInt(document.querySelector('input[name="minimumRating"]:checked').value);
     const maxRating = parseInt(document.querySelector('input[name="maximumRating"]:checked').value);
 
     filtered = filtered.filter(item => item.rating >= minRating && item.rating <= maxRating);
+
+    // Filter on label
+    if (selectedLabel) {
+        filtered = filtered.filter(item => item.labels.includes(selectedLabel));
+    }
 
     filteredDataArray = filtered;
     console.log('Filtered data:', filteredDataArray);
     displayData(filteredDataArray);
 }
 
-// Show data on page
+// Show content on page
 function displayData(dataArray) {
     dataContainer.innerHTML = '';
 
@@ -133,7 +139,7 @@ function displayData(dataArray) {
         div.appendChild(rating);
 
         const labels = document.createElement('p');
-        labels.textContent = `Labels: ${room.labels}`;
+        labels.textContent = `Labels: ${room.labels.join(', ')}`;
         div.appendChild(labels);
 
         dataContainer.appendChild(div);
@@ -147,3 +153,26 @@ const ratingRadioBtns = document.querySelectorAll('input[name="minimumRating"], 
 ratingRadioBtns.forEach(radio => {
     radio.addEventListener('change', applyFilter);
 });
+
+
+// Label buttons filtering
+
+const labelButtons = document.querySelectorAll('.label-btn');
+let selectedLabel = null;
+
+labelButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        selectedLabel = button.dataset.label;
+        console.log(`Selected label: ${selectedLabel}`);
+        applyFilter();
+    });
+});
+
+function filterByLabel(selectedLabel) {
+    const filteredByLabel = originalData.challenges.filter(challenge =>
+        challenge.labels.includes(selectedLabel)
+    );
+
+    console.log(`Filtered by label (${selectedLabel}):`, filterByLabel);
+    displayData(filteredByLabel);
+}
