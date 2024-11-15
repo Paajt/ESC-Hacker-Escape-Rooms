@@ -102,11 +102,8 @@ function onlineOnsiteFilter() {
         filtered = filterOnline(filtered);
     } else if (!onlineSortBtn.checked && onsiteSortBtn.checked) {
         filtered = filterOnsite(filtered);
-    } else if (!onlineSortBtn.checked && !onsiteSortBtn.checked) {
-        filtered = filtered = filterOnline(filtered), filterOnsite(filtered);
-
     } else if (onlineSortBtn.checked && onsiteSortBtn.checked) {
-        filtered = originalData.challenges;
+        filtered = [...filterOnline(originalData.challenges), ...filterOnsite(originalData.challenges)];
     }
 
     filteredDataArray = filtered;
