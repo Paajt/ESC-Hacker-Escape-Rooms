@@ -27,9 +27,11 @@
             </div>
             <nav class="mobileNav">
                 <span id="navLabel" hidden>Navigation</span>
-                <button id="openBtn" class="mobileOpenBtn" aria-expanded="false" aria-labelledby="navLabel"><img src="img/menuBtn.png" alt=""></button>
+                <button id="openBtn" class="mobileOpenBtn" aria-expanded="false" aria-labelledby="navLabel"><img
+                        src="img/menuBtn.png" alt=""></button>
                 <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
-                    <button id="closeBtn" class="mobileCloseBtn" aria-label="Close"><img src="img/closeBtn.png" alt=""></button>
+                    <button id="closeBtn" class="mobileCloseBtn" aria-label="Close"><img src="img/closeBtn.png"
+                            alt=""></button>
                     <ul class="mobileLinks">
                         <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play online</a></li>
                         <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play on-site</a></li>
@@ -49,7 +51,62 @@
             alt="Hacker with hoodie from behind, facing computer screens">
     </header>
     <main>
-        <button class="filterBtn">Filter challenges</button>
+        <div>
+            <button class="filterBtn">Filter challenges</button>
+        </div>
+        <div class="filterBox">
+            <h2>
+                Filter challenges
+            </h2>
+            <div class="typeFilter">
+                <p>
+                    By type
+                </p>
+                <label>
+                    <input type="checkbox" class="onlineBtn">
+                    Include online challenges
+                </label>
+                <label>
+                    <input type="checkbox" class="onsiteBtn">
+                    Include on-site challenges
+                </label>
+            </div>
+            <div class="ratingFilter">
+                <p>
+                    By rating
+                </p>
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+                <p>
+                    to
+                </p>
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <div class="tagFilter">
+                <p>
+                    By tags
+                </p>
+                <div class="tags">
+                    <button class="tag" data-tag="Web">Web</button>
+                    <button class="tag" data-tag="Linux">Linux</button>
+                    <button class="tag" data-tag="Cryptography">Cryptography</button>
+                    <button class="tag" data-tag="Coding">Coding</button>
+                </div>
+            </div>
+            <div class="keywordFilter">
+                <p>
+                    Or type to search for keyword
+                </p>
+                <input type="text">
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footerWrap">
