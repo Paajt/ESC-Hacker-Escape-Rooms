@@ -4,6 +4,87 @@
   color: #36769D;
   padding: 1rem;
   border-radius: 3px;
+  margin: 2rem auto 1rem;
+}
+
+.closeBtn {
+  grid-column: 3;
+  margin: 0.2rem 0.2rem auto auto;
+  font-size: 2rem;
+  color: gray;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filterBox {
+  margin: 20px;
+  border: 2px solid #ddd;
+  display: grid;
+  grid: repeat(3);
+}
+
+.FC {
+  display: flex;
+  margin: 1rem auto auto 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.typeFilter {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 1rem;
+}
+.typeFilter p {
+  font-weight: bold;
+}
+
+.ratingFilter {
+  grid-column: 2;
+}
+.ratingFilter div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.4rem auto auto;
+  padding: 0.5rem;
+}
+.ratingFilter p {
+  font-weight: bold;
+}
+
+.tagFilter {
+  grid-column: 3;
+}
+.tagFilter p {
+  font-weight: bold;
+  margin-left: -25rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: white;
+  font-size: 1rem;
+  border: 1 gray;
+  cursor: pointer;
+}
+
+.keywordFilter {
+  grid-column: 2;
+}
+.keywordFilter p {
+  font-weight: bold;
 }
 
 html {
