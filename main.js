@@ -24,7 +24,6 @@ closeBtn.addEventListener('click', closeMobileMenu);
 const apiBtn = document.querySelector('#apiFetch');
 const onlineSortBtn = document.querySelector('#onlineSortBtn');
 const onsiteSortBtn = document.querySelector('#onsiteSortBtn');
-const ratingPlus3Btn = document.querySelector('#ratingPlus3');
 const dataContainer = document.querySelector('#dataContainer');
 
 let originalData = {};
@@ -58,17 +57,6 @@ onsiteSortBtn.addEventListener('change', () => {
     displayData(filteredDataArray);
 });
 
-// Sort +3 rating
-ratingPlus3Btn.addEventListener('click', () => {
-    if (filteredDataArray.length === 0) {
-        console.log('Nothing to filter');
-    } else {
-        const filtered3Stars = filter3Stars(filteredDataArray);
-        console.log('Filtered +3 stars:', filtered3Stars);
-        displayData(filtered3Stars);
-    }
-});
-
 // Load API
 async function loadAPI() {
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
@@ -90,12 +78,8 @@ function filterOnsite (dataArray) {
     return dataArray.filter(room => room.type === 'onsite');
 }
 
-function filter3Stars(dataArray) {
-    return dataArray.filter(room => room.rating >= 3);
-}
-
 // Filter online & onsite
-function onlineOnsiteFilter() {
+function applyFilter() {
     let filtered = [...originalData.challenges];
 
     if (onlineSortBtn.checked && !onsiteSortBtn.checked) {
@@ -103,8 +87,16 @@ function onlineOnsiteFilter() {
     } else if (!onlineSortBtn.checked && onsiteSortBtn.checked) {
         filtered = filterOnsite(filtered);
     } else if (onlineSortBtn.checked && onsiteSortBtn.checked) {
-        filtered = [...filterOnline(originalData.challenges), ...filterOnsite(originalData.challenges)];
+        const onlineFiltered = filterOnline(originalData.challenges);
+        const onsiteFiltered = filterOnsite(originalData.challenges);
+        filtered = [...new Set([...onlineFiltered, ...onsiteFiltered])];
     }
+
+    // Get current values on radio buttons
+    const minRating = parseInt(document.querySelector('input[name="minimumRating"]:checked').value);
+    const maxRating = parseInt(document.querySelector('input[name="maximumRating"]:checked').value);
+
+    filtered = filtered.filter(item => item.rating >= minRating && item.rating <= maxRating);
 
     filteredDataArray = filtered;
     console.log('Filtered data:', filteredDataArray);
@@ -116,7 +108,7 @@ function displayData(dataArray) {
     dataContainer.innerHTML = '';
 
     if (dataArray.length === 0) {
-        dataContainer.innerHTML = '<p>No data.</p>';
+        dataContainer.innerHTML = '<p>No matching challenges.</p>';
         return;
     }
 
@@ -125,17 +117,33 @@ function displayData(dataArray) {
         div.classList.add('data-item');
 
         const title = document.createElement('h3');
-        title.textContent = room.title;
+        title.textContent = `Title: ${room.title}`;
         div.appendChild(title);
 
+        const description = document.createElement('p');
+        description.textContent = `Description: ${room.description}`;
+        div.appendChild(description);
+
         const type = document.createElement('p');
-        type.textContent = `Typ: ${room.type}`;
+        type.textContent = `Type: ${room.type}`;
         div.appendChild(type);
 
         const rating = document.createElement('p');
         rating.textContent = `Rating: ${room.rating}`;
         div.appendChild(rating);
 
+        const labels = document.createElement('p');
+        labels.textContent = `Labels: ${room.labels}`;
+        div.appendChild(labels);
+
         dataContainer.appendChild(div);
     });
 }
+
+// Radio buttons filtering
+
+const ratingRadioBtns = document.querySelectorAll('input[name="minimumRating"], input[name="maximumRating"]');
+
+ratingRadioBtns.forEach(radio => {
+    radio.addEventListener('change', applyFilter);
+});
