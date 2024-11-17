@@ -23,9 +23,8 @@ async function highestRanking() {
     try{
         const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
         const data = await response.json();
-        data.challenges.sort(function(a, b){return a.rating - b.rating});
-        let start = data.challenges.length;
-        const topThree =data.challenges.splice(-3, start);
+        data.challenges.sort(function(a, b){return b.rating - a.rating});
+        const topThree =data.challenges.slice(0, 3);
         console.log(topThree);
         
        
