@@ -301,12 +301,23 @@ main .onlineLink:active {
   margin-bottom: 1rem;
   margin-left: 1.2rem;
 }
-.roomContainer .roomIndividual .imgContainer img {
+.roomContainer .roomIndividual .imgContainer img, .roomContainer .roomIndividual .imgContainer div {
   max-width: 20%;
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
   align-items: left;
+}
+.roomContainer .roomIndividual .imgContainer .halfstarContainer {
+  position: relative;
+}
+.roomContainer .roomIndividual .imgContainer .star {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.roomContainer .roomIndividual .imgContainer .halfFilled {
+  clip: rect(0px, 7.5px, 15px, 0px);
 }
 .roomContainer .roomIndividual span {
   font-size: 0.8rem;
