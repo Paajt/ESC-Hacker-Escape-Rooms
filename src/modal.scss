@@ -12,8 +12,8 @@
     text-align: left;
 
     h1 {
-    margin: 0px;
-    font-weight: 400;
+        margin: 0px;
+        font-weight: 400;
     }
 
     h2 {
@@ -45,10 +45,11 @@
         width: 15rem;
     }
 
-    .searchButton, .submitButton {
+    .searchButton,
+    .submitButton {
         width: 12.5rem;
         padding: 0.7rem 0rem;
-        background-color: rgba(101,88,245,255);
+        background-color: rgba(101, 88, 245, 255);
         font-size: 0.9rem;
         color: white;
         border: none;
@@ -58,9 +59,9 @@
         right: 1rem;
     }
 
-    .exitWindowButton{
+    .exitWindowButton {
         position: fixed;
-        color: rgba(101,88,245,255);
+        color: rgba(101, 88, 245, 255);
         background: transparent;
         font-size: 2rem;
         border: none;
@@ -79,21 +80,28 @@
         padding: 0rem;
     }
 
-    .submittedTitle{
+
+    .submittedTitle {
         text-align: center;
         font-size: 3rem;
         justify-content: center;
         //Justify content stlye is added with JS on button press
     }
-    
-    .submittedButton{
+
+    .submittedButton {
         border: none;
         background: transparent;
         text-decoration: underline;
-        color: rgba(101,88,245,255);
+        color: rgba(101, 88, 245, 255);
         margin-top: 3rem;
         font-size: 1.5rem;
     }
+
+    .noAvailableTimes {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+    }
 }
-
-

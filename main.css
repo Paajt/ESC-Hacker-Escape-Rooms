@@ -40,7 +40,8 @@
 .bookingWindow .bookingInput {
   width: 15rem;
 }
-.bookingWindow .searchButton, .bookingWindow .submitButton {
+.bookingWindow .searchButton,
+.bookingWindow .submitButton {
   width: 12.5rem;
   padding: 0.7rem 0rem;
   background-color: rgb(101, 88, 245);
@@ -83,6 +84,13 @@
   color: rgb(101, 88, 245);
   margin-top: 3rem;
   font-size: 1.5rem;
+}
+.bookingWindow .noAvailableTimes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
 }
 
 html {
