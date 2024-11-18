@@ -117,20 +117,20 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         timeSelect.classList.add("timeSelect");
 
         // Populate the time dropdown with available times dynamically
-        if (availableTimes.length === 0) { 
+        if (availableTimes.length === 0) {
             const noAvailableTimes = document.createElement("span");
             noAvailableTimes.innerHTML = "No available times at this date";
             noAvailableTimes.classList.add("noAvailableTimes");
             bookingWindow.appendChild(noAvailableTimes); // Append the message to the window
             return;
-        } else { 
+        } else {
             availableTimes.forEach(time => {
                 const timeOption = document.createElement("option");
                 timeOption.value = time;
                 timeOption.textContent = time;
                 timeSelect.appendChild(timeOption);
             });
-            bookingWindow.appendChild(timeSelect); 
+            bookingWindow.appendChild(timeSelect);
         }
 
         //Participants dropdown with label
@@ -181,7 +181,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             const emailValue = emailInput.value.trim();
             const emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const timeValue = timeSelect.value.trim();
-            const amountOfPeopleValue = amountOfPeopleSelect.value.trim();
+            const amountOfPeopleValue = parseInt(amountOfPeopleSelect.value.trim());
 
             if (!nameValue || !emailValue || !timeValue || !amountOfPeopleValue) {
                 if (!emptyDateWarning) {
@@ -210,7 +210,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             amountOfPeopleLabel.remove();
             amountOfPeopleSelect.remove();
             submitButton.remove();
-            
+
             //Added one line of styling to move content to center after button press
             bookingWindow.style.justifyContent = "center";
 
@@ -225,15 +225,6 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             bookingWindow.appendChild(submittedTitle);
             bookingWindow.appendChild(submittedButton);
 
-            const bookingData = {
-                name: nameValue,
-                email: emailValue,
-                time: timeValue,
-                participants: amountOfPeopleValue,
-                date: selectedDate,  
-                challengeId: challengeId,  
-            };
-        
             const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
                 method: 'POST',
                 headers: {
@@ -241,7 +232,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 },
                 body: JSON.stringify({
                     challenge: challengeId,
-                    name: nameValue.innerText,
+                    name: nameValue,
                     email: emailValue,
                     date: selectedDate,
                     time: timeValue,
@@ -262,8 +253,8 @@ async function testAPI() {
     try {
         const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
         const data = await response.json();
-        
-        testApiArray = data.challenges; 
+
+        testApiArray = data.challenges;
 
         attachEventListeners();
     } catch (error) {
@@ -277,28 +268,24 @@ async function fetchAvailableTimes(date, challengeId) {
         const response = await fetch(url);
 
         if (!response.ok) {
-            // API returned an error, handle it gracefully
             throw new Error(`Error fetching available times: ${response.statusText}`);
         }
 
         const data = await response.json();
 
-        // If the slots property doesn't exist or is empty, return an empty array
         return data.slots || [];
     } catch (error) {
         console.error("Error fetching available times:", error);
-        return []; // Return an empty array to indicate no available times
+        return []; 
     }
 }
 
 function attachEventListeners() {
     testingBtn.addEventListener('click', () => {
         const challengeId = parseInt(testingBtn.getAttribute("data-id"));
-        
+
         // Find the challenge object with the matching ID
         const challenge = testApiArray.find(challenge => challenge.id === challengeId);
-
-
 
         if (challenge) {
             const challengeTitle = challenge.title;
@@ -308,9 +295,9 @@ function attachEventListeners() {
             const maxParticipants = challenge.maxParticipants;
             //Loop through the number of participants
             for (let i = minParticipants; i <= maxParticipants; i++) {
-                challengePeople.push(i);  
+                challengePeople.push(i);
             }
-            
+
             console.log(challengePeople);
             openBookingWindow(challengeTitle, challengeId, [4], challengePeople);
         } else {
