@@ -18,6 +18,7 @@ async function cardAPI() {
             clone.querySelector(".img").src = challenge.image;
             clone.querySelector(".title").textContent = challenge.title;
             clone.querySelector(".onsite-online").textContent = challenge.type;
+            clone.querySelector(".rating")
             clone.querySelector(".ppl").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
             clone.querySelector(".describe").textContent = challenge.description;
             container.appendChild(clone);
