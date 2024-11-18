@@ -1,6 +1,7 @@
 //Declaring variables
 const bodyBox = document.querySelector("body");
 const placeHolderButton = document.querySelector(".onsiteBtn");
+const testingBtn = document.querySelector(".testingBtn");
 
 //Creating the step 1 window
 function openBookingWindow(challengeTitle, challengeId, availableTimes = [], participantOptions = []) {
@@ -53,7 +54,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
     bodyBox.appendChild(bookingWindow);
 
     //Runs when "Search available times" is clicked
-    searchButton.addEventListener("click", () => {
+    searchButton.addEventListener("click", async () => {
 
         //Prevents the user from continuing without selecting a date
         const selectedDate = bookingInput.value;
@@ -72,6 +73,8 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 emptyDateWarning.remove();
             }
         }
+
+        const availableTimes = await fetchAvailableTimes(selectedDate, challengeId);
 
         //Updating the window for step 2
         dateTitle.remove();
@@ -114,19 +117,20 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         timeSelect.classList.add("timeSelect");
 
         // Populate the time dropdown with available times dynamically
-        if (availableTimes.length === 0) {
-            const placeholderOption = document.createElement("option");
-            placeholderOption.textContent = "No times available";
-            placeholderOption.disabled = true;
-            placeholderOption.selected = true;
-            timeSelect.appendChild(placeholderOption);
-        } else {
+        if (availableTimes.length === 0) { 
+            const noAvailableTimes = document.createElement("span");
+            noAvailableTimes.innerHTML = "No available times at this date";
+            noAvailableTimes.classList.add("noAvailableTimes");
+            bookingWindow.appendChild(noAvailableTimes); // Append the message to the window
+            return;
+        } else { 
             availableTimes.forEach(time => {
                 const timeOption = document.createElement("option");
                 timeOption.value = time;
                 timeOption.textContent = time;
                 timeSelect.appendChild(timeOption);
             });
+            bookingWindow.appendChild(timeSelect); 
         }
 
         //Participants dropdown with label
@@ -148,7 +152,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             participantOptions.forEach(option => {
                 const peopleOption = document.createElement("option");
                 peopleOption.value = option;
-                peopleOption.textContent = option;
+                peopleOption.textContent = option + " participants";
                 amountOfPeopleSelect.appendChild(peopleOption);
             });
         }
@@ -170,7 +174,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         bookingWindow.appendChild(submitButton);
 
         //Runs when "Submit booking" is clicked
-        submitButton.addEventListener("click", () => {
+        submitButton.addEventListener("click", async () => {
 
             // Validate inputs
             const nameValue = nameInput.value.trim();
@@ -221,6 +225,32 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             bookingWindow.appendChild(submittedTitle);
             bookingWindow.appendChild(submittedButton);
 
+            const bookingData = {
+                name: nameValue,
+                email: emailValue,
+                time: timeValue,
+                participants: amountOfPeopleValue,
+                date: selectedDate,  
+                challengeId: challengeId,  
+            };
+        
+            const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    challenge: challengeId,
+                    name: nameValue.innerText,
+                    email: emailValue,
+                    date: selectedDate,
+                    time: timeValue,
+                    participants: amountOfPeopleValue,
+                }),
+            });
+            const data = await res.json();
+            console.log(data);
+
             submittedButton.addEventListener("click", () => {
                 bookingWindow.remove();
             });
@@ -228,12 +258,65 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
     });
 }
 
-// Example usage
-placeHolderButton.addEventListener("click", () => {
-    openBookingWindow (
-        "Escape Room",
-        1,
-        ["10:00-11:30", "12:00-13:30"], 
-        ["1 participants", "2 participants", "3 participants", "4 participants"] 
-    );
-});
+async function testAPI() {
+    try {
+        const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
+        const data = await response.json();
+        
+        testApiArray = data.challenges; 
+
+        attachEventListeners();
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+async function fetchAvailableTimes(date, challengeId) {
+    try {
+        const url = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${challengeId}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            // API returned an error, handle it gracefully
+            throw new Error(`Error fetching available times: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        // If the slots property doesn't exist or is empty, return an empty array
+        return data.slots || [];
+    } catch (error) {
+        console.error("Error fetching available times:", error);
+        return []; // Return an empty array to indicate no available times
+    }
+}
+
+function attachEventListeners() {
+    testingBtn.addEventListener('click', () => {
+        const challengeId = parseInt(testingBtn.getAttribute("data-id"));
+        
+        // Find the challenge object with the matching ID
+        const challenge = testApiArray.find(challenge => challenge.id === challengeId);
+
+
+
+        if (challenge) {
+            const challengeTitle = challenge.title;
+            const challengePeople = [];
+
+            const minParticipants = challenge.minParticipants;
+            const maxParticipants = challenge.maxParticipants;
+            //Loop through the number of participants
+            for (let i = minParticipants; i <= maxParticipants; i++) {
+                challengePeople.push(i);  
+            }
+            
+            console.log(challengePeople);
+            openBookingWindow(challengeTitle, challengeId, [4], challengePeople);
+        } else {
+            console.error("Challenge not found!");
+        }
+    });
+}
+
+testAPI();
