@@ -34,28 +34,9 @@ let filteredDataArray = [];
 apiBtn.addEventListener('click', loadAPI);
 
 // Sort online
-onlineSortBtn.addEventListener('change', () => {
-    if (onlineSortBtn.checked) {
-        filteredDataArray = filterOnline(originalData.challenges);
-        console.log('Filtered online:', filteredDataArray);
-    } else {
-        filteredDataArray = [...originalData.challenges];
-        console.log('Removed online filter:', filteredDataArray);
-    }
-    displayData(filteredDataArray);
-});
-
+onlineSortBtn.addEventListener('change', applyFilter);
 // Sort onsite
-onsiteSortBtn.addEventListener('change', () => {
-    if (onsiteSortBtn.checked) {
-        filteredDataArray = filterOnsite(originalData.challenges);
-        console.log('Filtered on-site:', filteredDataArray);
-    } else {
-        filteredDataArray = [...originalData.challenges];
-        console.log('Removed on-site filter:', filteredDataArray);
-    }
-    displayData(filteredDataArray);
-});
+onsiteSortBtn.addEventListener('change', applyFilter);
 
 // Load API
 async function loadAPI() {
@@ -78,34 +59,46 @@ function filterOnsite (dataArray) {
     return dataArray.filter(room => room.type === 'onsite');
 }
 
-// Filters
+// Apply filters to challenges
 function applyFilter() {
     let filtered = [...originalData.challenges];
 
     // Filter online/on-site
-    if (onlineSortBtn.checked && !onsiteSortBtn.checked) {
+    const isOnlineChecked = onlineSortBtn.checked;
+    const isOnsiteChecked = onsiteSortBtn.checked;
+
+    if (isOnlineChecked && !isOnsiteChecked) {
         filtered = filterOnline(filtered);
-    } else if (!onlineSortBtn.checked && onsiteSortBtn.checked) {
+        console.log('After online filter:', filtered);
+    } else if (!isOnlineChecked && isOnsiteChecked) {
         filtered = filterOnsite(filtered);
-    } else if (onlineSortBtn.checked && onsiteSortBtn.checked) {
-        const onlineFiltered = filterOnline(originalData.challenges);
-        const onsiteFiltered = filterOnsite(originalData.challenges);
-        filtered = [...new Set([...onlineFiltered, ...onsiteFiltered])];
+        console.log('After onsite filter:', filtered);
+    } else if (!isOnlineChecked && !isOnsiteChecked) {
+        filtered = [...originalData.challenges];
+        console.log('No filters for Online/Onsite');
     }
 
     // Filter radio buttons min & max rating
-    const minRating = parseInt(document.querySelector('input[name="minimumRating"]:checked').value);
-    const maxRating = parseInt(document.querySelector('input[name="maximumRating"]:checked').value);
+    const minRatingInput = document.querySelector('input[name="minimumRating"]:checked');
+    const maxRatingInput = document.querySelector('input[name="maximumRating"]:checked');
 
-    filtered = filtered.filter(item => item.rating >= minRating && item.rating <= maxRating);
+    if (minRatingInput && maxRatingInput) {
+        const minRating = parseInt(minRatingInput.value);
+        const maxRating = parseInt(maxRatingInput.value);
+        filtered = filtered.filter(item => item.rating >= minRating && item.rating <= maxRating);
+        console.log('After rating filter:', filtered);
+    } else {
+        console.log('No rating filter applied');
+    }
 
     // Filter on label
     if (selectedLabel) {
         filtered = filtered.filter(item => item.labels.includes(selectedLabel));
+        console.log(`After label filter (${selectedLabel}):`, filtered);
     }
 
     filteredDataArray = filtered;
-    console.log('Filtered data:', filteredDataArray);
+    console.log('Challenges after filtering:', filteredDataArray);
     displayData(filteredDataArray);
 }
 
