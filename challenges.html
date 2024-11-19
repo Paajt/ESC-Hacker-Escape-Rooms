@@ -62,10 +62,10 @@
             <label>
                 <input type="checkbox" id="onsiteSortBtn">
                 Sort on-site
-            </label><br><br>
+            </label><br>
             <!-- Sort challenges after min & max rating -->
             <p>By rating:</p>
-            <input type="radio" id="rating1" name="minimumRating" value="1" checked>
+            <input type="radio" id="rating1" name="minimumRating" value="1">
             <label for="rating1">1</label>
             <input type="radio" id="rating2" name="minimumRating" value="2">
             <label for="rating2">2</label>
@@ -84,14 +84,21 @@
             <label for="rating3max">3</label>
             <input type="radio" id="rating4max" name="maximumRating" value="4">
             <label for="rating4max">4</label>
-            <input type="radio" id="rating5max" name="maximumRating" value="5" checked>
-            <label for="rating5max">5</label>
+            <input type="radio" id="rating5max" name="maximumRating" value="5">
+            <label for="rating5max">5</label><br><br>
             <!-- Sort after labels -->
             <div id="labelsContainer">
                 <button class="label-btn" data-label="javascript">Javascript</button>
                 <button class="label-btn" data-label="linux">Linux</button>
                 <button class="label-btn" data-label="web">Web</button>
-            </div>
+                <button class="label-btn" data-label="coding">Coding</button>
+                <button class="label-btn" data-label="electronics">Electronics</button>
+                <button class="label-btn" data-label="ssh">SSH</button>
+                <button class="label-btn" data-label="ctf">CTF</button>
+                <button class="label-btn" data-label="phreaking">Phreaking</button>
+                <button class="label-btn" data-label="hacking">Hacking</button>
+                <button class="label-btn" data-label="bash">Bash</button>
+            </div><br>
         </div>
         <div id="dataContainer"></div>
     </main>
