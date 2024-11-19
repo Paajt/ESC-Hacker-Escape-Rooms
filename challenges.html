@@ -22,14 +22,108 @@
   <body>
     <div class="blurBG" id="blurBG"></div>
     <header>
-      <section class="containerTop">
-        <div class="containerHeader">
-          <h1 class="headerTitle">Hacker Escape Rooms</h1>
-          <img
-            src="img/escLogo.png"
-            class="headerLogo"
-            alt="Logo of letters 'ESC' in a rounded square"
-          />
+        <section class="containerTop">
+            <div class="containerHeader">
+                <h1 class="headerTitle">Hacker Escape Rooms</h1>
+                <img src="img/escLogo.png" class="headerLogo" alt="Logo of letters 'ESC' in a rounded square">
+            </div>
+            <nav class="mobileNav">
+                <span id="navLabel" hidden>Navigation</span>
+                <button id="openBtn" class="mobileOpenBtn" aria-expanded="false" aria-labelledby="navLabel"><img
+                        src="img/menuBtn.png" alt=""></button>
+                <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
+                    <button id="closeBtn" class="mobileCloseBtn" aria-label="Close"><img src="img/closeBtn.png"
+                            alt=""></button>
+                    <ul class="mobileLinks">
+                        <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play online</a></li>
+                        <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play on-site</a></li>
+                        <li class="mobileItem"><a href="#story.html" class="mobileLink">The story</a></li>
+                        <li class="mobileItem"><a href="#contact.html" class="mobileLink">Contact us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="topNav">
+                <a href="challenges.html" class="topNavLink">Play online</a>
+                <a href="challenges.html" class="topNavLink">Play on-site</a>
+                <a href="#story.html" class="topNavLink">The Story</a>
+                <a href="#contact" class="topNavLink">Contact us</a>
+            </nav>
+        </section>
+        <img src="img/hacker.png" class="bannerTop" title="Hacker and computer screens"
+            alt="Hacker with hoodie from behind, facing computer screens">
+    </header>
+    <main>
+        <div>
+            <button class="filterBtn">Filter challenges</button>
+        </div>
+        <div class="filterBox">
+
+            <p class="FC">
+                Filter challenges
+            </p>
+            <button class="closeBtn">×</button>
+
+            <div class="typeFilter">
+                <p>
+                    By type
+                </p>
+                <label>
+                    <input type="checkbox" class="onlineCheck">
+                    Include online challenges
+                </label>
+                <label>
+                    <input type="checkbox" class="onsiteCheck">
+                    Include on-site challenges
+                </label>
+            </div>
+            <div class="ratingFilter">
+                <p>
+                    By rating
+                </p>
+                <div class="stars">
+                    <div class="fromRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <p>
+                        to
+                    </p>
+                    <div class="toRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tagFilter">
+                <p>
+                    By tags
+                </p>
+                <div class="tags">
+                    <button class="tag" data-tag="Web">Web</button>
+                    <button class="tag" data-tag="Linux">Linux</button>
+                    <button class="tag" data-tag="Electronics">Electronics</button>
+                    <button class="tag" data-tag="Coding">Coding</button>
+                    <button class="tag" data-tag="Ssh">Ssh</button>
+                    <button class="tag" data-tag="Ctf">Ctf</button>
+                    <button class="tag" data-tag="Phreaking">Phreaking</button>
+                    <button class="tag" data-tag="Javascript">Javascript</button>
+                    <button class="tag" data-tag="Hacking">Hacking</button>
+                    <button class="tag" data-tag="Bash">Bash</button>
+                </div>
+            </div>
+            <div class="keywordFilter">
+                <p>
+                    Or type to search for keyword
+                </p>
+                <input type="text" placeholder="Start typing to filter">
+            </div>
+
         </div>
         <nav class="mobileNav">
           <span id="navLabel" hidden>Navigation</span>
@@ -115,6 +209,10 @@
       </div>
     </footer>
 
-    <script src="load-challenges.js"></script>
+ filter-challenges
+    <script src='main.js'></script>
+    <script src='filter.js'></script>
+ <script src="load-challenges.js"></script>
   </body>
+
 </html>
