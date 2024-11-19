@@ -1,8 +1,9 @@
 //Declaring variables
 const bodyBox = document.querySelector("body");
 const placeHolderButton = document.querySelector(".onsiteBtn");
+const testingBtn = document.querySelector(".testingBtn");
 
-//Creating the step 1 window
+//Creating the booking window
 function openBookingWindow(challengeTitle, challengeId, availableTimes = [], participantOptions = []) {
 
     //Creating the <div> that will contain the booking window
@@ -53,7 +54,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
     bodyBox.appendChild(bookingWindow);
 
     //Runs when "Search available times" is clicked
-    searchButton.addEventListener("click", () => {
+    searchButton.addEventListener("click", async () => {
 
         //Prevents the user from continuing without selecting a date
         const selectedDate = bookingInput.value;
@@ -72,6 +73,9 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 emptyDateWarning.remove();
             }
         }
+
+        //Fetch info about the times
+        const availableTimes = await fetchAvailableTimes(selectedDate, challengeId);
 
         //Updating the window for step 2
         dateTitle.remove();
@@ -115,11 +119,12 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
 
         // Populate the time dropdown with available times dynamically
         if (availableTimes.length === 0) {
-            const placeholderOption = document.createElement("option");
-            placeholderOption.textContent = "No times available";
-            placeholderOption.disabled = true;
-            placeholderOption.selected = true;
-            timeSelect.appendChild(placeholderOption);
+            const noAvailableTimes = document.createElement("span");
+            noAvailableTimes.innerHTML = "No available times at this date";
+            noAvailableTimes.classList.add("noAvailableTimes");
+            bookingWindow.appendChild(noAvailableTimes); 
+            return;
+
         } else {
             availableTimes.forEach(time => {
                 const timeOption = document.createElement("option");
@@ -127,6 +132,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 timeOption.textContent = time;
                 timeSelect.appendChild(timeOption);
             });
+            bookingWindow.appendChild(timeSelect);
         }
 
         //Participants dropdown with label
@@ -141,14 +147,12 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         if (participantOptions.length === 0) {
             const placeholderOption = document.createElement("option");
             placeholderOption.textContent = "No participant options available";
-            placeholderOption.disabled = true;
-            placeholderOption.selected = true;
             amountOfPeopleSelect.appendChild(placeholderOption);
         } else {
             participantOptions.forEach(option => {
                 const peopleOption = document.createElement("option");
                 peopleOption.value = option;
-                peopleOption.textContent = option;
+                peopleOption.textContent = option + " participants";
                 amountOfPeopleSelect.appendChild(peopleOption);
             });
         }
@@ -170,14 +174,14 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         bookingWindow.appendChild(submitButton);
 
         //Runs when "Submit booking" is clicked
-        submitButton.addEventListener("click", () => {
+        submitButton.addEventListener("click", async () => {
 
             // Validate inputs
             const nameValue = nameInput.value.trim();
             const emailValue = emailInput.value.trim();
             const emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const timeValue = timeSelect.value.trim();
-            const amountOfPeopleValue = amountOfPeopleSelect.value.trim();
+            const amountOfPeopleValue = parseInt(amountOfPeopleSelect.value.trim());
 
             if (!nameValue || !emailValue || !timeValue || !amountOfPeopleValue) {
                 if (!emptyDateWarning) {
@@ -189,7 +193,6 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 return;
             } else if (!emailFormat.test(emailValue)) {
                 alert("Please enter a valid email address.");
-                emailInput.focus();
                 return;
             } else if (emptyDateWarning) {
                 emptyDateWarning.remove();
@@ -206,7 +209,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             amountOfPeopleLabel.remove();
             amountOfPeopleSelect.remove();
             submitButton.remove();
-            
+
             //Added one line of styling to move content to center after button press
             bookingWindow.style.justifyContent = "center";
 
@@ -221,6 +224,25 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             bookingWindow.appendChild(submittedTitle);
             bookingWindow.appendChild(submittedButton);
 
+            //POST to API
+            const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    challenge: challengeId,
+                    name: nameValue,
+                    email: emailValue,
+                    date: selectedDate,
+                    time: timeValue,
+                    participants: amountOfPeopleValue,
+                }),
+            });
+            const data = await res.json();
+            console.log(data);
+
+            //Close window
             submittedButton.addEventListener("click", () => {
                 bookingWindow.remove();
             });
@@ -228,12 +250,107 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
     });
 }
 
-// Example usage
-placeHolderButton.addEventListener("click", () => {
-    openBookingWindow (
-        "Escape Room",
-        1,
-        ["10:00-11:30", "12:00-13:30"], 
-        ["1 participants", "2 participants", "3 participants", "4 participants"] 
-    );
+//Test function for fetching API challenges
+async function testAPI() {
+    try {
+        const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
+        const data = await response.json();
+
+        challengeApiArray = data.challenges;
+
+        attachEventListeners();
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+//Function to fetch availableTimes for specific date and challengeId
+async function fetchAvailableTimes(date, challengeId) {
+    try {
+        const url = `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${challengeId}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Error fetching available times: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        return data.slots || [];
+    } catch (error) {
+        console.error("Error fetching available times:", error);
+        return [];
+    }
+}
+
+//Looks at the first h3 element inside the div the button was pressed
+document.addEventListener("DOMContentLoaded", () => {
+    testAPI();
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const parentDiv = button.closest('div');
+
+            if (!parentDiv) {
+                console.error("Parent div not found!");
+                return;
+            }
+
+            // Gets the first h3 
+            const challengeH3 = parentDiv.querySelector("h3");
+            if (!challengeH3) {
+                console.error("No h3 found in the parent div!");
+                return;
+            }
+
+            const challengeTitle = challengeH3.textContent.trim();
+            console.log("Challenge Title:", challengeTitle);
+
+            // Find a matching challenge from "variable = data.challenges"
+            const challenge = challengeApiArray.find(challenge => challenge.title === challengeTitle);
+
+            if (challenge) {
+                const challengeId = challenge.id;
+                const challengePeople = [];
+
+                for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+                    challengePeople.push(i);
+                }
+
+                console.log(challengePeople);
+                openBookingWindow(challengeTitle, challengeId, [], challengePeople);
+            } else {
+                console.error("Challenge not found for title:", challengeTitle);
+            }
+        });
+    });
 });
+
+
+// With button id
+/* function attachEventListeners() {
+    testingBtn.addEventListener('click', () => {
+        const challengeId = parseInt(testingBtn.getAttribute("data-id"));
+
+        // Find the challenge object with the matching ID
+        const challenge = challengeApiArray.find(challenge => challenge.id === challengeId);
+
+        if (challenge) {
+            const challengeTitle = challenge.title;
+            const challengePeople = [];
+
+            const minParticipants = challenge.minParticipants;
+            const maxParticipants = challenge.maxParticipants;
+            //Loop through the number of participants
+            for (let i = minParticipants; i <= maxParticipants; i++) {
+                challengePeople.push(i);
+            }
+
+            console.log(challengePeople);
+            openBookingWindow(challengeTitle, challengeId, [], challengePeople);
+        } else {
+            console.error("Challenge not found!");
+        }
+    });
+} */
