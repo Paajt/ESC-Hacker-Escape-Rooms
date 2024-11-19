@@ -254,7 +254,7 @@ async function testAPI() {
         const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
         const data = await response.json();
 
-        testApiArray = data.challenges;
+        challengeApiArray = data.challenges;
 
         attachEventListeners();
     } catch (error) {
@@ -276,16 +276,60 @@ async function fetchAvailableTimes(date, challengeId) {
         return data.slots || [];
     } catch (error) {
         console.error("Error fetching available times:", error);
-        return []; 
+        return [];
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const parentDiv = button.closest('div');
+
+            if (!parentDiv) {
+                console.error("Parent div not found!");
+                return;
+            }
+
+            // Gets the first h3 
+            const challengeH3 = parentDiv.querySelector('h3');
+            if (!challengeH3) {
+                console.error("No h3 found in the parent div!");
+                return;
+            }
+
+            const challengeTitle = challengeH3.textContent.trim();
+            console.log('Challenge Title:', challengeTitle);
+
+            // Find a matching challenge from "variable = data.challenges"
+            const challenge = challengeApiArray.find(challenge => challenge.title === challengeTitle);
+
+            if (challenge) {
+                const challengeId = challenge.id;
+                const challengePeople = [];
+
+                for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+                    challengePeople.push(i);
+                }
+
+                console.log(challengePeople);
+                openBookingWindow(challengeTitle, challengeId, [], challengePeople);
+            } else {
+                console.error("Challenge not found for title:", challengeTitle);
+            }
+        });
+    });
+});
+
+/* With button id
 function attachEventListeners() {
     testingBtn.addEventListener('click', () => {
         const challengeId = parseInt(testingBtn.getAttribute("data-id"));
 
         // Find the challenge object with the matching ID
-        const challenge = testApiArray.find(challenge => challenge.id === challengeId);
+        const challenge = challengeApiArray.find(challenge => challenge.id === challengeId);
 
         if (challenge) {
             const challengeTitle = challenge.title;
@@ -299,11 +343,11 @@ function attachEventListeners() {
             }
 
             console.log(challengePeople);
-            openBookingWindow(challengeTitle, challengeId, [4], challengePeople);
+            openBookingWindow(challengeTitle, challengeId, [], challengePeople);
         } else {
             console.error("Challenge not found!");
         }
     });
-}
+} */
 
 testAPI();
