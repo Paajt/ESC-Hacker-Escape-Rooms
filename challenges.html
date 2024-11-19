@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ESC - Hacker Escape Rooms</title>
-    <meta name="description"
-        content="The webpage where you can book hacker themed escape rooms on-site or complete challenges online" />
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <meta
+      name="description"
+      content="The webpage where you can book hacker themed escape rooms on-site or complete challenges online"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <!-- Font Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="blurBG" id="blurBG"></div>
     <header>
         <section class="containerTop">
@@ -121,42 +123,96 @@
                 </p>
                 <input type="text" placeholder="Start typing to filter">
             </div>
+
         </div>
-    </main>
+        <nav class="mobileNav">
+          <span id="navLabel" hidden>Navigation</span>
+          <button
+            id="openBtn"
+            class="mobileOpenBtn"
+            aria-expanded="false"
+            aria-labelledby="navLabel"
+          >
+            <img src="img/menuBtn.png" alt="" />
+          </button>
+          <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
+            <button id="closeBtn" class="mobileCloseBtn" aria-label="Close">
+              <img src="img/closeBtn.png" alt="" />
+            </button>
+            <ul class="mobileLinks">
+              <li class="mobileItem">
+                <a href="challenges.html" class="mobileLink">Play online</a>
+              </li>
+              <li class="mobileItem">
+                <a href="challenges.html" class="mobileLink">Play on-site</a>
+              </li>
+              <li class="mobileItem">
+                <a href="#story.html" class="mobileLink">The story</a>
+              </li>
+              <li class="mobileItem">
+                <a href="#contact.html" class="mobileLink">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="topNav">
+          <a href="challenges.html" class="topNavLink">Play online</a>
+          <a href="challenges.html" class="topNavLink">Play on-site</a>
+          <a href="#story.html" class="topNavLink">The Story</a>
+          <a href="#contact" class="topNavLink">Contact us</a>
+        </nav>
+      </section>
+     
+    <template class="card-template">
+      <div>
+        <img class="img" src="" alt="" />
+        <h3 class="title"></h3>
+        <h3 class="onsite-online"></h3>
+        <p class="ppl"></p>
+        <p class="describe"></p>
+        <button>Book this challenge</button>
+      </div>
+    </template>
+    <div class="card-container"></div>
     <footer>
-        <div class="footerWrap">
-            <div class="h5P">
-                <h5>[Esc] Hacker Escape Rooms</h5>
-                <p>Quodsi haberent magnalia inter potentiam et divitias,
-                    et non illam quidem haec eo spectant haec quoque vos omnino
-                    desit illud quo solo felicitatis libertatisque perficiuntur.
-                </p>
-            </div>
-            <div class="h5Map">
-                <h5>Site map</h5>
-                <nav>
-                    <ul>
-                        <li><a href="#story.html">The Story</a></li>
-                        <li><a href="#contact.html">Contact Us</a></li>
-                        <li><a href="#legal.html">Legal</a></li>
-                        <li class="aTopMargin"><a href="challenges.html">Play online</a></li>
-                        <li><a href="challenges.html">Play on-site</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="H5SoMe">
-                <h5>Follow us on</h5>
-                <ul>
-                    <li><a href="#facebook">Facebook</a></li>
-                    <li><a href="#instagram">Instagram</a></li>
-                    <li><a href="#twitter">Twitter</a></li>
-                </ul>
-            </div>
+      <div class="footerWrap">
+        <div class="h5P">
+          <h5>[Esc] Hacker Escape Rooms</h5>
+          <p>
+            Quodsi haberent magnalia inter potentiam et divitias, et non illam
+            quidem haec eo spectant haec quoque vos omnino desit illud quo solo
+            felicitatis libertatisque perficiuntur.
+          </p>
         </div>
+        <div class="h5Map">
+          <h5>Site map</h5>
+          <nav>
+            <ul>
+              <li><a href="#story.html">The Story</a></li>
+              <li><a href="#contact.html">Contact Us</a></li>
+              <li><a href="#legal.html">Legal</a></li>
+              <li class="aTopMargin">
+                <a href="challenges.html">Play online</a>
+              </li>
+              <li><a href="challenges.html">Play on-site</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="H5SoMe">
+          <h5>Follow us on</h5>
+          <ul>
+            <li><a href="#facebook">Facebook</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#twitter">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
 
+ filter-challenges
     <script src='main.js'></script>
     <script src='filter.js'></script>
-</body>
+ <script src="load-challenges.js"></script>
+  </body>
 
 </html>
