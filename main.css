@@ -280,16 +280,17 @@ main .onlineLink:active {
 }
 .roomContainer .roomIndividual .titleContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   position: relative;
-  top: -2rem;
+  top: -2.5rem;
 }
 .roomContainer .roomIndividual .titleContainer h3 {
   font-size: 1.8rem;
   font-weight: normal;
   align-items: start;
   text-align: left;
-  margin: 0rem 0rem 0rem 1rem;
+  margin: 0rem 0rem 0rem 0.7rem;
 }
 .roomContainer .roomIndividual .titleContainer .typeRoom {
   margin: 0;
@@ -308,7 +309,7 @@ main .onlineLink:active {
   width: 3rem;
   position: relative;
   top: -16rem;
-  left: 18rem;
+  left: 18.5rem;
 }
 .roomContainer .roomIndividual .imgContainer {
   display: flex;
@@ -316,7 +317,7 @@ main .onlineLink:active {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 0rem;
-  margin-left: 1.2rem;
+  margin-left: 1rem;
   position: relative;
   top: -7rem;
 }
@@ -332,13 +333,14 @@ main .onlineLink:active {
   margin-left: 1rem;
   text-align: left;
   position: relative;
-  top: -2rem;
+  top: -1.5rem;
 }
 .roomContainer .roomIndividual p {
   max-width: 100%;
   font-size: 1.1em;
   text-align: left;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   margin-left: 1rem;
   margin-right: 0.8rem;
   padding-right: 0.2em;
@@ -758,16 +760,15 @@ footer ul .aTopMargin {
   .roomContainer .roomIndividual .imgContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: 360px;
   }
   .roomContainer .roomIndividual img {
     margin-right: 4px;
   }
   .roomContainer .roomIndividual span {
-    text-align: right;
-    margin-left: auto;
-    margin-right: 1rem;
+    text-align: left;
+    margin-left: 1rem;
   }
   .btnContainer {
     display: flex;
