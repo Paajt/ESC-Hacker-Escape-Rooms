@@ -27,12 +27,12 @@ async function loadAPI() {
 }
 
 // Filter online
-function filterOnline (dataArray) {
+function filterOnline(dataArray) {
     return dataArray.filter(room => room.type === 'online');
 }
 
 // Filter onsite
-function filterOnsite (dataArray) {
+function filterOnsite(dataArray) {
     return dataArray.filter(room => room.type === 'onsite');
 }
 
@@ -43,32 +43,52 @@ ratingRadioBtns.forEach(radio => {
     radio.addEventListener('change', applyFilter);
 });
 
-// Label/tag buttons filtering
-const labelButtons = document.querySelectorAll('.label-btn');
-let selectedLabel = null;
-
-labelButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        selectedLabel = button.dataset.label;
-        console.log(`Selected label: ${selectedLabel}`);
-        applyFilter();
-    });
-});
-
-function filterByLabel(selectedLabel) {
-    const filteredByLabel = originalData.challenges.filter(challenge =>
-        challenge.labels.includes(selectedLabel)
-    );
-
-    console.log(`Filtered by label (${selectedLabel}):`, filterByLabel);
-    displayData(filteredByLabel);
-}
-
 // Filter in search input
 const userInput = document.querySelector("#userInput");
 userInput.addEventListener('input', () => {
     applyFilter();
 });
+
+// Label/tag filtering
+let selectedLabels = [];
+
+const labelButtons = document.querySelectorAll('.label-btn');
+
+labelButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const label = button.dataset.label;
+
+        if (selectedLabels.includes(label)) {
+            selectedLabels = selectedLabels.filter(item => item !== label);
+            button.classList.remove('active');
+
+            //Temporary label remove styling for button (not clicked or clicked twice)
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        } else {
+            selectedLabels.push(label);
+            button.classList.add('active');
+
+            //Temporary label styling for button being pressed
+            button.style.backgroundColor = '#4CAF50';
+            button.style.color = 'white';
+        }
+        applyFilter();
+    });
+});
+
+function filterByLabels(dataArray) {
+    if (selectedLabels.length === 0) {
+        return dataArray;
+    }
+
+    const filtered = dataArray.filter(challenge =>
+        selectedLabels.every(label => challenge.labels.includes(label))
+    );
+
+    console.log('Filtered by labels:', filtered);
+    return filtered;
+}
 
 // Apply filters to challenges
 function applyFilter() {
@@ -98,21 +118,19 @@ function applyFilter() {
         const maxRating = parseInt(maxRatingInput.value);
         filtered = filtered.filter(item => item.rating >= minRating && item.rating <= maxRating);
         console.log('After rating filter:', filtered);
-    } else {
-        console.log('No rating filter applied');
     }
 
     // Filter on label
-    if (selectedLabel) {
-        filtered = filtered.filter(item => item.labels.includes(selectedLabel));
-        console.log(`After label filter (${selectedLabel}):`, filtered);
+    if (selectedLabels.length > 0) {
+        filtered = filterByLabels(filtered);
+        console.log('After label filter:', filtered);
     }
 
     // Filter with search input
     const searchValue = document.querySelector('#userInput').value.toLowerCase();
-    
+
     if (searchValue) {
-        filtered = filtered.filter(challenge => 
+        filtered = filtered.filter(challenge =>
             challenge.title.toLowerCase().includes(searchValue) ||
             challenge.description.toLowerCase().includes(searchValue)
         );
