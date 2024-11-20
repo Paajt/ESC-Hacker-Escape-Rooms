@@ -1,0 +1,107 @@
+.bookingWindow {
+    background-color: white;
+    border: 0.1rem solid rgb(175, 175, 175);
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 1.8rem 0.6rem;
+    text-align: left;
+
+    h1 {
+        margin: 0px;
+        font-weight: 400;
+    }
+
+    h2 {
+        margin-top: 1.7rem;
+        margin-bottom: 0rem;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    label {
+        text-align: left;
+        font-weight: 700;
+        color: rgb(80, 80, 80);
+        margin-top: 3rem;
+        font-size: 1rem;
+    }
+
+    input {
+        width: 24rem;
+        height: 3rem;
+        border: 0.1rem solid rgb(206, 206, 206);
+        border-radius: 0.3rem;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 0rem;
+    }
+
+    .bookingInput {
+        width: 15rem;
+    }
+
+    .searchButton,
+    .submitButton {
+        width: 12.5rem;
+        padding: 0.7rem 0rem;
+        background-color: rgba(101, 88, 245, 255);
+        font-size: 0.9rem;
+        color: white;
+        border: none;
+        border-radius: 0.2rem;
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .exitWindowButton {
+        position: fixed;
+        color: rgba(101, 88, 245, 255);
+        background: transparent;
+        font-size: 2rem;
+        border: none;
+        border-radius: 0.2rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    select {
+        width: 16rem;
+        height: 3rem;
+        border: 0.1rem solid rgb(206, 206, 206);
+        border-radius: 0.3rem;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0rem;
+    }
+
+
+    .submittedTitle {
+        text-align: center;
+        font-size: 3rem;
+        justify-content: center;
+        //Justify content stlye is added with JS on button press
+    }
+
+    .submittedButton {
+        border: none;
+        background: transparent;
+        text-decoration: underline;
+        color: rgba(101, 88, 245, 255);
+        margin-top: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .noAvailableTimes {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+    }
+}
