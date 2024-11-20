@@ -53,17 +53,17 @@
             <h1>Content here:</h1>
             <!-- API button-->
             <button id="apiFetch">Press for API</button><br><br>
-            <!-- Sort online challenges -->
+            <!-- Filter online challenges -->
             <label>
                 <input type="checkbox" id="onlineSortBtn">
                 Sort online
             </label>
-            <!-- Sort on-site challenges -->
+            <!-- Filter on-site challenges -->
             <label>
                 <input type="checkbox" id="onsiteSortBtn">
                 Sort on-site
             </label><br>
-            <!-- Sort challenges after min & max rating -->
+            <!-- Filter challenges with min & max rating -->
             <p>By rating:</p>
             <input type="radio" id="rating1" name="minimumRating" value="1">
             <label for="rating1">1</label>
@@ -86,7 +86,7 @@
             <label for="rating4max">4</label>
             <input type="radio" id="rating5max" name="maximumRating" value="5">
             <label for="rating5max">5</label><br><br>
-            <!-- Sort after labels -->
+            <!-- Filter with tags/labels -->
             <div id="labelsContainer">
                 <button class="label-btn" data-label="javascript">Javascript</button>
                 <button class="label-btn" data-label="linux">Linux</button>
@@ -99,6 +99,8 @@
                 <button class="label-btn" data-label="hacking">Hacking</button>
                 <button class="label-btn" data-label="bash">Bash</button>
             </div><br>
+            <!-- User input search-->
+            <input type="text" id="userInput" placeholder="Search Title/Description..">
         </div>
         <div id="dataContainer"></div>
     </main>
@@ -135,6 +137,7 @@
     </footer>
 
     <script src='main.js'></script>
+    <script src='challengesFilter.js'></script>
 </body>
 
 </html>
