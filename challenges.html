@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ESC - Hacker Escape Rooms</title>
+    <meta
+      name="description"
+      content="The webpage where you can book hacker themed escape rooms on-site or complete challenges online"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="blurBG" id="blurBG"></div>
+    <header>
+        <section class="containerTop">
+            <div class="containerHeader">
+                <h1 class="headerTitle">Hacker Escape Rooms</h1>
+                <img src="img/escLogo.png" class="headerLogo" alt="Logo of letters 'ESC' in a rounded square">
+            </div>
+            <nav class="mobileNav">
+                <span id="navLabel" hidden>Navigation</span>
+                <button id="openBtn" class="mobileOpenBtn" aria-expanded="false" aria-labelledby="navLabel"><img
+                        src="img/menuBtn.png" alt=""></button>
+                <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
+                    <button id="closeBtn" class="mobileCloseBtn" aria-label="Close"><img src="img/closeBtn.png"
+                            alt=""></button>
+                    <ul class="mobileLinks">
+                        <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play online</a></li>
+                        <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play on-site</a></li>
+                        <li class="mobileItem"><a href="#story.html" class="mobileLink">The story</a></li>
+                        <li class="mobileItem"><a href="#contact.html" class="mobileLink">Contact us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="topNav">
+                <a href="challenges.html" class="topNavLink">Play online</a>
+                <a href="challenges.html" class="topNavLink">Play on-site</a>
+                <a href="#story.html" class="topNavLink">The Story</a>
+                <a href="#contact" class="topNavLink">Contact us</a>
+            </nav>
+        </section>
+        <img src="img/hacker.png" class="bannerTop" title="Hacker and computer screens"
+            alt="Hacker with hoodie from behind, facing computer screens">
+    </header>
+    <main>
+        <div>
+            <button class="filterBtn">Filter challenges</button>
+        </div>
+        <div class="filterBox">
+
+            <p class="FC">
+                Filter challenges
+            </p>
+            <button class="closeBtn">×</button>
+
+            <div class="typeFilter">
+                <p>
+                    By type
+                </p>
+                <label>
+                    <input type="checkbox" class="onlineCheck">
+                    Include online challenges
+                </label>
+                <label>
+                    <input type="checkbox" class="onsiteCheck">
+                    Include on-site challenges
+                </label>
+            </div>
+            <div class="ratingFilter">
+                <p>
+                    By rating
+                </p>
+                <div class="stars">
+                    <div class="fromRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <p>
+                        to
+                    </p>
+                    <div class="toRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tagFilter">
+                <p>
+                    By tags
+                </p>
+                <div class="tags">
+                    <button class="tag" data-tag="Web">Web</button>
+                    <button class="tag" data-tag="Linux">Linux</button>
+                    <button class="tag" data-tag="Electronics">Electronics</button>
+                    <button class="tag" data-tag="Coding">Coding</button>
+                    <button class="tag" data-tag="Ssh">Ssh</button>
+                    <button class="tag" data-tag="Ctf">Ctf</button>
+                    <button class="tag" data-tag="Phreaking">Phreaking</button>
+                    <button class="tag" data-tag="Javascript">Javascript</button>
+                    <button class="tag" data-tag="Hacking">Hacking</button>
+                    <button class="tag" data-tag="Bash">Bash</button>
+                </div>
+            </div>
+            <div class="keywordFilter">
+                <p>
+                    Or type to search for keyword
+                </p>
+                <input type="text" placeholder="Start typing to filter">
+            </div>
+
+        </div>
+        <nav class="mobileNav">
+          <span id="navLabel" hidden>Navigation</span>
+          <button
+            id="openBtn"
+            class="mobileOpenBtn"
+            aria-expanded="false"
+            aria-labelledby="navLabel"
+          >
+            <img src="img/menuBtn.png" alt="" />
+          </button>
+          <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
+            <button id="closeBtn" class="mobileCloseBtn" aria-label="Close">
+              <img src="img/closeBtn.png" alt="" />
+            </button>
+            <ul class="mobileLinks">
+              <li class="mobileItem">
+                <a href="challenges.html" class="mobileLink">Play online</a>
+              </li>
+              <li class="mobileItem">
+                <a href="challenges.html" class="mobileLink">Play on-site</a>
+              </li>
+              <li class="mobileItem">
+                <a href="#story.html" class="mobileLink">The story</a>
+              </li>
+              <li class="mobileItem">
+                <a href="#contact.html" class="mobileLink">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav class="topNav">
+          <a href="challenges.html" class="topNavLink">Play online</a>
+          <a href="challenges.html" class="topNavLink">Play on-site</a>
+          <a href="#story.html" class="topNavLink">The Story</a>
+          <a href="#contact" class="topNavLink">Contact us</a>
+        </nav>
+      </section>
+     
+    <template class="card-template">
+      <div>
+        <img class="img" src="" alt="" />
+        <h3 class="title"></h3>
+        <h3 class="onsite-online"></h3>
+        <p class="ppl"></p>
+        <p class="describe"></p>
+        <button>Book this challenge</button>
+      </div>
+    </template>
+    <div class="card-container"></div>
+    <footer>
+      <div class="footerWrap">
+        <div class="h5P">
+          <h5>[Esc] Hacker Escape Rooms</h5>
+          <p>
+            Quodsi haberent magnalia inter potentiam et divitias, et non illam
+            quidem haec eo spectant haec quoque vos omnino desit illud quo solo
+            felicitatis libertatisque perficiuntur.
+          </p>
+        </div>
+        <div class="h5Map">
+          <h5>Site map</h5>
+          <nav>
+            <ul>
+              <li><a href="#story.html">The Story</a></li>
+              <li><a href="#contact.html">Contact Us</a></li>
+              <li><a href="#legal.html">Legal</a></li>
+              <li class="aTopMargin">
+                <a href="challenges.html">Play online</a>
+              </li>
+              <li><a href="challenges.html">Play on-site</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="H5SoMe">
+          <h5>Follow us on</h5>
+          <ul>
+            <li><a href="#facebook">Facebook</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#twitter">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+ filter-challenges
+    <script src='main.js'></script>
+    <script src='filter.js'></script>
+ <script src="load-challenges.js"></script>
+  </body>
+
+</html>
