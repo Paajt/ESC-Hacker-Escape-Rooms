@@ -20,6 +20,17 @@ async function cardAPI() {
             clone.querySelector(".onsite-online").textContent = challenge.type;
             clone.querySelector(".ppl").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
             clone.querySelector(".describe").textContent = challenge.description;
+            const cardButton = clone.querySelector("button");
+
+            cardButton.addEventListener("click", () => {
+                challengePeople = [];
+                
+                for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+                    challengePeople.push(i);
+                }
+                openBookingWindow(challenge.title, challenge.id, [], challengePeople);
+            });
+
             container.appendChild(clone);
         })};
     
