@@ -302,14 +302,15 @@ main .onlineLink:active {
   margin-left: 1.2rem;
 }
 .roomContainer .roomIndividual .imgContainer img, .roomContainer .roomIndividual .imgContainer div {
-  max-width: 20%;
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
   align-items: left;
 }
-.roomContainer .roomIndividual .imgContainer .halfstarContainer {
+.roomContainer .roomIndividual .imgContainer #halfStar {
   position: relative;
+  width: 15px;
+  height: 15px;
 }
 .roomContainer .roomIndividual .imgContainer .star {
   position: absolute;

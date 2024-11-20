@@ -298,15 +298,16 @@ main {
             margin-left: 1.2rem;
 
             img, div {
-                max-width: 20%;
                 height: auto;
                 margin-right: 0.5rem;
                 text-align: left;
                 align-items: left;
             }
 
-            .halfstarContainer {
+            #halfStar {
                 position: relative;
+                width: 15px;
+                height: 15px;
             }
 
             .star {
