@@ -32,6 +32,7 @@ async function highestRanking() {
           const card = cards[index];
           card.querySelector(".hackerImg").src = challenge.image;
           card.querySelector(".titleRoom").textContent = challenge.title;
+          createStars(challenge.rating, card.querySelector('.imgContainer'));
           card.querySelector(".descriptionRoom").textContent = challenge.description;  
           card.querySelector(".participantsRoom").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
           if (challenge.type.includes("onsite")) {
