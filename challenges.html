@@ -85,6 +85,17 @@
             <span class="star" data-value="4">★</span>
             <span class="star" data-value="5">★</span>
           </div>
+
+        </nav>
+        <nav class="topNav">
+          <a href="challenges.html" class="topNavLink">Play online</a>
+          <a href="challenges.html" class="topNavLink">Play on-site</a>
+          <a href="#story.html" class="topNavLink">The Story</a>
+          <a href="#contact" class="topNavLink">Contact us</a>
+        </nav>
+      </section>
+    </header> 
+
           <p>
             to
           </p>
@@ -121,14 +132,15 @@
         <input type="text" placeholder="Start typing to filter">
       </div>
     </div>
+
     <template class="card-template">
-      <div>
-        <img class="img" src="" alt="" />
-        <h3 class="title"></h3>
-        <h3 class="onsite-online"></h3>
-        <p class="ppl"></p>
-        <p class="describe"></p>
-        <button>Book this challenge</button>
+      <div class="card">
+        <img class="card-img" src="" alt="" />
+        <h3 class="card-title"></h3>
+        <div class="stars-container"></div>
+        <p class="card-ppl"></p>
+        <p class="card-describe"></p>
+        <a href="#on-site.html" class="card-book-btn">Book this challenge</a>
       </div>
     </template>
     <div class="card-container"></div>
@@ -171,7 +183,9 @@
     <script src='main.js'></script>
     <script src='filter.js'></script>
     <script src="load-challenges.js"></script>
+    <script src="createStars.js"></script>
     <script src="modal.js"></script>
 </body>
 
 </html>
+
