@@ -15,11 +15,22 @@ async function cardAPI() {
 
         challenges.forEach(challenge => {
             const clone = template.content.cloneNode(true);
-            clone.querySelector(".card-img").src = challenge.image;
-            clone.querySelector(".card-title").textContent = challenge.title;
+            clone.querySelector(".img").src = challenge.image;
+            clone.querySelector(".title").textContent = challenge.title;
             createStars(challenge.rating, clone.querySelector(".stars-container"));
-            clone.querySelector(".card-ppl").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
-            clone.querySelector(".card-describe").textContent = challenge.description;
+            clone.querySelector(".onsite-online").textContent = challenge.type;
+            clone.querySelector(".ppl").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
+            clone.querySelector(".describe").textContent = challenge.description;
+            const cardButton = clone.querySelector("button");
+
+            cardButton.addEventListener("click", () => {
+                challengePeople = [];
+                
+                for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+                    challengePeople.push(i);
+                }
+                openBookingWindow(challenge.title, challenge.id, [], challengePeople);
+            });
             container.appendChild(clone);
         })};
     
