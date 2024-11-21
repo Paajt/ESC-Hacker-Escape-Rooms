@@ -11,7 +11,7 @@ async function cardAPI() {
 
     function createCards (challenges) {
         const template = document.querySelector(".card-template");
-        const container = document.querySelector(".roomContainer");
+        const container = document.querySelector(".card-container");
 
         challenges.forEach(challenge => {
             const clone = template.content.cloneNode(true);

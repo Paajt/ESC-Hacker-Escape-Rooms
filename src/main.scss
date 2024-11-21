@@ -1015,7 +1015,7 @@ footer {
     margin-right: auto;
     padding: 5rem 1rem 1rem 1rem;
 
-    .card {
+    .roomIndividual {
         @include flexWrapColumn();
         box-shadow: 0 0 5px rgba($color: #B6BDB5, $alpha: 1);
         border-radius: 0.5em;
@@ -1023,17 +1023,30 @@ footer {
         padding: 0;
         margin-bottom: 0.5rem;
         margin-right: 2rem;
-        position: relative;
-
+        scroll-snap-align: start;
+        scroll-margin-left: 1rem;
+    
+        .titleContainer{
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            top: -2.5rem;
+    
         h3 {
             font-size: 1.8rem;
             font-weight: normal;
             align-items: start;
             text-align: left;
-            margin: 0.5rem 0 0.5rem 1rem;
+            margin: 0rem 0rem 0rem 0.7rem;
         }
-
-        .card-img {
+        .typeRoom{
+            margin: 0;
+            text-align: right;
+        }
+    }
+    
+        .hackerImg {
             padding: 0;
             margin: 0;
             border-top-left-radius: 0.5em;
@@ -1041,60 +1054,78 @@ footer {
             max-width: 100%;
             height: auto;
         }
-
-        .stars-container {
+    
+        .iconRoom{
+            height: 3rem;
+            width: 3rem;;
+            position: relative;
+            top: -16rem;
+            left: 18.5rem;
+        }
+    
+        .imgContainer {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-wrap: wrap;
             margin-bottom: 1rem;
             margin-left: 1.2rem;
-
+            position: relative;
+            top: -7rem;
+    
             img, div {
                 height: auto;
                 margin-right: 0.5rem;
                 text-align: left;
                 align-items: left;
             }
-
+    
             #halfStar {
                 position: relative;
                 width: 15px;
                 height: 15px;
             }
-
+    
             .star {
                 position: absolute;
                 top: 0;
                 left: 0;
             }
-
+    
             .halfFilled {
                 clip: rect(0px, 7.5px, 15px, 0px);
             }
         }
-
+    
+        span {
+            font-size: 0.8rem;
+            margin-left: 1rem;
+            text-align: left;
+            position: relative;
+            top: - 1.5rem;
+        }
+    
         p {
             max-width: 100%;
             font-size: 1.1em;
             text-align: left;
-            margin-top: 0.5rem;
+            margin-top: 0rem;
+            margin-bottom: 0rem;
             margin-left: 1rem;
             margin-right: 0.8rem;
             padding-right: 0.2em;
+            height: 3rem;
         }
-
+    
+    
         a:link,
         a:visited,
         a:active {
             @include bookBtn();
             align-self: flex-end;
             @include linkStyle(#FFFFFF, none);
-            /* position: absolute;
-            bottom: 1rem;
-            right: 0.5rem; */
         }
-
+    
     }
 }
 

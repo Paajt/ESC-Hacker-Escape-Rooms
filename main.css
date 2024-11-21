@@ -1175,7 +1175,7 @@ footer ul .aTopMargin {
   margin-right: auto;
   padding: 5rem 1rem 1rem 1rem;
 }
-.card-container .card {
+.card-container .roomIndividual {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1185,16 +1185,28 @@ footer ul .aTopMargin {
   padding: 0;
   margin-bottom: 0.5rem;
   margin-right: 2rem;
-  position: relative;
+  scroll-snap-align: start;
+  scroll-margin-left: 1rem;
 }
-.card-container .card h3 {
+.card-container .roomIndividual .titleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  top: -2.5rem;
+}
+.card-container .roomIndividual .titleContainer h3 {
   font-size: 1.8rem;
   font-weight: normal;
   align-items: start;
   text-align: left;
-  margin: 0.5rem 0 0.5rem 1rem;
+  margin: 0rem 0rem 0rem 0.7rem;
 }
-.card-container .card .card-img {
+.card-container .roomIndividual .titleContainer .typeRoom {
+  margin: 0;
+  text-align: right;
+}
+.card-container .roomIndividual .hackerImg {
   padding: 0;
   margin: 0;
   border-top-left-radius: 0.5em;
@@ -1202,45 +1214,63 @@ footer ul .aTopMargin {
   max-width: 100%;
   height: auto;
 }
-.card-container .card .stars-container {
+.card-container .roomIndividual .iconRoom {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  top: -16rem;
+  left: 18.5rem;
+}
+.card-container .roomIndividual .imgContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 1rem;
   margin-left: 1.2rem;
+  position: relative;
+  top: -7rem;
 }
-.card-container .card .stars-container img, .card-container .card .stars-container div {
+.card-container .roomIndividual .imgContainer img, .card-container .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
   align-items: left;
 }
-.card-container .card .stars-container #halfStar {
+.card-container .roomIndividual .imgContainer #halfStar {
   position: relative;
   width: 15px;
   height: 15px;
 }
-.card-container .card .stars-container .star {
+.card-container .roomIndividual .imgContainer .star {
   position: absolute;
   top: 0;
   left: 0;
 }
-.card-container .card .stars-container .halfFilled {
+.card-container .roomIndividual .imgContainer .halfFilled {
   clip: rect(0px, 7.5px, 15px, 0px);
 }
-.card-container .card p {
+.card-container .roomIndividual span {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  text-align: left;
+  position: relative;
+  top: -1.5rem;
+}
+.card-container .roomIndividual p {
   max-width: 100%;
   font-size: 1.1em;
   text-align: left;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   margin-left: 1rem;
   margin-right: 0.8rem;
   padding-right: 0.2em;
+  height: 3rem;
 }
-.card-container .card a:link,
-.card-container .card a:visited,
-.card-container .card a:active {
+.card-container .roomIndividual a:link,
+.card-container .roomIndividual a:visited,
+.card-container .roomIndividual a:active {
   display: block;
   margin: 1rem 1.2rem;
   background-color: #E3170A;
@@ -1256,9 +1286,6 @@ footer ul .aTopMargin {
   align-self: flex-end;
   color: #FFFFFF;
   text-decoration: none;
-  /* position: absolute;
-  bottom: 1rem;
-  right: 0.5rem; */
 }
 
 /*# sourceMappingURL=main.css.map */
