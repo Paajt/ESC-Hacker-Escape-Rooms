@@ -1,3 +1,212 @@
+.bookingWindow {
+  background-color: white;
+  border: 0.1rem solid rgb(175, 175, 175);
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.8rem 0.6rem;
+  text-align: left;
+}
+.bookingWindow h1 {
+  margin: 0px;
+  font-weight: 400;
+}
+.bookingWindow h2 {
+  margin-top: 1.7rem;
+  margin-bottom: 0rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.bookingWindow label {
+  text-align: left;
+  font-weight: 700;
+  color: rgb(80, 80, 80);
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+.bookingWindow input {
+  width: 24rem;
+  height: 3rem;
+  border: 0.1rem solid rgb(206, 206, 206);
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0rem;
+}
+.bookingWindow .bookingInput {
+  width: 15rem;
+}
+.bookingWindow .searchButton,
+.bookingWindow .submitButton {
+  width: 12.5rem;
+  padding: 0.7rem 0rem;
+  background-color: rgb(101, 88, 245);
+  font-size: 0.9rem;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.bookingWindow .exitWindowButton {
+  position: fixed;
+  color: rgb(101, 88, 245);
+  background: transparent;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  top: 10px;
+  right: 10px;
+}
+.bookingWindow select {
+  width: 16rem;
+  height: 3rem;
+  border: 0.1rem solid rgb(206, 206, 206);
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0rem;
+}
+.bookingWindow .submittedTitle {
+  text-align: center;
+  font-size: 3rem;
+  justify-content: center;
+}
+.bookingWindow .submittedButton {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  color: rgb(101, 88, 245);
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+.bookingWindow .noAvailableTimes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.filterBtn {
+  background-color: white;
+  border-color: #36769D;
+  color: #36769D;
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 2rem auto 1rem;
+}
+
+.closeBtn {
+  grid-column: 3;
+  margin: 0.2rem 0.2rem auto auto;
+  font-size: 2rem;
+  color: gray;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filterBox {
+  margin: 20px;
+  border: 2px solid #ddd;
+  display: grid;
+  grid: repeat(3);
+  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+}
+
+.FC {
+  display: flex;
+  margin: 1rem auto auto 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.typeFilter {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 1rem;
+}
+.typeFilter p {
+  font-weight: bold;
+}
+
+.ratingFilter {
+  grid-column: 2;
+}
+.ratingFilter div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: center;
+}
+.ratingFilter p {
+  font-weight: bold;
+}
+.ratingFilter .selected {
+  color: red;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: lightgray;
+  cursor: pointer;
+}
+.star :hover {
+  color: red;
+}
+
+.tagFilter {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+}
+.tagFilter p {
+  font-weight: bold;
+  justify-content: flex-start;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tags :hover {
+  background-color: gray;
+}
+.tags .selected {
+  background-color: gray;
+}
+
+.tag {
+  border-radius: 16px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.keywordFilter {
+  grid-column: 2;
+}
+.keywordFilter p {
+  font-weight: bold;
+}
+.keywordFilter input {
+  margin: auto auto 1rem;
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
 html {
   font-family: Roboto;
 }
@@ -278,12 +487,23 @@ main .onlineLink:active {
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
 }
-.roomContainer .roomIndividual h3 {
+.roomContainer .roomIndividual .titleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  top: -2.5rem;
+}
+.roomContainer .roomIndividual .titleContainer h3 {
   font-size: 1.8rem;
   font-weight: normal;
   align-items: start;
   text-align: left;
-  margin: 0.5rem 0 0.5rem 1rem;
+  margin: 0rem 0rem 0rem 0.7rem;
+}
+.roomContainer .roomIndividual .titleContainer .typeRoom {
+  margin: 0;
+  text-align: right;
 }
 .roomContainer .roomIndividual .hackerImg {
   padding: 0;
@@ -293,13 +513,22 @@ main .onlineLink:active {
   max-width: 100%;
   height: auto;
 }
+.roomContainer .roomIndividual .iconRoom {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  top: -16rem;
+  left: 18.5rem;
+}
 .roomContainer .roomIndividual .imgContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
-  margin-left: 1.2rem;
+  margin-bottom: 0rem;
+  margin-left: 1rem;
+  position: relative;
+  top: -7rem;
 }
 .roomContainer .roomIndividual .imgContainer img {
   max-width: 20%;
@@ -310,16 +539,21 @@ main .onlineLink:active {
 }
 .roomContainer .roomIndividual span {
   font-size: 0.8rem;
-  margin-left: 0.8rem;
+  margin-left: 1rem;
+  text-align: left;
+  position: relative;
+  top: -1.5rem;
 }
 .roomContainer .roomIndividual p {
   max-width: 100%;
   font-size: 1.1em;
   text-align: left;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   margin-left: 1rem;
   margin-right: 0.8rem;
   padding-right: 0.2em;
+  height: 3rem;
 }
 .roomContainer .roomIndividual a:link,
 .roomContainer .roomIndividual a:visited,
@@ -735,16 +969,15 @@ footer ul .aTopMargin {
   .roomContainer .roomIndividual .imgContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: 360px;
   }
   .roomContainer .roomIndividual img {
     margin-right: 4px;
   }
   .roomContainer .roomIndividual span {
-    text-align: right;
-    margin-left: auto;
-    margin-right: 1rem;
+    text-align: left;
+    margin-left: 1rem;
   }
   .btnContainer {
     display: flex;
