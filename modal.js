@@ -1,7 +1,5 @@
 //Declaring variables
 const bodyBox = document.querySelector("body");
-const placeHolderButton = document.querySelector(".onsiteBtn");
-const testingBtn = document.querySelector(".testingBtn");
 
 //Creating the booking window
 function openBookingWindow(challengeTitle, challengeId, availableTimes = [], participantOptions = []) {
@@ -192,7 +190,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 }
                 return;
             } else if (!emailFormat.test(emailValue)) {
-                alert("Please enter a valid email address.");
+                alert("Please enter a valid email address."); //Fix this
                 return;
             } else if (emptyDateWarning) {
                 emptyDateWarning.remove();
