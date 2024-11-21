@@ -973,3 +973,99 @@ footer {
     }
 
 }
+
+//challenges i challenges.html
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 2rem;
+    width: 80%;
+     margin-left: auto;
+    margin-right: auto;
+    padding: 5rem 1rem 1rem 1rem;
+
+    .card {
+        @include flexWrapColumn();
+        box-shadow: 0 0 5px rgba($color: #B6BDB5, $alpha: 1);
+        border-radius: 0.5em;
+        min-width: 360px;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        margin-right: 2rem;
+        position: relative;
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            align-items: start;
+            text-align: left;
+            margin: 0.5rem 0 0.5rem 1rem;
+        }
+
+        .card-img {
+            padding: 0;
+            margin: 0;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .stars-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            margin-left: 1.2rem;
+
+            img, div {
+                height: auto;
+                margin-right: 0.5rem;
+                text-align: left;
+                align-items: left;
+            }
+
+            #halfStar {
+                position: relative;
+                width: 15px;
+                height: 15px;
+            }
+
+            .star {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .halfFilled {
+                clip: rect(0px, 7.5px, 15px, 0px);
+            }
+        }
+
+        p {
+            max-width: 100%;
+            font-size: 1.1em;
+            text-align: left;
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+            margin-right: 0.8rem;
+            padding-right: 0.2em;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            @include bookBtn();
+            align-self: flex-end;
+            @include linkStyle(#FFFFFF, none);
+            /* position: absolute;
+            bottom: 1rem;
+            right: 0.5rem; */
+        }
+
+    }
+}
+
