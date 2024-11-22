@@ -44,6 +44,17 @@ async function highestRanking() {
               card.querySelector(".bookBtn").textContent = "Take challenge online";
               card.querySelector(".typeRoom").textContent = "";
             }
+
+            const cardButton = card.querySelector(".bookBtn");
+            cardButton.addEventListener("click", () => {
+              const challengePeople = [];
+
+              for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+                  challengePeople.push(i);
+              }
+
+              openBookingWindow(challenge.title, challenge.id, [], challengePeople);
+          });
         }
       }
       );
