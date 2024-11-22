@@ -102,16 +102,16 @@
           By tags
         </p>
         <div class="tags">
-          <button class="tag" data-tag="Web">Web</button>
-          <button class="tag" data-tag="Linux">Linux</button>
-          <button class="tag" data-tag="Electronics">Electronics</button>
-          <button class="tag" data-tag="Coding">Coding</button>
-          <button class="tag" data-tag="Ssh">Ssh</button>
-          <button class="tag" data-tag="Ctf">Ctf</button>
-          <button class="tag" data-tag="Phreaking">Phreaking</button>
-          <button class="tag" data-tag="Javascript">Javascript</button>
-          <button class="tag" data-tag="Hacking">Hacking</button>
-          <button class="tag" data-tag="Bash">Bash</button>
+          <button class="tag" data-tag="web">Web</button>
+          <button class="tag" data-tag="linux">Linux</button>
+          <button class="tag" data-tag="electronics">Electronics</button>
+          <button class="tag" data-tag="coding">Coding</button>
+          <button class="tag" data-tag="ssh">Ssh</button>
+          <button class="tag" data-tag="ctf">Ctf</button>
+          <button class="tag" data-tag="phreaking">Phreaking</button>
+          <button class="tag" data-tag="javascript">Javascript</button>
+          <button class="tag" data-tag="hacking">Hacking</button>
+          <button class="tag" data-tag="bash">Bash</button>
         </div>
       </div>
       <div class="keywordFilter">
@@ -120,49 +120,20 @@
         </p>
         <input type="text" placeholder="Start typing to filter">
       </div>
-
     </div>
-    <nav class="mobileNav">
-      <span id="navLabel" hidden>Navigation</span>
-      <button id="openBtn" class="mobileOpenBtn" aria-expanded="false" aria-labelledby="navLabel">
-        <img src="img/menuBtn.png" alt="" />
-      </button>
-      <div class="mobileMenu" role="dialog" aria-labelledby="navLabel">
-        <button id="closeBtn" class="mobileCloseBtn" aria-label="Close">
-          <img src="img/closeBtn.png" alt="" />
-        </button>
-        <ul class="mobileLinks">
-          <li class="mobileItem">
-            <a href="challenges.html" class="mobileLink">Play online</a>
-          </li>
-          <li class="mobileItem">
-            <a href="challenges.html" class="mobileLink">Play on-site</a>
-          </li>
-          <li class="mobileItem">
-            <a href="#story.html" class="mobileLink">The story</a>
-          </li>
-          <li class="mobileItem">
-            <a href="#contact.html" class="mobileLink">Contact us</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <nav class="topNav">
-      <a href="challenges.html" class="topNavLink">Play online</a>
-      <a href="challenges.html" class="topNavLink">Play on-site</a>
-      <a href="#story.html" class="topNavLink">The Story</a>
-      <a href="#contact" class="topNavLink">Contact us</a>
-    </nav>
-    </section>
 
     <template class="card-template">
-      <div>
-        <img class="img" src="" alt="" />
-        <h3 class="title"></h3>
-        <h3 class="onsite-online"></h3>
-        <p class="ppl"></p>
-        <p class="describe"></p>
-        <button>Book this challenge</button>
+      <div class="roomIndividual">
+        <img class="hackerImg" src="" alt="" />
+        <img class="iconRoom" src="" alt="icon">
+        <div class="titleContainer">
+          <h3 class="titleRoom"></h3>
+          <h4 class="typeRoom"></h4>
+        </div>
+        <div class="imgContainer"></div>
+        <span class="participantsRoom"></span>
+        <p class="descriptionRoom"></p>
+        <a href="#on-site.html" class="bookBtn"></a>
       </div>
     </template>
     <div class="card-container"></div>
@@ -205,6 +176,7 @@
     <script src='main.js'></script>
     <script src='filter.js'></script>
     <script src="load-challenges.js"></script>
+    <script src="createStars.js"></script>
     <script src="modal.js"></script>
     <script src="challengesFilter.js"></script>
 </body>
