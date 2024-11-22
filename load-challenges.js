@@ -2,8 +2,14 @@ async function cardAPI() {
     try{
         const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
         const data = await response.json();
-        console.log(data.challenges);
-        createCards(data.challenges);
+
+        // Added from challengesFilter.js
+        originalData = data;
+        filteredDataArray = [...data.challenges];
+        console.log('Received data:', originalData);
+        //console.log(data.challenges);
+        // Changed createCards(data.challenges) to createCards(filteredDataArray)
+        createCards(filteredDataArray);
     }catch (error){
         console.error("error", error);
         }
