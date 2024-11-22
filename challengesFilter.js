@@ -144,6 +144,11 @@ function applyFilter() {
     const container = document.querySelector('.card-container');
     container.innerHTML = '';
 
+    if (filteredDataArray.length === 0) {
+        container.innerHTML = '<h2>No matching challenges.</h2>';
+        return;
+    }
+
     // Render filtered cards
     createCards(filteredDataArray);
 
