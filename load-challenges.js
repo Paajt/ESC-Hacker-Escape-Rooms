@@ -15,13 +15,21 @@ async function cardAPI() {
 
         challenges.forEach(challenge => {
             const clone = template.content.cloneNode(true);
-            clone.querySelector(".img").src = challenge.image;
-            clone.querySelector(".title").textContent = challenge.title;
-            createStars(challenge.rating, clone.querySelector(".stars-container"));
-            clone.querySelector(".onsite-online").textContent = challenge.type;
-            clone.querySelector(".ppl").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
-            clone.querySelector(".describe").textContent = challenge.description;
-            const cardButton = clone.querySelector("button");
+            clone.querySelector(".hackerImg").src = challenge.image;
+            clone.querySelector(".titleRoom").textContent = challenge.title;
+            createStars(challenge.rating, clone.querySelector(".imgContainer"));
+            clone.querySelector(".participantsRoom").textContent = `${challenge.minParticipants}-${challenge.maxParticipants} participants`;
+            clone.querySelector(".descriptionRoom").textContent = challenge.description;
+            const cardButton = clone.querySelector("a");
+            if (challenge.type.includes("onsite")) {
+                clone.querySelector(".typeRoom").textContent = `(${challenge.type})`;
+                clone.querySelector(".iconRoom").src = "./img/home.png";
+                clone.querySelector(".bookBtn").textContent = "Book this room";
+              }else{
+                  clone.querySelector(".iconRoom").src = "./img/laptop.png";
+                  clone.querySelector(".bookBtn").textContent = "Take challenge online";
+                  clone.querySelector(".typeRoom").textContent = "";
+                }
 
             cardButton.addEventListener("click", () => {
                 challengePeople = [];
