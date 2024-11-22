@@ -1,13 +1,14 @@
-const apiBtn = document.querySelector('#apiFetch');
+// const apiBtn = document.querySelector('#apiFetch');
 const onlineSortBtn = document.querySelector('#onlineSortBtn');
 const onsiteSortBtn = document.querySelector('#onsiteSortBtn');
-const dataContainer = document.querySelector('#dataContainer');
+// const dataContainer = document.querySelector('#dataContainer');
 
+/*
 let originalData = {};
 let filteredDataArray = [];
-
+*/
 // API button
-apiBtn.addEventListener('click', loadAPI);
+//apiBtn.addEventListener('click', loadAPI);
 
 // Sort online
 onlineSortBtn.addEventListener('change', applyFilter);
@@ -15,7 +16,8 @@ onlineSortBtn.addEventListener('change', applyFilter);
 onsiteSortBtn.addEventListener('change', applyFilter);
 
 // Load API
-async function loadAPI() {
+
+/*async function loadAPI() {
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await res.json();
 
@@ -23,8 +25,8 @@ async function loadAPI() {
     filteredDataArray = [...data.challenges];
     console.log('Received data:', originalData);
 
-    displayData(filteredDataArray);
-}
+    // displayData(filteredDataArray);
+}*/
 
 // Filter online
 function filterOnline(dataArray) {
@@ -52,11 +54,11 @@ userInput.addEventListener('input', () => {
 // Label/tag filtering
 let selectedLabels = [];
 
-const labelButtons = document.querySelectorAll('.label-btn');
+const labelButtons = document.querySelectorAll('.tag');
 
 labelButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const label = button.dataset.label;
+        const label = button.dataset.tag;
 
         if (selectedLabels.includes(label)) {
             selectedLabels = selectedLabels.filter(item => item !== label);
@@ -127,7 +129,7 @@ function applyFilter() {
     }
 
     // Filter with search input
-    const searchValue = document.querySelector('#userInput').value.toLowerCase();
+    const searchValue = document.querySelector('#userInput').value.trim().toLowerCase();
 
     if (searchValue) {
         filtered = filtered.filter(challenge =>
@@ -137,11 +139,20 @@ function applyFilter() {
     }
 
     filteredDataArray = filtered;
+
+    // Clear card container
+    const container = document.querySelector('.card-container');
+    container.innerHTML = '';
+
+    // Render filtered cards
+    createCards(filteredDataArray);
+
     console.log('Challenges after filtering:', filteredDataArray);
-    displayData(filteredDataArray);
+    //displayData(filteredDataArray);
 }
 
 // Show content on webpage
+/*
 function displayData(dataArray) {
     dataContainer.innerHTML = '';
 
@@ -176,4 +187,4 @@ function displayData(dataArray) {
 
         dataContainer.appendChild(div);
     });
-}
+} */
