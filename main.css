@@ -489,7 +489,7 @@ main .onlineLink:active {
 }
 .roomContainer .roomIndividual .titleContainer {
   position: relative;
-  top: -3rem;
+  top: -3.5rem;
   height: 3.5rem;
   margin-right: 1.2rem;
 }
@@ -501,10 +501,12 @@ main .onlineLink:active {
   height: 3rem;
 }
 .roomContainer .roomIndividual .titleContainer .typeRoom {
-  margin-left: 0.8;
+  margin-left: 0.8rem;
   text-align: left;
   font-size: 1.3rem;
   font-weight: normal;
+  position: relative;
+  top: -0.6rem;
 }
 .roomContainer .roomIndividual .hackerImg {
   padding: 0;
