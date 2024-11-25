@@ -276,7 +276,7 @@ main {
 
         .titleContainer{
             position: relative;
-            top: -3rem;
+            top: -3.5rem;
             height: 3.5rem;
             margin-right: 1.2rem;
 
@@ -288,10 +288,12 @@ main {
             height: 3rem;
         }
         .typeRoom{
-            margin-left: 0.8;
+            margin-left: 0.8rem;
             text-align: left;
             font-size: 1.3rem;
             font-weight: normal;
+            position: relative;
+            top: -0.6rem;
         }
     }
 
