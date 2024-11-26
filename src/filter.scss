@@ -21,14 +21,14 @@
 
 .filterBox {
     display: none;
-
+margin: 20px;
+    border: 2px solid #ddd;
     .filterBox.visible {
         display: grid;
     grid: repeat(3);
     grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
         opacity: 1;
-    margin: 20px;
-    border: 2px solid #ddd;
+    
     }
 }
 
