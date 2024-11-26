@@ -25,7 +25,6 @@ async function highestRanking() {
         const data = await response.json();
         data.challenges.sort(function(a, b){return b.rating - a.rating});
         const topThree =data.challenges.slice(0, 3);
-        console.log(topThree);
         const cards = document.querySelectorAll(".roomIndividual");
       topThree.forEach((challenge, index) => {
         if (cards[index]) {
@@ -44,6 +43,17 @@ async function highestRanking() {
               card.querySelector(".bookBtn").textContent = "Take challenge online";
               card.querySelector(".typeRoom").textContent = "";
             }
+
+            const cardButton = card.querySelector(".bookBtn");
+            cardButton.addEventListener("click", () => {
+              const challengePeople = [];
+
+              for (let i = challenge.minParticipants; i <= challenge.maxParticipants; i++) {
+                  challengePeople.push(i);
+              }
+
+              openBookingWindow(challenge.title, challenge.id, [], challengePeople);
+          });
         }
       }
       );
