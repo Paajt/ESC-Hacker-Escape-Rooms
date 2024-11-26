@@ -17,25 +17,20 @@ function filterOnsite(dataArray) {
 }
 
 // Star rating (from 1-5 to 1-5) Filter
-document.querySelectorAll('.fromRating .star').forEach(star => {
-    star.addEventListener('click', () => starClick(star, true));
-    star.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            starClick(star, true);
-        }
+function setupStarRating(starSelector, isMinRating) {
+    document.querySelectorAll(starSelector).forEach(star => {
+        star.addEventListener('click', () => starClick(star, isMinRating));
+        star.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                starClick(star, isMinRating);
+            }
+        });
     });
-});
+}
 
-document.querySelectorAll('.toRating .star').forEach(star => {
-    star.addEventListener('click', () => starClick(star, false));
-    star.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            starClick(star, false);
-        }
-    });
-});
+setupStarRating('.fromRating .star', true);
+setupStarRating('.toRating .star', false);
 
 let minRating = 0;
 let maxRating = 5;
@@ -94,14 +89,11 @@ function resetStars(selector) {
 }
 
 function checkStarStyles() {
-    const minStars = document.querySelectorAll('.fromRating .star.selected').length;
-    const maxStars = document.querySelectorAll('.toRating .star.selected').length;
-
-    if (minStars === 0) {
+    if (document.querySelectorAll('.fromRating .star.selected').length === 0) {
         minRating = 0;
     }
 
-    if (maxStars === 0) {
+    if (document.querySelectorAll('.toRating .star.selected').length === 0) {
         maxRating = 5;
     }
 }
