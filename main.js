@@ -25,7 +25,6 @@ async function highestRanking() {
         const data = await response.json();
         data.challenges.sort(function(a, b){return b.rating - a.rating});
         const topThree =data.challenges.slice(0, 3);
-        console.log(topThree);
         const cards = document.querySelectorAll(".roomIndividual");
       topThree.forEach((challenge, index) => {
         if (cards[index]) {

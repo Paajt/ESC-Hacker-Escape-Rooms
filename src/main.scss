@@ -275,22 +275,25 @@ main {
         scroll-margin-left: 1rem;
 
         .titleContainer{
-            display:flex;
-            flex-wrap: wrap;
-            align-items: center;
             position: relative;
-            top: -2.5rem;
+            top: -3.5rem;
+            height: 3.5rem;
+            margin-right: 1.2rem;
 
         h3 {
             font-size: 1.8rem;
             font-weight: normal;
-            align-items: start;
             text-align: left;
             margin: 0rem 0rem 0rem 0.7rem;
+            height: 3rem;
         }
         .typeRoom{
-            margin: 0;
-            text-align: right;
+            margin-left: 0.8rem;
+            text-align: left;
+            font-size: 1.3rem;
+            font-weight: normal;
+            position: relative;
+            top: -0.6rem;
         }
     }
 
@@ -319,7 +322,7 @@ main {
             margin-bottom: 0rem;
             margin-left: 1rem;
             position: relative;
-            top: -7rem;
+            top: -5rem;
 
             img, div {
                 height: auto;
@@ -350,7 +353,7 @@ main {
             margin-left: 1rem;
             text-align: left;
             position: relative;
-            top: - 1.5rem;
+            top: -1rem;
         }
 
         p {
@@ -1028,22 +1031,24 @@ footer {
         scroll-margin-left: 1rem;
     
         .titleContainer{
-            display:flex;
-            flex-wrap: wrap;
-            align-items: center;
             position: relative;
-            top: -2.5rem;
+            top: -4rem;
+            height: 3rem;
+            margin-right: 1.2rem;
     
         h3 {
             font-size: 1.8rem;
             font-weight: normal;
-            align-items: start;
             text-align: left;
             margin: 0rem 0rem 0rem 0.7rem;
+            position: relative;
+            height: 3rem;
         }
         .typeRoom{
-            margin: 0;
-            text-align: right;
+            margin-left: 0.8rem;
+            text-align: left;
+            font-size: 1.3rem;
+            font-weight: normal;
         }
     }
     
@@ -1072,7 +1077,7 @@ footer {
             margin-bottom: 1rem;
             margin-left: 1.2rem;
             position: relative;
-            top: -7rem;
+            top: -5rem;
     
             img, div {
                 height: auto;
@@ -1103,7 +1108,7 @@ footer {
             margin-left: 1rem;
             text-align: left;
             position: relative;
-            top: - 1.5rem;
+            top: -1rem;
         }
     
         p {
