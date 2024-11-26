@@ -133,7 +133,6 @@ function filterByLabels(dataArray) {
         selectedLabels.every(label => challenge.labels.includes(label))
     );
 
-    console.log('Filtered by labels:', filtered);
     return filtered;
 }
 
@@ -147,13 +146,10 @@ function applyFilter() {
 
     if (isOnlineChecked && !isOnsiteChecked) {
         filtered = filterOnline(filtered);
-        console.log('After online filter:', filtered);
     } else if (!isOnlineChecked && isOnsiteChecked) {
         filtered = filterOnsite(filtered);
-        console.log('After onsite filter:', filtered);
     } else if (!isOnlineChecked && !isOnsiteChecked) {
         filtered = [...originalData.challenges];
-        console.log('No filters for Online/Onsite');
     }
 
     // Star Ratings 1-5 
@@ -166,7 +162,6 @@ function applyFilter() {
     // Filter on label
     if (selectedLabels.length > 0) {
         filtered = filterByLabels(filtered);
-        console.log('After label filter:', filtered);
     }
 
     // Filter with search input
@@ -195,6 +190,4 @@ function applyFilter() {
 
     // Render filtered cards
     createCards(filteredDataArray);
-
-    console.log('Challenges after filtering:', filteredDataArray);
 }
