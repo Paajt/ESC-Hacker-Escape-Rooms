@@ -5,6 +5,7 @@
     padding: 1rem;
     border-radius: 3px;
     margin: 2rem auto 1rem;
+    cursor: pointer;
 }
 
 .closeBtn {
@@ -19,11 +20,16 @@
 }
 
 .filterBox {
-    margin: 20px;
-    border: 2px solid #ddd;
-    display: grid;
+    display: none;
+
+    .filterBox.visible {
+        display: grid;
     grid: repeat(3);
     grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+        opacity: 1;
+    margin: 20px;
+    border: 2px solid #ddd;
+    }
 }
 
 .FC {
@@ -63,10 +69,10 @@
         font-weight: bold;
     }
 
-    .selected{
+    .selected {
         color: red;
     }
-    
+
 }
 
 .star {
@@ -89,7 +95,7 @@
         justify-content: flex-start;
     }
 
-    
+
 }
 
 .tags {
@@ -97,14 +103,14 @@
     flex-wrap: wrap;
     gap: 10px;
 
-:hover {
+    :hover {
         background-color: gray;
     }
-    
-    .selected{
+
+    .selected {
         background-color: gray;
     }
-   
+
 }
 
 .tag {
