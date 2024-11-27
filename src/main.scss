@@ -712,6 +712,12 @@ footer {
     }
 
     main {
+        .ourChallengesHeader{
+            margin-top: 3rem;
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
         #toggleBtn {
             display: inline-block;
             @include onlineBtn();
