@@ -14,8 +14,8 @@ and final breakpoint at 1280px width for desktop design.
 * Booking modal
 
 ### Project contributors:
-* @Emilyempa
-* @alfredbrannare
-* @itsJoel59
-* @NordicNomadicLife
-* @Paajt
+* [Emilyempa](https://github.com/Emilyempa)
+* [alfredbrannare](https://github.com/alfredbrannare)
+* [itsJoel59](https://github.com/itsJoel59)
+* [NordicNomadicLife](https://github.com/NordicNomadicLife)
+* [Paajt](https://github.com/Paajt)
