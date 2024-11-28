@@ -4,7 +4,7 @@ document.querySelectorAll('.ratingFilter .star').forEach(star => {
 
         const stars = this.parentElement.querySelectorAll('.star');
 
-        const isAlreadySelected = this.classList.contains('selected') && 
+        const isAlreadySelected = this.classList.contains('selected') &&
             !Array.from(stars).some(s => s.classList.contains('selected') && s.getAttribute('data-value') > value);
 
         if (isAlreadySelected) {
