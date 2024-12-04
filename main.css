@@ -72,6 +72,14 @@
   font-size: 1rem;
   padding: 0rem;
 }
+.bookingWindow .amountOfPeopleInput {
+  width: 14rem;
+}
+.bookingWindow .amountOfPeopleRange {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: rgb(139, 131, 131);
+}
 .bookingWindow .submittedTitle {
   text-align: center;
   font-size: 3rem;
@@ -538,7 +546,8 @@ main .onlineLink:active {
   position: relative;
   top: -5rem;
 }
-.roomContainer .roomIndividual .imgContainer img, .roomContainer .roomIndividual .imgContainer div {
+.roomContainer .roomIndividual .imgContainer img,
+.roomContainer .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
@@ -1246,7 +1255,8 @@ footer ul .aTopMargin {
   position: relative;
   top: -5rem;
 }
-.card-container .roomIndividual .imgContainer img, .card-container .roomIndividual .imgContainer div {
+.card-container .roomIndividual .imgContainer img,
+.card-container .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
