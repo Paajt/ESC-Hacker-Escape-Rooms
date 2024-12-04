@@ -146,6 +146,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         const participantMax = Math.max(...participantOptions);
 
         const amountOfPeopleRange = document.createElement("label");
+        amountOfPeopleRange.classList.add("amountOfPeopleRange");
         amountOfPeopleRange.innerHTML = `Allowed participants ${participantMin} - ${participantMax}`;
 
         //Submit button
@@ -173,7 +174,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             const emailValue = emailInput.value.trim();
             const emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const timeValue = timeSelect.value.trim();
-            const amountOfPeopleValue = amountOfPeopleInput.value;
+            const amountOfPeopleValue = parseInt(amountOfPeopleInput.value, 10);
 
             if (!nameValue || !emailValue || !timeValue || !amountOfPeopleValue || amountOfPeopleInput.value < participantMin || amountOfPeopleInput.value > participantMax) {
                 if (!emptyDateWarning) {
@@ -207,6 +208,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             timeSelect.remove();
             amountOfPeopleLabel.remove();
             amountOfPeopleInput.remove();
+            amountOfPeopleRange.remove();
             submitButton.remove();
 
             //Added one line of styling to move content to center after button press
