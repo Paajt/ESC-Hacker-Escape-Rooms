@@ -406,6 +406,11 @@ main .onlineLink:active {
   font-weight: bold;
   text-decoration: underline;
 }
+main .onlineLink:link:hover,
+main .onlineLink:visited:hover,
+main .onlineLink:active:hover {
+  color: #011827;
+}
 
 .containerReviews {
   margin: 4rem 2rem 4rem 0;
