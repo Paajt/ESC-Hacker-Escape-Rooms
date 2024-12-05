@@ -48,6 +48,10 @@
     margin: 1rem 1.2rem;
     padding: 1rem 3.6rem;
     text-decoration: none;
+
+    &:hover {
+        box-shadow: 5px 5px 5px #b6bdb5;
+    }
 }
 
 @mixin onsiteBtn {
@@ -63,6 +67,10 @@
     margin: 2rem;
     padding: 1rem 3rem;
     text-decoration: none;
+
+    &:hover {
+        box-shadow: 5px 5px 5px #b6bdb5;
+    }
 }
 
 @mixin bookBtn {
@@ -78,14 +86,11 @@
     padding: 1rem 2.5rem;
     border-radius: 4px;
     text-decoration: none;
-    position: relative;
-    overflow: hidden;
-
+   
     &:hover {
         background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
         background-size: 200% 100%;
         animation: shimmer 1.5s;
-        animation-iteration-count: 1;
     }
 
     @keyframes shimmer {

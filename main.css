@@ -365,6 +365,11 @@ main a:active .onsiteBtn {
   padding: 1rem 3rem;
   text-decoration: none;
 }
+main a:link .onsiteBtn:hover,
+main a:visited .onsiteBtn:hover,
+main a:active .onsiteBtn:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
+}
 main .onsiteBtn {
   display: inline-block;
   background-color: #8ACFE5;
@@ -378,6 +383,9 @@ main .onsiteBtn {
   margin: 2rem;
   padding: 1rem 3rem;
   text-decoration: none;
+}
+main .onsiteBtn:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
 }
 main .onsiteBtn a:link,
 main .onsiteBtn a:visited,
@@ -591,8 +599,6 @@ main .onlineLink:active {
   padding: 1rem 2.5rem;
   border-radius: 4px;
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
   align-self: flex-end;
   color: #FFFFFF;
   text-decoration: none;
@@ -603,7 +609,6 @@ main .onlineLink:active {
   background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
   background-size: 200% 100%;
   animation: shimmer 1.5s;
-  animation-iteration-count: 1;
 }
 @keyframes shimmer {
   0% {
@@ -717,6 +722,11 @@ main .onlineLink:active {
   text-decoration: none;
   color: #FFFFFF;
   text-decoration: none;
+}
+.playOrBuildContainer a:link:hover,
+.playOrBuildContainer a:visited:hover,
+.playOrBuildContainer a:active:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
 }
 
 footer {
@@ -932,6 +942,9 @@ footer ul .aTopMargin {
     position: absolute;
     translate: -20.5rem -4.5rem;
   }
+  main #toggleBtn:hover {
+    box-shadow: 5px 5px 5px #b6bdb5;
+  }
   main #absoluteBtn {
     display: inline-block;
     background-color: #8ACFE5;
@@ -947,6 +960,9 @@ footer ul .aTopMargin {
     text-decoration: none;
     position: absolute;
     translate: -1.2rem -5.5rem;
+  }
+  main #absoluteBtn:hover {
+    box-shadow: 5px 5px 5px #b6bdb5;
   }
   main .onlineLink:link,
   main .onlineLink:visited,
@@ -1045,6 +1061,9 @@ footer ul .aTopMargin {
     text-decoration: none;
     display: flex;
     margin: 0;
+  }
+  .btnContainer .onlineBtn:hover {
+    box-shadow: 5px 5px 5px #b6bdb5;
   }
   .btnContainer .onsiteBtn {
     margin: 0;
@@ -1318,8 +1337,6 @@ footer ul .aTopMargin {
   padding: 1rem 2.5rem;
   border-radius: 4px;
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
   align-self: flex-end;
   color: #FFFFFF;
   text-decoration: none;
@@ -1330,7 +1347,6 @@ footer ul .aTopMargin {
   background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
   background-size: 200% 100%;
   animation: shimmer 1.5s;
-  animation-iteration-count: 1;
 }
 @keyframes shimmer {
   0% {
