@@ -138,22 +138,16 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         amountOfPeopleLabel.setAttribute("for", "amountOfPeople");
         amountOfPeopleLabel.textContent = "How many participants?";
 
-        const amountOfPeopleSelect = document.createElement("select");
-        amountOfPeopleSelect.classList.add("amountOfPeopleSelect");
+        const amountOfPeopleInput = document.createElement("input");
+        amountOfPeopleInput.classList.add("amountOfPeopleInput");
+        amountOfPeopleInput.setAttribute("type", "number");
 
-        // Populate the participants dropdown with dynamic options
-        if (participantOptions.length === 0) {
-            const placeholderOption = document.createElement("option");
-            placeholderOption.textContent = "No participant options available";
-            amountOfPeopleSelect.appendChild(placeholderOption);
-        } else {
-            participantOptions.forEach(option => {
-                const peopleOption = document.createElement("option");
-                peopleOption.value = option;
-                peopleOption.textContent = option + " participants";
-                amountOfPeopleSelect.appendChild(peopleOption);
-            });
-        }
+        const participantMin = Math.min(...participantOptions);
+        const participantMax = Math.max(...participantOptions);
+
+        const amountOfPeopleRange = document.createElement("label");
+        amountOfPeopleRange.classList.add("amountOfPeopleRange");
+        amountOfPeopleRange.innerHTML = `Allowed participants ${participantMin} - ${participantMax}`;
 
         //Submit button
         const submitButton = document.createElement("button");
@@ -168,7 +162,8 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
         bookingWindow.appendChild(timeLabel);
         bookingWindow.appendChild(timeSelect);
         bookingWindow.appendChild(amountOfPeopleLabel);
-        bookingWindow.appendChild(amountOfPeopleSelect);
+        bookingWindow.appendChild(amountOfPeopleInput);
+        bookingWindow.appendChild(amountOfPeopleRange);
         bookingWindow.appendChild(submitButton);
 
         //Runs when "Submit booking" is clicked
@@ -179,9 +174,9 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             const emailValue = emailInput.value.trim();
             const emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const timeValue = timeSelect.value.trim();
-            const amountOfPeopleValue = parseInt(amountOfPeopleSelect.value.trim());
+            const amountOfPeopleValue = parseInt(amountOfPeopleInput.value, 10);
 
-            if (!nameValue || !emailValue || !timeValue || !amountOfPeopleValue) {
+            if (!nameValue || !emailValue || !timeValue || !amountOfPeopleValue || amountOfPeopleInput.value < participantMin || amountOfPeopleInput.value > participantMax) {
                 if (!emptyDateWarning) {
                     emptyDateWarning = document.createElement("span");
                     emptyDateWarning.classList.add("emptyDateWarning");
@@ -212,7 +207,8 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             timeLabel.remove();
             timeSelect.remove();
             amountOfPeopleLabel.remove();
-            amountOfPeopleSelect.remove();
+            amountOfPeopleInput.remove();
+            amountOfPeopleRange.remove();
             submitButton.remove();
 
             //Added one line of styling to move content to center after button press
