@@ -167,7 +167,7 @@ function applyFilter() {
     // Filter with search input
     const searchValue = document.querySelector('#userInput').value.trim().toLowerCase();
 
-    if (searchValue) {
+    if (searchValue.length >= 3) {
         filtered = filtered.filter(challenge =>
             challenge.title.toLowerCase().includes(searchValue) ||
             challenge.description.toLowerCase().includes(searchValue)
