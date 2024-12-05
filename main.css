@@ -1303,4 +1303,36 @@ footer ul .aTopMargin {
   text-decoration: none;
 }
 
+.theStoryContainer {
+  display: grid;
+  grid: repeat(3);
+  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+}
+
+.firstImg {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+    height: auto;
+}
+
+.history{
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.2rem;
+
+}
+
+.secondImg{
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+    height: auto;
+}
+
+.vision{
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 1.2rem;
+}
 /*# sourceMappingURL=main.css.map */
