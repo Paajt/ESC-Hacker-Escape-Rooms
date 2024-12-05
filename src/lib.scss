@@ -30,6 +30,10 @@
     font-size: 1rem;
 }
 
+@mixin cardAnimation($keyframes) {
+    animation: $keyframes 0.8s;
+}
+
 @mixin flexWrapColumn {
     display: flex;
     flex-direction: column;

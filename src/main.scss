@@ -273,6 +273,7 @@ main {
         margin-right: 2rem;
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
+        @include cardAnimation(fadeIn);
 
         .titleContainer {
             position: relative;
@@ -1038,6 +1039,7 @@ footer {
         margin-right: 2rem;
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
+        @include cardAnimation(fadeIn);
 
         .titleContainer {
             position: relative;
@@ -1135,7 +1137,6 @@ footer {
             height: 3rem;
         }
 
-
         a:link,
         a:visited,
         a:active {
@@ -1143,6 +1144,15 @@ footer {
             align-self: flex-end;
             @include linkStyle(#FFFFFF, none);
         }
+    }
+}
 
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

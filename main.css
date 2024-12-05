@@ -491,6 +491,7 @@ main .onlineLink:active {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
+  animation: fadeIn 0.8s;
 }
 .roomContainer .roomIndividual .titleContainer {
   position: relative;
@@ -538,7 +539,8 @@ main .onlineLink:active {
   position: relative;
   top: -5rem;
 }
-.roomContainer .roomIndividual .imgContainer img, .roomContainer .roomIndividual .imgContainer div {
+.roomContainer .roomIndividual .imgContainer img,
+.roomContainer .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
@@ -1200,6 +1202,7 @@ footer ul .aTopMargin {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
+  animation: fadeIn 0.8s;
 }
 .card-container .roomIndividual .titleContainer {
   position: relative;
@@ -1246,7 +1249,8 @@ footer ul .aTopMargin {
   position: relative;
   top: -5rem;
 }
-.card-container .roomIndividual .imgContainer img, .card-container .roomIndividual .imgContainer div {
+.card-container .roomIndividual .imgContainer img,
+.card-container .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
@@ -1301,6 +1305,15 @@ footer ul .aTopMargin {
   align-self: flex-end;
   color: #FFFFFF;
   text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
