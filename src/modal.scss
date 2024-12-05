@@ -10,6 +10,16 @@
     flex-direction: column;
     padding: 1.8rem 1.8rem 0.6rem;
     text-align: left;
+    opacity: 0;
+
+    &.active {
+        animation: fadeIn 0.5s ease-in-out forwards;
+        opacity: 1;
+    }
+
+    &.disabled {
+        animation: fadeOut 0.5s ease-in-out forwards;
+    }
 
     h1 {
         margin: 0px;
@@ -103,5 +113,23 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

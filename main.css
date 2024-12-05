@@ -10,6 +10,14 @@
   flex-direction: column;
   padding: 1.8rem 1.8rem 0.6rem;
   text-align: left;
+  opacity: 0;
+}
+.bookingWindow.active {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 1;
+}
+.bookingWindow.disabled {
+  animation: fadeOut 0.5s ease-in-out forwards;
 }
 .bookingWindow h1 {
   margin: 0px;
@@ -93,6 +101,22 @@
   font-size: 20px;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .filterBtn {
   background-color: white;
   border-color: #36769D;
@@ -538,7 +562,8 @@ main .onlineLink:active {
   position: relative;
   top: -5rem;
 }
-.roomContainer .roomIndividual .imgContainer img, .roomContainer .roomIndividual .imgContainer div {
+.roomContainer .roomIndividual .imgContainer img,
+.roomContainer .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
@@ -1246,7 +1271,8 @@ footer ul .aTopMargin {
   position: relative;
   top: -5rem;
 }
-.card-container .roomIndividual .imgContainer img, .card-container .roomIndividual .imgContainer div {
+.card-container .roomIndividual .imgContainer img,
+.card-container .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
