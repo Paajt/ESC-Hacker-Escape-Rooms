@@ -120,7 +120,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
             const noAvailableTimes = document.createElement("span");
             noAvailableTimes.innerHTML = "No available times at this date";
             noAvailableTimes.classList.add("noAvailableTimes");
-            bookingWindow.appendChild(noAvailableTimes); 
+            bookingWindow.appendChild(noAvailableTimes);
             return;
 
         } else {
@@ -190,7 +190,14 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 }
                 return;
             } else if (!emailFormat.test(emailValue)) {
-                alert("Please enter a valid email address."); //Fix this
+                if (!emptyDateWarning) {
+                    emptyDateWarning = document.createElement("span");
+                    emptyDateWarning.classList.add("emptyDateWarning");
+                    emptyDateWarning.innerHTML = "Please enter a valid email adress.";
+                    bookingWindow.appendChild(emptyDateWarning);
+                } else {
+                    emptyDateWarning.innerHTML = "Please enter a valid email adress.";
+                }
                 return;
             } else if (emptyDateWarning) {
                 emptyDateWarning.remove();
@@ -238,7 +245,6 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
                 }),
             });
             const data = await res.json();
-            console.log(data);
 
             //Close window
             submittedButton.addEventListener("click", () => {

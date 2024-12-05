@@ -274,28 +274,29 @@ main {
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
 
-        .titleContainer{
+        .titleContainer {
             position: relative;
             top: -3.5rem;
             height: 3.5rem;
             margin-right: 1.2rem;
 
-        h3 {
-            font-size: 1.8rem;
-            font-weight: normal;
-            text-align: left;
-            margin: 0rem 0rem 0rem 0.7rem;
-            height: 3rem;
+            h3 {
+                font-size: 1.8rem;
+                font-weight: normal;
+                text-align: left;
+                margin: 0rem 0rem 0rem 0.7rem;
+                height: 3rem;
+            }
+
+            .typeRoom {
+                margin-left: 0.8rem;
+                text-align: left;
+                font-size: 1.3rem;
+                font-weight: normal;
+                position: relative;
+                top: -0.6rem;
+            }
         }
-        .typeRoom{
-            margin-left: 0.8rem;
-            text-align: left;
-            font-size: 1.3rem;
-            font-weight: normal;
-            position: relative;
-            top: -0.6rem;
-        }
-    }
 
         .hackerImg {
             padding: 0;
@@ -306,9 +307,10 @@ main {
             height: auto;
         }
 
-        .iconRoom{
+        .iconRoom {
             height: 3rem;
-            width: 3rem;;
+            width: 3rem;
+            ;
             position: relative;
             top: -16rem;
             left: 18.5rem;
@@ -324,7 +326,8 @@ main {
             position: relative;
             top: -5rem;
 
-            img, div {
+            img,
+            div {
                 height: auto;
                 margin-right: 0.5rem;
                 text-align: left;
@@ -712,6 +715,12 @@ footer {
     }
 
     main {
+        .ourChallengesHeader {
+            margin-top: 3rem;
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+
         #toggleBtn {
             display: inline-block;
             @include onlineBtn();
@@ -811,7 +820,7 @@ footer {
             span {
                 text-align: left;
                 margin-left: 1rem;
-                
+
             }
         }
     }
@@ -1015,7 +1024,7 @@ footer {
 
     row-gap: 2rem;
     width: 80%;
-     margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     padding: 5rem 1rem 1rem 1rem;
 
@@ -1029,29 +1038,30 @@ footer {
         margin-right: 2rem;
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
-    
-        .titleContainer{
+
+        .titleContainer {
             position: relative;
             top: -4rem;
             height: 3rem;
             margin-right: 1.2rem;
-    
-        h3 {
-            font-size: 1.8rem;
-            font-weight: normal;
-            text-align: left;
-            margin: 0rem 0rem 0rem 0.7rem;
-            position: relative;
-            height: 3rem;
+
+            h3 {
+                font-size: 1.8rem;
+                font-weight: normal;
+                text-align: left;
+                margin: 0rem 0rem 0rem 0.7rem;
+                position: relative;
+                height: 3rem;
+            }
+
+            .typeRoom {
+                margin-left: 0.8rem;
+                text-align: left;
+                font-size: 1.3rem;
+                font-weight: normal;
+            }
         }
-        .typeRoom{
-            margin-left: 0.8rem;
-            text-align: left;
-            font-size: 1.3rem;
-            font-weight: normal;
-        }
-    }
-    
+
         .hackerImg {
             padding: 0;
             margin: 0;
@@ -1060,15 +1070,16 @@ footer {
             max-width: 100%;
             height: auto;
         }
-    
-        .iconRoom{
+
+        .iconRoom {
             height: 3rem;
-            width: 3rem;;
+            width: 3rem;
+            ;
             position: relative;
             top: -16rem;
             left: 18.5rem;
         }
-    
+
         .imgContainer {
             display: flex;
             align-items: center;
@@ -1078,31 +1089,32 @@ footer {
             margin-left: 1.2rem;
             position: relative;
             top: -5rem;
-    
-            img, div {
+
+            img,
+            div {
                 height: auto;
                 margin-right: 0.5rem;
                 text-align: left;
                 align-items: left;
             }
-    
+
             #halfStar {
                 position: relative;
                 width: 15px;
                 height: 15px;
             }
-    
+
             .star {
                 position: absolute;
                 top: 0;
                 left: 0;
             }
-    
+
             .halfFilled {
                 clip: rect(0px, 7.5px, 15px, 0px);
             }
         }
-    
+
         span {
             font-size: 0.8rem;
             margin-left: 1rem;
@@ -1110,7 +1122,7 @@ footer {
             position: relative;
             top: -1rem;
         }
-    
+
         p {
             max-width: 100%;
             font-size: 1.1em;
@@ -1122,8 +1134,8 @@ footer {
             padding-right: 0.2em;
             height: 3rem;
         }
-    
-    
+
+
         a:link,
         a:visited,
         a:active {
@@ -1131,7 +1143,6 @@ footer {
             align-self: flex-end;
             @include linkStyle(#FFFFFF, none);
         }
-    
+
     }
 }
-
