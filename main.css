@@ -102,6 +102,9 @@
   margin: 2rem auto 1rem;
   cursor: pointer;
 }
+.filterBtn:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
+}
 
 .closeBtn {
   grid-column: 3;
