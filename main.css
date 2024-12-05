@@ -652,6 +652,11 @@ main .onlineLink:active {
   color: #8ACFE5;
   text-decoration: none;
 }
+.storyContainer a:link:hover,
+.storyContainer a:visited:hover,
+.storyContainer a:active:hover {
+  box-shadow: 5px 5px 5px #8ACFE5;
+}
 
 .playOrBuildContainer {
   text-align: left;

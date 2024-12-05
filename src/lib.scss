@@ -117,6 +117,10 @@
     padding: 1rem 3rem;
     margin: 2.5rem;
     text-decoration: none;
+
+    &:hover {
+        box-shadow: 5px 5px 5px #8ACFE5;
+    }
 }
 
 @mixin onlineLink {
