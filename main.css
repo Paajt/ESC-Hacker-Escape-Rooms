@@ -538,7 +538,8 @@ main .onlineLink:active {
   position: relative;
   top: -5rem;
 }
-.roomContainer .roomIndividual .imgContainer img, .roomContainer .roomIndividual .imgContainer div {
+.roomContainer .roomIndividual .imgContainer img,
+.roomContainer .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
@@ -590,9 +591,27 @@ main .onlineLink:active {
   padding: 1rem 2.5rem;
   border-radius: 4px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
   align-self: flex-end;
   color: #FFFFFF;
   text-decoration: none;
+}
+.roomContainer .roomIndividual a:link:hover,
+.roomContainer .roomIndividual a:visited:hover,
+.roomContainer .roomIndividual a:active:hover {
+  background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s;
+  animation-iteration-count: 1;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .btnContainer {
@@ -1246,7 +1265,8 @@ footer ul .aTopMargin {
   position: relative;
   top: -5rem;
 }
-.card-container .roomIndividual .imgContainer img, .card-container .roomIndividual .imgContainer div {
+.card-container .roomIndividual .imgContainer img,
+.card-container .roomIndividual .imgContainer div {
   height: auto;
   margin-right: 0.5rem;
   text-align: left;
@@ -1298,9 +1318,27 @@ footer ul .aTopMargin {
   padding: 1rem 2.5rem;
   border-radius: 4px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
   align-self: flex-end;
   color: #FFFFFF;
   text-decoration: none;
+}
+.card-container .roomIndividual a:link:hover,
+.card-container .roomIndividual a:visited:hover,
+.card-container .roomIndividual a:active:hover {
+  background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s;
+  animation-iteration-count: 1;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
