@@ -16,7 +16,7 @@ body {
 
 .containerTop {
     width: 100%;
-    background-color: #011827;
+    background-color: #021928;
     display: flex;
     padding-bottom: 1rem;
     align-items: center;
@@ -72,7 +72,7 @@ body {
             margin: 0.4em auto 0.4em auto;
             position: fixed;
             inset: 0;
-            background-color: #011827;
+            background-color: #021928;
             justify-content: center;
             align-items: center;
             font-size: 2rem;
@@ -176,7 +176,7 @@ main {
         a:link,
         a:visited,
         a:active {
-            @include linkStyle(#011827, none);
+            @include linkStyle(#021928, none);
         }
     }
 
@@ -393,7 +393,7 @@ main {
 }
 
 .storyContainer {
-    background-color: #011827;
+    background-color: #021928;
     margin: auto;
     padding: 2rem;
     color: #FFFFFF;
@@ -481,7 +481,7 @@ main {
 footer {
     padding: 2rem 2.5rem 4rem 1rem;
     margin-top: 5rem;
-    background-color: #011827;
+    background-color: #021928;
     text-align: left;
     color: #FFFFFF;
 
@@ -642,7 +642,7 @@ footer {
     .storyContainer {
         height: auto;
         margin: 2rem auto 0 auto;
-        background-color: #011827;
+        background-color: #021928;
 
         p {
             max-width: 550px;
@@ -679,14 +679,14 @@ footer {
 @media screen and (min-width: 1280px) {
 
     header {
-        background-color: #011827;
+        background-color: #021928;
     }
 
     .containerTop {
         width: 100%;
         max-width: 1280px;
         margin: 0 auto;
-        background-color: #011827;
+        background-color: #021928;
 
         div {
             max-width: 100%;
@@ -844,7 +844,7 @@ footer {
         }
 
         .onsiteBtn:hover {
-            color: #011827;
+            color: #021928;
         }
 
     }
@@ -942,7 +942,7 @@ footer {
 
     footer {
         padding: 8rem 2rem;
-        background-color: #011827;
+        background-color: #021928;
         text-align: center;
     }
 
