@@ -273,6 +273,7 @@ main {
         margin-right: 2rem;
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
+        @include cardAnimation(fadeIn);
 
         &:hover {
             box-shadow: 0 0 15px rgba($color: #B6BDB5, $alpha: 1);
@@ -1042,6 +1043,7 @@ footer {
         margin-right: 2rem;
         scroll-snap-align: start;
         scroll-margin-left: 1rem;
+        @include cardAnimation(fadeIn);
 
         &:hover {
             box-shadow: 0 0 15px rgba($color: #B6BDB5, $alpha: 1);
@@ -1143,7 +1145,6 @@ footer {
             height: 3rem;
         }
 
-
         a:link,
         a:visited,
         a:active {
@@ -1151,7 +1152,16 @@ footer {
             align-self: flex-end;
             @include linkStyle(#FFFFFF, none);
         }
+    }
+}
 
+@keyframes fadeIn{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 

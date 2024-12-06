@@ -515,6 +515,7 @@ main .onlineLink:active:hover {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
+  animation: fadeIn 0.8s;
 }
 .roomContainer .roomIndividual:hover {
   box-shadow: 0 0 15px #b6bdb5;
@@ -1262,6 +1263,7 @@ footer ul .aTopMargin {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
+  animation: fadeIn 0.8s;
 }
 .card-container .roomIndividual:hover {
   box-shadow: 0 0 15px #b6bdb5;
@@ -1381,6 +1383,24 @@ footer ul .aTopMargin {
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
