@@ -72,6 +72,14 @@
   font-size: 1rem;
   padding: 0rem;
 }
+.bookingWindow .amountOfPeopleInput {
+  width: 14rem;
+}
+.bookingWindow .amountOfPeopleRange {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: rgb(139, 131, 131);
+}
 .bookingWindow .submittedTitle {
   text-align: center;
   font-size: 3rem;
@@ -101,6 +109,9 @@
   border-radius: 3px;
   margin: 2rem auto 1rem;
   cursor: pointer;
+}
+.filterBtn:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
 }
 
 .closeBtn {
@@ -365,6 +376,11 @@ main a:active .onsiteBtn {
   padding: 1rem 3rem;
   text-decoration: none;
 }
+main a:link .onsiteBtn:hover,
+main a:visited .onsiteBtn:hover,
+main a:active .onsiteBtn:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
+}
 main .onsiteBtn {
   display: inline-block;
   background-color: #8acfe5;
@@ -378,6 +394,9 @@ main .onsiteBtn {
   margin: 2rem;
   padding: 1rem 3rem;
   text-decoration: none;
+}
+main .onsiteBtn:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
 }
 main .onsiteBtn a:link,
 main .onsiteBtn a:visited,
@@ -394,6 +413,11 @@ main .onlineLink:active {
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: underline;
+}
+main .onlineLink:link:hover,
+main .onlineLink:visited:hover,
+main .onlineLink:active:hover {
+  color: #011827;
 }
 
 .containerReviews {
@@ -491,6 +515,9 @@ main .onlineLink:active {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
+}
+.roomContainer .roomIndividual:hover {
+  box-shadow: 0 0 15px #b6bdb5;
 }
 .roomContainer .roomIndividual .titleContainer {
   position: relative;
@@ -595,6 +622,21 @@ main .onlineLink:active {
   color: #ffffff;
   text-decoration: none;
 }
+.roomContainer .roomIndividual a:link:hover,
+.roomContainer .roomIndividual a:visited:hover,
+.roomContainer .roomIndividual a:active:hover {
+  background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
 .btnContainer {
   margin-top: 0;
@@ -628,6 +670,11 @@ main .onlineLink:active {
   text-decoration: none;
   color: #8acfe5;
   text-decoration: none;
+}
+.storyContainer a:link:hover,
+.storyContainer a:visited:hover,
+.storyContainer a:active:hover {
+  box-shadow: 5px 5px 5px #8ACFE5;
 }
 
 .playOrBuildContainer {
@@ -699,6 +746,11 @@ main .onlineLink:active {
   text-decoration: none;
   color: #ffffff;
   text-decoration: none;
+}
+.playOrBuildContainer a:link:hover,
+.playOrBuildContainer a:visited:hover,
+.playOrBuildContainer a:active:hover {
+  box-shadow: 5px 5px 5px #b6bdb5;
 }
 
 footer {
@@ -914,6 +966,9 @@ footer ul .aTopMargin {
     position: absolute;
     translate: -20.5rem -4.5rem;
   }
+  main #toggleBtn:hover {
+    box-shadow: 5px 5px 5px #b6bdb5;
+  }
   main #absoluteBtn {
     display: inline-block;
     background-color: #8acfe5;
@@ -929,6 +984,9 @@ footer ul .aTopMargin {
     text-decoration: none;
     position: absolute;
     translate: -1.2rem -5.5rem;
+  }
+  main #absoluteBtn:hover {
+    box-shadow: 5px 5px 5px #b6bdb5;
   }
   main .onlineLink:link,
   main .onlineLink:visited,
@@ -1027,6 +1085,9 @@ footer ul .aTopMargin {
     text-decoration: none;
     display: flex;
     margin: 0;
+  }
+  .btnContainer .onlineBtn:hover {
+    box-shadow: 5px 5px 5px #b6bdb5;
   }
   .btnContainer .onsiteBtn {
     margin: 0;
@@ -1202,6 +1263,9 @@ footer ul .aTopMargin {
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
 }
+.card-container .roomIndividual:hover {
+  box-shadow: 0 0 15px #b6bdb5;
+}
 .card-container .roomIndividual .titleContainer {
   position: relative;
   top: -4rem;
@@ -1304,6 +1368,21 @@ footer ul .aTopMargin {
   color: #ffffff;
   text-decoration: none;
 }
+.card-container .roomIndividual a:link:hover,
+.card-container .roomIndividual a:visited:hover,
+.card-container .roomIndividual a:active:hover {
+  background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
 
 
@@ -1327,6 +1406,10 @@ footer ul .aTopMargin {
   grid-row: 1;
   font-size: 1.2rem;
 }
+.ourHistoryText{
+  text-align: start;
+  margin: auto 1rem;
+}
 
 .secondImg {
   grid-column: 2;
@@ -1341,16 +1424,17 @@ footer ul .aTopMargin {
   font-size: 1.2rem;
 }
 
+.ourVisionText{
+  text-align: start;
+  margin: auto 1rem;
+}
+
 @media screen and (min-width: 800px) {
   .theStoryContainer {
     width: 100%;
     max-width: 1280px;
     height: auto;
     object-fit: cover;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-  }
+    
 }
 /*# sourceMappingURL=main.css.map */
