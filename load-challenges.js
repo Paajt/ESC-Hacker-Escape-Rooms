@@ -5,7 +5,9 @@ async function cardAPI() {
 
         originalData = data;
         filteredDataArray = [...data.challenges];
-        createCards(filteredDataArray);
+        setTimeout(() => {
+            createCards(filteredDataArray);
+            }, 500);
     } catch (error) {
         console.error("error", error);
     }
