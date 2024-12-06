@@ -1,0 +1,1308 @@
+.bookingWindow {
+  background-color: white;
+  border: 0.1rem solid rgb(175, 175, 175);
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.8rem 0.6rem;
+  text-align: left;
+}
+.bookingWindow h1 {
+  margin: 0px;
+  font-weight: 400;
+}
+.bookingWindow h2 {
+  margin-top: 1.7rem;
+  margin-bottom: 0rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.bookingWindow label {
+  text-align: left;
+  font-weight: 700;
+  color: rgb(80, 80, 80);
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+.bookingWindow input {
+  width: 24rem;
+  height: 3rem;
+  border: 0.1rem solid rgb(206, 206, 206);
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0rem;
+}
+.bookingWindow .bookingInput {
+  width: 15rem;
+}
+.bookingWindow .searchButton,
+.bookingWindow .submitButton {
+  width: 12.5rem;
+  padding: 0.7rem 0rem;
+  background-color: rgb(101, 88, 245);
+  font-size: 0.9rem;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+.bookingWindow .exitWindowButton {
+  position: fixed;
+  color: rgb(101, 88, 245);
+  background: transparent;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  top: 10px;
+  right: 10px;
+}
+.bookingWindow select {
+  width: 16rem;
+  height: 3rem;
+  border: 0.1rem solid rgb(206, 206, 206);
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0rem;
+}
+.bookingWindow .submittedTitle {
+  text-align: center;
+  font-size: 3rem;
+  justify-content: center;
+}
+.bookingWindow .submittedButton {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  color: rgb(101, 88, 245);
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+.bookingWindow .noAvailableTimes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.filterBtn {
+  background-color: white;
+  border-color: #36769D;
+  color: #36769D;
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 2rem auto 1rem;
+  cursor: pointer;
+}
+
+.closeBtn {
+  grid-column: 3;
+  margin: 0.2rem 0.2rem auto auto;
+  font-size: 2rem;
+  color: gray;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filterBox {
+  display: none;
+  margin: 20px;
+  border: 2px solid #ddd;
+}
+.filterBox .filterBox.visible {
+  display: grid;
+  grid: repeat(3);
+  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+  opacity: 1;
+}
+
+.FC {
+  display: flex;
+  margin: 1rem auto auto 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.typeFilter {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 1rem;
+}
+.typeFilter p {
+  font-weight: bold;
+}
+
+.ratingFilter {
+  grid-column: 2;
+}
+.ratingFilter div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  justify-content: center;
+}
+.ratingFilter p {
+  font-weight: bold;
+}
+.ratingFilter .selected {
+  color: red;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: lightgray;
+  cursor: pointer;
+}
+.star :hover {
+  color: red;
+}
+
+.tagFilter {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+}
+.tagFilter p {
+  font-weight: bold;
+  justify-content: flex-start;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tags :hover {
+  background-color: gray;
+}
+.tags .selected {
+  background-color: gray;
+}
+
+.tag {
+  border-radius: 16px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.keywordFilter {
+  grid-column: 2;
+}
+.keywordFilter p {
+  font-weight: bold;
+}
+.keywordFilter input {
+  margin: auto auto 1rem;
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+html {
+  font-family: Roboto;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+}
+
+.containerTop {
+  width: 100%;
+  background-color: #021928;
+  display: flex;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.containerTop div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+.containerTop img {
+  max-width: 128px;
+  max-height: 82px;
+  margin: 20px 8px 20px 20px;
+  padding: 0;
+}
+.containerTop h1 {
+  max-width: 5rem;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  margin-top: 1.4rem;
+  font-weight: bold;
+}
+.containerTop .topNav {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .containerTop .noScroll {
+    overflow: hidden;
+  }
+  .containerTop button {
+    background: none;
+    border: none;
+    padding-right: 1em;
+  }
+  .containerTop .mobileOpenBtn[aria-expanded=true] + .mobileMenu {
+    translate: 0;
+    opacity: 1;
+  }
+  .containerTop .mobileMenu {
+    width: 95%;
+    height: 98%;
+    margin: 0.4em auto 0.4em auto;
+    position: fixed;
+    inset: 0;
+    background-color: #021928;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    translate: 100vw 0;
+    opacity: 0;
+    transition: translate 1ms ease-in-out;
+    transition: opacity 0.3s ease-in;
+    z-index: 20;
+  }
+  .containerTop .mobileMenu .mobileCloseBtn {
+    display: block;
+    margin-inline-start: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5rem;
+  }
+  .containerTop .mobileMenu img {
+    width: 2.5rem;
+  }
+  .containerTop .mobileLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .containerTop .mobileItem {
+    list-style-type: none;
+  }
+  .containerTop .mobileItem {
+    margin-bottom: 0.5rem;
+    padding-top: 3rem;
+  }
+  .containerTop .mobileLink:link,
+  .containerTop .mobileLink:visited,
+  .containerTop .mobileLink:active {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blurBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+  }
+  .blurBG.active {
+    backdrop-filter: blur(3px);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.bannerTop {
+  width: 100%;
+  height: auto;
+}
+
+#toggleBtn {
+  display: none;
+}
+
+main a:link .onsiteBtn,
+main a:visited .onsiteBtn,
+main a:active .onsiteBtn {
+  display: inline-block;
+  background-color: #8ACFE5;
+  color: #021928;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  margin: 2rem;
+  padding: 1rem 3rem;
+  text-decoration: none;
+}
+main .onsiteBtn {
+  display: inline-block;
+  background-color: #8ACFE5;
+  color: #021928;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  margin: 2rem;
+  padding: 1rem 3rem;
+  text-decoration: none;
+}
+main .onsiteBtn a:link,
+main .onsiteBtn a:visited,
+main .onsiteBtn a:active {
+  color: #021928;
+  text-decoration: none;
+}
+main .onlineLink:link,
+main .onlineLink:visited,
+main .onlineLink:active {
+  display: block;
+  margin-bottom: 3rem;
+  color: #36769D;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.containerReviews {
+  margin: 4rem 2rem 4rem 0;
+}
+.containerReviews .review1 {
+  max-width: 440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.containerReviews .review1 img {
+  margin: 0 1.5rem;
+  flex-grow: 0;
+  float: left;
+  max-width: 80px;
+  height: auto;
+}
+.containerReviews .review1 .reviewText {
+  text-align: left;
+  overflow: hidden;
+}
+.containerReviews .review1 q {
+  font-size: 1.4rem;
+  quotes: none;
+  font-style: italic;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.containerReviews .review1 p {
+  margin: 0.5em 0;
+  padding: 0;
+  text-align: left;
+}
+.containerReviews .review2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.containerReviews .review2 img {
+  margin: 0 1.5rem;
+  flex-grow: 0;
+  display: none;
+}
+.containerReviews .review2 q {
+  margin-top: 1.5rem;
+  margin-right: 5rem;
+  flex-grow: 1;
+  text-align: left;
+  display: block;
+  font-size: 1.3rem;
+  font-style: italic;
+  display: none;
+  quotes: none;
+}
+.containerReviews .review2 p {
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+  display: block;
+  font-style: normal;
+  font-size: 1rem;
+  display: none;
+}
+
+.popularHeading {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.roomContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  max-width: 1280px;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.roomContainer .roomIndividual {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px #b6bdb5;
+  border-radius: 0.5em;
+  min-width: 360px;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  scroll-snap-align: start;
+  scroll-margin-left: 1rem;
+}
+.roomContainer .roomIndividual .titleContainer {
+  position: relative;
+  top: -3.5rem;
+  height: 3.5rem;
+  margin-right: 1.2rem;
+}
+.roomContainer .roomIndividual .titleContainer h3 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-align: left;
+  margin: 0rem 0rem 0rem 0.7rem;
+  height: 3rem;
+}
+.roomContainer .roomIndividual .titleContainer .typeRoom {
+  margin-left: 0.8rem;
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: normal;
+  position: relative;
+  top: -0.6rem;
+}
+.roomContainer .roomIndividual .hackerImg {
+  padding: 0;
+  margin: 0;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  max-width: 100%;
+  height: auto;
+}
+.roomContainer .roomIndividual .iconRoom {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  top: -16rem;
+  left: 18.5rem;
+}
+.roomContainer .roomIndividual .imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 0rem;
+  margin-left: 1rem;
+  position: relative;
+  top: -5rem;
+}
+.roomContainer .roomIndividual .imgContainer img,
+.roomContainer .roomIndividual .imgContainer div {
+  height: auto;
+  margin-right: 0.5rem;
+  text-align: left;
+  align-items: left;
+}
+.roomContainer .roomIndividual .imgContainer #halfStar {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+.roomContainer .roomIndividual .imgContainer .star {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.roomContainer .roomIndividual .imgContainer .halfFilled {
+  clip: rect(0px, 7.5px, 15px, 0px);
+}
+.roomContainer .roomIndividual span {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  text-align: left;
+  position: relative;
+  top: -1rem;
+}
+.roomContainer .roomIndividual p {
+  max-width: 100%;
+  font-size: 1.1em;
+  text-align: left;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-left: 1rem;
+  margin-right: 0.8rem;
+  padding-right: 0.2em;
+  height: 3rem;
+}
+.roomContainer .roomIndividual a:link,
+.roomContainer .roomIndividual a:visited,
+.roomContainer .roomIndividual a:active {
+  display: block;
+  margin: 1rem 1.2rem;
+  background-color: #E3170A;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  align-self: flex-end;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btnContainer {
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+.btnContainer .onlineBtn {
+  display: none;
+}
+
+.storyContainer {
+  background-color: #021928;
+  margin: auto;
+  padding: 2rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+}
+.storyContainer a:link,
+.storyContainer a:visited,
+.storyContainer a:active {
+  display: inline-block;
+  background-color: #021928;
+  color: #8ACFE5;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #8ACFE5;
+  border-radius: 3px;
+  padding: 1rem 3rem;
+  margin: 2.5rem;
+  text-decoration: none;
+  color: #8ACFE5;
+  text-decoration: none;
+}
+
+.playOrBuildContainer {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.playOrBuildContainer .bottomContainer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.playOrBuildContainer .bottomContainer .playWithFriendsImg {
+  width: 100%;
+  height: auto;
+  flex-direction: row;
+}
+.playOrBuildContainer .bottomContainer .textContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  order: -1;
+}
+.playOrBuildContainer .bottomContainer2 {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.playOrBuildContainer .bottomContainer2 .playOnlineImg {
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}
+.playOrBuildContainer .bottomContainer2 .textContainer {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  order: -1;
+}
+.playOrBuildContainer h4 {
+  font-size: 2rem;
+  margin: 1.5rem 1rem 0 1rem;
+  text-align: left;
+}
+.playOrBuildContainer p {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0 0.5rem 0.5rem 0.51rem;
+}
+.playOrBuildContainer a:link,
+.playOrBuildContainer a:visited,
+.playOrBuildContainer a:active {
+  display: inline-block;
+  background-color: #E3170A;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  margin: 1rem 1.2rem;
+  padding: 1rem 3.6rem;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+footer {
+  padding: 2rem 2.5rem 4rem 1rem;
+  margin-top: 5rem;
+  background-color: #021928;
+  text-align: left;
+  color: #FFFFFF;
+}
+footer h5 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+footer p {
+  padding-top: 0.5rem;
+  margin-top: 0;
+  margin-right: 0.3em;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+footer ul {
+  margin-top: 0.5em;
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+}
+footer ul li {
+  font-size: 1.2rem;
+  margin-top: 0.2em;
+}
+footer ul .aTopMargin {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .containerTop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .containerTop h1 {
+    max-width: 100%;
+    font-size: 2rem;
+    margin-top: 1.9em;
+    text-align: left;
+  }
+  .containerTop img {
+    max-width: 128px;
+    max-height: 82px;
+    margin-top: 1rem;
+  }
+  .containerTop .topNav {
+    margin: 2rem auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .containerTop .topNavLink {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .containerTop .topNavLink:hover {
+    color: #8ACFE5;
+  }
+  .mobileNav {
+    display: none;
+  }
+  .mobileMenu {
+    display: none;
+  }
+  .bannerTop {
+    width: 100%;
+    max-width: 1280px;
+    height: 468px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  main {
+    margin-top: -0.5rem;
+  }
+  .onlineBtn,
+  .onsiteBtn {
+    display: inline-block;
+    margin-inline: 0.4rem;
+    margin-top: -3rem;
+  }
+  .onlineBtn a,
+  .onsiteBtn a {
+    font-size: 1.4rem;
+  }
+  .btnContainer button {
+    display: inline-block;
+    margin-inline: 0.4rem;
+    margin-top: 2rem;
+  }
+  .btnContainer button a {
+    font-size: 1.4rem;
+  }
+  .onlineLink:link,
+  .onlineLink:visited,
+  .onlineLink:active {
+    display: none;
+  }
+  .containerMiddle {
+    display: flex;
+    flex-direction: column;
+  }
+  .containerMiddle img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .roomContainer {
+    display: flex;
+    flex-direction: wrap;
+    padding: 1rem 0 1rem 1rem;
+    margin: 0 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .roomIndividual {
+    margin: 1rem auto;
+    max-width: 360px;
+    height: auto;
+  }
+  .storyContainer {
+    height: auto;
+    margin: 2rem auto 0 auto;
+    background-color: #021928;
+  }
+  .storyContainer p {
+    max-width: 550px;
+    margin: 0 auto;
+    padding-top: 6rem;
+  }
+  .storyContainer button {
+    margin-bottom: 7rem;
+  }
+  .playOrBuildContainer {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  footer {
+    max-width: 100%;
+  }
+  footer div {
+    padding: 1rem;
+    max-width: 770px;
+    margin: auto;
+  }
+  footer a:hover {
+    color: #8ACFE5;
+  }
+}
+@media screen and (min-width: 1280px) {
+  header {
+    background-color: #021928;
+  }
+  .containerTop {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #021928;
+  }
+  .containerTop div {
+    max-width: 100%;
+  }
+  .containerTop div h1 {
+    font-size: 2.5em;
+    margin-top: 1.3em;
+    margin-left: 0.3em;
+  }
+  .containerTop .topNav {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 1em;
+  }
+  .bannerTop {
+    width: 100%;
+    max-width: 1280px;
+    height: 468px;
+    margin: -4px auto;
+    object-fit: cover;
+  }
+  main .ourChallengesHeader {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  main #toggleBtn {
+    display: inline-block;
+    background-color: #E3170A;
+    color: #FFFFFF;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    margin: 1rem 1.2rem;
+    padding: 1rem 3.6rem;
+    text-decoration: none;
+    position: absolute;
+    translate: -20.5rem -4.5rem;
+  }
+  main #absoluteBtn {
+    display: inline-block;
+    background-color: #8ACFE5;
+    color: #021928;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    margin: 2rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    position: absolute;
+    translate: -1.2rem -5.5rem;
+  }
+  main .onlineLink:link,
+  main .onlineLink:visited,
+  main .onlineLink:active {
+    display: none;
+  }
+  .containerReviews {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding-top: 8rem;
+  }
+  .containerReviews .review1 {
+    grid-column: 1;
+    max-width: 550px;
+  }
+  .containerReviews .review2 {
+    grid-column: 2;
+    max-width: 550px;
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  .containerReviews .review2 img {
+    display: inline;
+    margin: 0 1.5rem;
+    flex-grow: 0;
+    float: left;
+    max-width: 80px;
+    height: auto;
+  }
+  .containerReviews .review2 .reviewText {
+    text-align: left;
+    overflow: hidden;
+  }
+  .containerReviews .review2 q {
+    font-size: 1.4rem;
+    quotes: none;
+    font-style: italic;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .containerReviews .review2 p {
+    display: block;
+    margin: 0.5em 0;
+    padding: 0;
+    text-align: left;
+  }
+  .popularHeading {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    font-size: 2.3rem;
+  }
+  .roomContainer {
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .roomContainer .roomIndividual {
+    margin-left: 1rem;
+  }
+  .roomContainer .roomIndividual .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 360px;
+  }
+  .roomContainer .roomIndividual img {
+    margin-right: 4px;
+  }
+  .roomContainer .roomIndividual span {
+    text-align: left;
+    margin-left: 1rem;
+  }
+  .btnContainer {
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+  }
+  .btnContainer .onlineBtn {
+    background-color: #E3170A;
+    color: #FFFFFF;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    margin: 1rem 1.2rem;
+    padding: 1rem 3.6rem;
+    text-decoration: none;
+    display: flex;
+    margin: 0;
+  }
+  .btnContainer .onsiteBtn {
+    margin: 0;
+  }
+  .btnContainer .onsiteBtn:hover {
+    color: #021928;
+  }
+  .playOrBuildContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    margin-bottom: 0;
+  }
+  .playOrBuildContainer .bottomContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .playOrBuildContainer .bottomContainer .playWithFriendsImg {
+    max-width: 50%;
+    height: auto;
+    order: -1;
+  }
+  .playOrBuildContainer .bottomContainer .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 50%;
+    margin: 4rem 7rem 0 7rem;
+  }
+  .playOrBuildContainer .bottomContainer .textContainer p {
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-left: -0.4rem;
+    margin-bottom: 1rem;
+    padding-right: 0;
+  }
+  .playOrBuildContainer .bottomContainer .textContainer a {
+    margin-left: 0;
+  }
+  .playOrBuildContainer .bottomContainer2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .playOrBuildContainer .bottomContainer2 .playOnlineImg {
+    max-width: 50%;
+    height: auto;
+    order: 1;
+    margin-top: 0;
+  }
+  .playOrBuildContainer .bottomContainer2 .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 50%;
+    order: -1;
+    margin: 4rem 6rem 0 7rem;
+  }
+  .playOrBuildContainer .bottomContainer2 p {
+    margin: 1rem 0 1rem -0.4rem;
+    padding-right: 0;
+  }
+  .playOrBuildContainer .bottomContainer2 a {
+    margin-left: 0;
+  }
+  .playOrBuildContainer h4 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: left;
+  }
+  .playOrBuildContainer p {
+    text-align: left;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
+  }
+  footer {
+    padding: 8rem 2rem;
+    background-color: #021928;
+    text-align: center;
+  }
+  .footerWrap {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+  .footerWrap div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .h5P {
+    flex-grow: 2;
+  }
+  footer .h5P,
+  footer .h5Map,
+  footer .H5SoMe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  footer .h5P h5,
+  footer .h5Map h5,
+  footer .H5SoMe h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  footer .h5P p,
+  footer .h5Map p,
+  footer .H5SoMe p {
+    margin-right: -4rem;
+  }
+  footer .h5P ul,
+  footer .h5Map ul,
+  footer .H5SoMe ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  footer .h5Map h5,
+  ul {
+    margin-left: 15rem;
+    text-align: left;
+  }
+  footer .H5SoMe {
+    margin: 0 2.4rem 0 0;
+    padding: 0;
+    text-align: left;
+    flex-shrink: 1;
+  }
+  footer .H5SoMe h5 {
+    margin-left: 6rem;
+  }
+  footer .H5SoMe ul {
+    margin-left: 6rem;
+  }
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  row-gap: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1rem 1rem 1rem;
+}
+.card-container .roomIndividual {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px #b6bdb5;
+  border-radius: 0.5em;
+  min-width: 360px;
+  padding: 0;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  scroll-snap-align: start;
+  scroll-margin-left: 1rem;
+}
+.card-container .roomIndividual .titleContainer {
+  position: relative;
+  top: -4rem;
+  height: 3rem;
+  margin-right: 1.2rem;
+}
+.card-container .roomIndividual .titleContainer h3 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-align: left;
+  margin: 0rem 0rem 0rem 0.7rem;
+  position: relative;
+  height: 3rem;
+}
+.card-container .roomIndividual .titleContainer .typeRoom {
+  margin-left: 0.8rem;
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+.card-container .roomIndividual .hackerImg {
+  padding: 0;
+  margin: 0;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  max-width: 100%;
+  height: auto;
+}
+.card-container .roomIndividual .iconRoom {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  top: -16rem;
+  left: 18.5rem;
+}
+.card-container .roomIndividual .imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  margin-left: 1.2rem;
+  position: relative;
+  top: -5rem;
+}
+.card-container .roomIndividual .imgContainer img,
+.card-container .roomIndividual .imgContainer div {
+  height: auto;
+  margin-right: 0.5rem;
+  text-align: left;
+  align-items: left;
+}
+.card-container .roomIndividual .imgContainer #halfStar {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+.card-container .roomIndividual .imgContainer .star {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card-container .roomIndividual .imgContainer .halfFilled {
+  clip: rect(0px, 7.5px, 15px, 0px);
+}
+.card-container .roomIndividual span {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  text-align: left;
+  position: relative;
+  top: -1rem;
+}
+.card-container .roomIndividual p {
+  max-width: 100%;
+  font-size: 1.1em;
+  text-align: left;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-left: 1rem;
+  margin-right: 0.8rem;
+  padding-right: 0.2em;
+  height: 3rem;
+}
+.card-container .roomIndividual a:link,
+.card-container .roomIndividual a:visited,
+.card-container .roomIndividual a:active {
+  display: block;
+  margin: 1rem 1.2rem;
+  background-color: #E3170A;
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  align-self: flex-end;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */
