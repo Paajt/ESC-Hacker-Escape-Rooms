@@ -500,6 +500,9 @@ main .onlineLink:active {
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
 }
+.roomContainer .roomIndividual:hover {
+  box-shadow: 0 0 15px #b6bdb5;
+}
 .roomContainer .roomIndividual .titleContainer {
   position: relative;
   top: -3.5rem;
@@ -1209,6 +1212,9 @@ footer ul .aTopMargin {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
+}
+.card-container .roomIndividual:hover {
+  box-shadow: 0 0 15px #b6bdb5;
 }
 .card-container .roomIndividual .titleContainer {
   position: relative;
