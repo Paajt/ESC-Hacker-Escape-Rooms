@@ -124,6 +124,18 @@
         </p>
         <input type="text" id="userInput" placeholder="Minimum 3 characters">
       </div>
+      <div class="sortFilter">
+        <p>
+          Sort challenges
+        </p>
+          <input type="radio" id="sortTitleAlphabet" name="sortFilterBtn">
+          <label for="sortTitleAlphabet">Title (alphabetically)</label><br>
+          <input type="radio" id="sortMaxRating" name="sortFilterBtn">
+          <label for="sortMaxRating">Highest to lowest (rating)</label><br>
+          <input type="radio" id="sortMinRating" name="sortFilterBtn">
+          <label for="sortMinRating">Lowest to highest (rating)</label><br>
+          <button type="button" id="resetSortingBtn" class="filterBtn">Remove sorting</button>
+      </div>
     </div>
 
     <template class="card-template">
