@@ -72,14 +72,6 @@
   font-size: 1rem;
   padding: 0rem;
 }
-.bookingWindow .amountOfPeopleInput {
-  width: 14rem;
-}
-.bookingWindow .amountOfPeopleRange {
-  margin-top: 0;
-  font-size: 0.8rem;
-  color: rgb(139, 131, 131);
-}
 .bookingWindow .submittedTitle {
   text-align: center;
   font-size: 3rem;
@@ -103,8 +95,8 @@
 
 .filterBtn {
   background-color: white;
-  border-color: #36769d;
-  color: #36769d;
+  border-color: #36769D;
+  color: #36769D;
   padding: 1rem;
   border-radius: 3px;
   margin: 2rem auto 1rem;
@@ -230,14 +222,14 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   text-align: center;
   width: 100%;
 }
 
 .containerTop {
   width: 100%;
-  background-color: #011827;
+  background-color: #021928;
   display: flex;
   padding-bottom: 1rem;
   align-items: center;
@@ -257,7 +249,7 @@ body {
 }
 .containerTop h1 {
   max-width: 5rem;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 1.3rem;
   margin-top: 1.4rem;
   font-weight: bold;
@@ -274,7 +266,7 @@ body {
     border: none;
     padding-right: 1em;
   }
-  .containerTop .mobileOpenBtn[aria-expanded="true"] + .mobileMenu {
+  .containerTop .mobileOpenBtn[aria-expanded=true] + .mobileMenu {
     translate: 0;
     opacity: 1;
   }
@@ -284,7 +276,7 @@ body {
     margin: 0.4em auto 0.4em auto;
     position: fixed;
     inset: 0;
-    background-color: #011827;
+    background-color: #021928;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
@@ -323,7 +315,7 @@ body {
   .containerTop .mobileLink:link,
   .containerTop .mobileLink:visited,
   .containerTop .mobileLink:active {
-    color: #ffffff;
+    color: #FFFFFF;
     text-decoration: none;
     font-family: Roboto;
     font-size: 2.5rem;
@@ -364,8 +356,8 @@ main a:link .onsiteBtn,
 main a:visited .onsiteBtn,
 main a:active .onsiteBtn {
   display: inline-block;
-  background-color: #8acfe5;
-  color: #011827;
+  background-color: #8ACFE5;
+  color: #021928;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: bold;
@@ -375,16 +367,11 @@ main a:active .onsiteBtn {
   margin: 2rem;
   padding: 1rem 3rem;
   text-decoration: none;
-}
-main a:link .onsiteBtn:hover,
-main a:visited .onsiteBtn:hover,
-main a:active .onsiteBtn:hover {
-  box-shadow: 5px 5px 5px #b6bdb5;
 }
 main .onsiteBtn {
   display: inline-block;
-  background-color: #8acfe5;
-  color: #011827;
+  background-color: #8ACFE5;
+  color: #021928;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: bold;
@@ -394,14 +381,11 @@ main .onsiteBtn {
   margin: 2rem;
   padding: 1rem 3rem;
   text-decoration: none;
-}
-main .onsiteBtn:hover {
-  box-shadow: 5px 5px 5px #b6bdb5;
 }
 main .onsiteBtn a:link,
 main .onsiteBtn a:visited,
 main .onsiteBtn a:active {
-  color: #011827;
+  color: #021928;
   text-decoration: none;
 }
 main .onlineLink:link,
@@ -409,15 +393,10 @@ main .onlineLink:visited,
 main .onlineLink:active {
   display: block;
   margin-bottom: 3rem;
-  color: #36769d;
+  color: #36769D;
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: underline;
-}
-main .onlineLink:link:hover,
-main .onlineLink:visited:hover,
-main .onlineLink:active:hover {
-  color: #011827;
 }
 
 .containerReviews {
@@ -515,10 +494,6 @@ main .onlineLink:active:hover {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
-  animation: fadeIn 0.8s;
-}
-.roomContainer .roomIndividual:hover {
-  box-shadow: 0 0 15px #b6bdb5;
 }
 .roomContainer .roomIndividual .titleContainer {
   position: relative;
@@ -609,8 +584,8 @@ main .onlineLink:active:hover {
 .roomContainer .roomIndividual a:active {
   display: block;
   margin: 1rem 1.2rem;
-  background-color: #e3170a;
-  color: #ffffff;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
   font-size: 1rem;
   font-weight: 500;
@@ -620,23 +595,8 @@ main .onlineLink:active:hover {
   border-radius: 4px;
   text-decoration: none;
   align-self: flex-end;
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
-}
-.roomContainer .roomIndividual a:link:hover,
-.roomContainer .roomIndividual a:visited:hover,
-.roomContainer .roomIndividual a:active:hover {
-  background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s;
-}
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
 }
 
 .btnContainer {
@@ -648,34 +608,29 @@ main .onlineLink:active:hover {
 }
 
 .storyContainer {
-  background-color: #011827;
+  background-color: #021928;
   margin: auto;
   padding: 2rem;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 1.6rem;
 }
 .storyContainer a:link,
 .storyContainer a:visited,
 .storyContainer a:active {
   display: inline-block;
-  background-color: #011827;
-  color: #8acfe5;
+  background-color: #021928;
+  color: #8ACFE5;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #8acfe5;
+  border: 2px solid #8ACFE5;
   border-radius: 3px;
   padding: 1rem 3rem;
   margin: 2.5rem;
   text-decoration: none;
-  color: #8acfe5;
+  color: #8ACFE5;
   text-decoration: none;
-}
-.storyContainer a:link:hover,
-.storyContainer a:visited:hover,
-.storyContainer a:active:hover {
-  box-shadow: 5px 5px 5px #8ACFE5;
 }
 
 .playOrBuildContainer {
@@ -734,8 +689,8 @@ main .onlineLink:active:hover {
 .playOrBuildContainer a:visited,
 .playOrBuildContainer a:active {
   display: inline-block;
-  background-color: #e3170a;
-  color: #ffffff;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: 500;
@@ -745,21 +700,16 @@ main .onlineLink:active:hover {
   margin: 1rem 1.2rem;
   padding: 1rem 3.6rem;
   text-decoration: none;
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
-}
-.playOrBuildContainer a:link:hover,
-.playOrBuildContainer a:visited:hover,
-.playOrBuildContainer a:active:hover {
-  box-shadow: 5px 5px 5px #b6bdb5;
 }
 
 footer {
   padding: 2rem 2.5rem 4rem 1rem;
   margin-top: 5rem;
-  background-color: #011827;
+  background-color: #021928;
   text-align: left;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 footer h5 {
   margin-bottom: 0;
@@ -775,7 +725,7 @@ footer p {
   font-weight: 300;
 }
 footer a {
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
 }
 footer ul {
@@ -815,7 +765,7 @@ footer ul .aTopMargin {
     text-align: center;
   }
   .containerTop .topNavLink {
-    color: #ffffff;
+    color: #FFFFFF;
     text-decoration: none;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
@@ -823,7 +773,7 @@ footer ul .aTopMargin {
     font-size: 1.5rem;
   }
   .containerTop .topNavLink:hover {
-    color: #8acfe5;
+    color: #8ACFE5;
   }
   .mobileNav {
     display: none;
@@ -889,7 +839,7 @@ footer ul .aTopMargin {
   .storyContainer {
     height: auto;
     margin: 2rem auto 0 auto;
-    background-color: #011827;
+    background-color: #021928;
   }
   .storyContainer p {
     max-width: 550px;
@@ -912,18 +862,18 @@ footer ul .aTopMargin {
     margin: auto;
   }
   footer a:hover {
-    color: #8acfe5;
+    color: #8ACFE5;
   }
 }
 @media screen and (min-width: 1280px) {
   header {
-    background-color: #011827;
+    background-color: #021928;
   }
   .containerTop {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    background-color: #011827;
+    background-color: #021928;
   }
   .containerTop div {
     max-width: 100%;
@@ -953,8 +903,8 @@ footer ul .aTopMargin {
   }
   main #toggleBtn {
     display: inline-block;
-    background-color: #e3170a;
-    color: #ffffff;
+    background-color: #E3170A;
+    color: #FFFFFF;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: 500;
@@ -967,13 +917,10 @@ footer ul .aTopMargin {
     position: absolute;
     translate: -20.5rem -4.5rem;
   }
-  main #toggleBtn:hover {
-    box-shadow: 5px 5px 5px #b6bdb5;
-  }
   main #absoluteBtn {
     display: inline-block;
-    background-color: #8acfe5;
-    color: #011827;
+    background-color: #8ACFE5;
+    color: #021928;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: bold;
@@ -985,9 +932,6 @@ footer ul .aTopMargin {
     text-decoration: none;
     position: absolute;
     translate: -1.2rem -5.5rem;
-  }
-  main #absoluteBtn:hover {
-    box-shadow: 5px 5px 5px #b6bdb5;
   }
   main .onlineLink:link,
   main .onlineLink:visited,
@@ -1073,8 +1017,8 @@ footer ul .aTopMargin {
     gap: 1.1rem;
   }
   .btnContainer .onlineBtn {
-    background-color: #e3170a;
-    color: #ffffff;
+    background-color: #E3170A;
+    color: #FFFFFF;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: 500;
@@ -1087,14 +1031,11 @@ footer ul .aTopMargin {
     display: flex;
     margin: 0;
   }
-  .btnContainer .onlineBtn:hover {
-    box-shadow: 5px 5px 5px #b6bdb5;
-  }
   .btnContainer .onsiteBtn {
     margin: 0;
   }
   .btnContainer .onsiteBtn:hover {
-    color: #011827;
+    color: #021928;
   }
   .playOrBuildContainer {
     display: flex;
@@ -1175,7 +1116,7 @@ footer ul .aTopMargin {
   }
   footer {
     padding: 8rem 2rem;
-    background-color: #011827;
+    background-color: #021928;
     text-align: center;
   }
   .footerWrap {
@@ -1263,10 +1204,6 @@ footer ul .aTopMargin {
   margin-right: 2rem;
   scroll-snap-align: start;
   scroll-margin-left: 1rem;
-  animation: fadeIn 0.8s;
-}
-.card-container .roomIndividual:hover {
-  box-shadow: 0 0 15px #b6bdb5;
 }
 .card-container .roomIndividual .titleContainer {
   position: relative;
@@ -1356,8 +1293,8 @@ footer ul .aTopMargin {
 .card-container .roomIndividual a:active {
   display: block;
   margin: 1rem 1.2rem;
-  background-color: #e3170a;
-  color: #ffffff;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
   font-size: 1rem;
   font-weight: 500;
@@ -1367,95 +1304,8 @@ footer ul .aTopMargin {
   border-radius: 4px;
   text-decoration: none;
   align-self: flex-end;
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
-}
-.card-container .roomIndividual a:link:hover,
-.card-container .roomIndividual a:visited:hover,
-.card-container .roomIndividual a:active:hover {
-  background: linear-gradient(60deg, #E3170A 10%, rgba(255, 255, 255, 0.2) 50%, #E3170A);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s;
-}
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-
-
-.theStoryContainer {
-  display: grid;
-  grid: repeat(3);
-  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.firstImg {
-  grid-column: 1;
-  grid-row: 1;
-  width: 100%;
-  height: auto;
-}
-
-.history {
-  grid-column: 2;
-  grid-row: 1;
-  font-size: 1.2rem;
-}
-.ourHistoryText{
-  text-align: start;
-  margin: auto 1rem;
-}
-
-.secondImg {
-  grid-column: 2;
-  grid-row: 2;
-  width: 100%;
-  height: auto;
-}
-
-.vision {
-  grid-column: 1;
-  grid-row: 2;
-  font-size: 1.2rem;
-}
-
-.ourVisionText{
-  text-align: start;
-  margin: auto 1rem;
-}
-
-@media screen and (min-width: 800px) {
-  .theStoryContainer {
-    width: 100%;
-    max-width: 1280px;
-    height: auto;
-    object-fit: cover;
-    
 }
 
 /*# sourceMappingURL=main.css.map */
