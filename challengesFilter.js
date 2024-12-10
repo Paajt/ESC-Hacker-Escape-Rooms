@@ -201,8 +201,6 @@ function applyFilter() {
 
     filteredDataArray = filtered;
 
-    console.log(filteredDataArray);
-
     // Clear card container
     const container = document.querySelector('.card-container');
     container.innerHTML = '';
