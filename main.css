@@ -10,6 +10,14 @@
   flex-direction: column;
   padding: 1.8rem 1.8rem 0.6rem;
   text-align: left;
+  opacity: 0;
+}
+.bookingWindow.active {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 1;
+}
+.bookingWindow.disabled {
+  animation: fadeOut 0.5s ease-in-out forwards;
 }
 .bookingWindow h1 {
   margin: 0px;
@@ -101,6 +109,22 @@
   font-size: 20px;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .filterBtn {
   background-color: white;
   border-color: #36769d;
@@ -1455,8 +1479,8 @@ footer ul .aTopMargin {
     max-width: 1280px;
     height: auto;
     object-fit: cover;
-    
+  }
 }
-}
+
 
 /*# sourceMappingURL=main.css.map */
