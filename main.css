@@ -223,6 +223,61 @@
   border-radius: 4px;
 }
 
+.sortFilter {
+  grid-column: 1;
+  grid-row: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 1rem;
+  padding-bottom: 1rem;
+}
+.sortFilter p {
+  align-items: start;
+  font-weight: bold;
+}
+.sortFilter .sortButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.sortFilter .sortButtons input[type=radio] {
+  grid-column: span 1;
+  appearance: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 15%;
+  border: 1px solid #021928;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+.sortFilter .sortButtons input[type=radio]:checked {
+  background-color: white;
+  border-color: #021928;
+}
+.sortFilter .sortButtons input[type=radio]:checked::before {
+  content: "";
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  top: 50%;
+  left: 50%;
+  background-color: #021928;
+  border-radius: 10%;
+  transform: translate(-50%, -50%);
+}
+.sortFilter .sortButtons label {
+  grid-column: span 3;
+  text-align: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 html {
   font-family: Roboto;
 }
