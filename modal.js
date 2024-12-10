@@ -13,7 +13,10 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
     exitWindowButton.innerHTML = "X";
 
     exitWindowButton.addEventListener("click", () => {
-        bookingWindow.remove();
+        bookingWindow.classList.add("disabled");
+        setTimeout(() => {
+            bookingWindow.remove();
+        }, 500);
     });
 
     //Creating the <h1> for the booking window
@@ -50,6 +53,7 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
     bookingWindow.appendChild(searchButton);
     bookingWindow.appendChild(exitWindowButton);
     bodyBox.appendChild(bookingWindow);
+    bookingWindow.classList.add("active");
 
     //Runs when "Search available times" is clicked
     searchButton.addEventListener("click", async () => {
@@ -244,7 +248,10 @@ function openBookingWindow(challengeTitle, challengeId, availableTimes = [], par
 
             //Close window
             submittedButton.addEventListener("click", () => {
-                bookingWindow.remove();
+                bookingWindow.classList.add("disabled");
+                setTimeout(() => {
+                    bookingWindow.remove();
+                }, 500);
             });
         });
     });
