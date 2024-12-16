@@ -12,8 +12,5 @@
   "license": "ISC",
   "dependencies": {
     "sass": "^1.80.7"
-  },
-  "devDependencies": {
-    "cypress": "^13.16.1"
   }
 }
