@@ -34,7 +34,7 @@
           <ul class="mobileLinks">
             <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play online</a></li>
             <li class="mobileItem"><a href="challenges.html" class="mobileLink">Play on-site</a></li>
-            <li class="mobileItem"><a href="#story.html" class="mobileLink">The story</a></li>
+            <li class="mobileItem"><a href="theStory.html" class="mobileLink">The story</a></li>
             <li class="mobileItem"><a href="#contact.html" class="mobileLink">Contact us</a></li>
           </ul>
         </div>
@@ -42,7 +42,7 @@
       <nav class="topNav">
         <a href="challenges.html" class="topNavLink">Play online</a>
         <a href="challenges.html" class="topNavLink">Play on-site</a>
-        <a href="#story.html" class="topNavLink">The Story</a>
+        <a href="theStory.html" class="topNavLink">The Story</a>
         <a href="#contact" class="topNavLink">Contact us</a>
       </nav>
     </section>
@@ -124,6 +124,29 @@
         </p>
         <input type="text" id="userInput" placeholder="Minimum 3 characters">
       </div>
+      <div class="sortFilter">
+        <p>
+          Sort challenges
+        </p>
+        <div class="sortButtons">
+          <label>
+            <input type="radio" id="sortTitleAlphabet" name="sortFilterBtn">
+            Title (A-Z)
+          </label>
+          <label>
+            <input type="radio" id="sortMaxRating" name="sortFilterBtn">
+            Highest to lowest (5-0)
+          </label>
+          <label>
+            <input type="radio" id="sortMinRating" name="sortFilterBtn">
+            Lowest to highest (0-5)
+          </label>
+          <label>
+            <input type="radio" id="sortDefault" name="sortFilterBtn" checked="true">
+            Default
+          </label>
+        </div>
+      </div>
     </div>
 
     <template class="card-template">
@@ -156,7 +179,7 @@
           <h5>Site map</h5>
           <nav>
             <ul>
-              <li><a href="#story.html">The Story</a></li>
+              <li><a href="theStory.html">The Story</a></li>
               <li><a href="#contact.html">Contact Us</a></li>
               <li><a href="#legal.html">Legal</a></li>
               <li class="aTopMargin">

@@ -247,6 +247,61 @@
   border-radius: 4px;
 }
 
+.sortFilter {
+  grid-column: 1;
+  grid-row: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 1rem;
+  padding-bottom: 1rem;
+}
+.sortFilter p {
+  align-items: start;
+  font-weight: bold;
+}
+.sortFilter .sortButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.sortFilter .sortButtons input[type=radio] {
+  grid-column: span 1;
+  appearance: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 15%;
+  border: 1px solid #021928;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+.sortFilter .sortButtons input[type=radio]:checked {
+  background-color: white;
+  border-color: #021928;
+}
+.sortFilter .sortButtons input[type=radio]:checked::before {
+  content: "";
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  top: 50%;
+  left: 50%;
+  background-color: #021928;
+  border-radius: 10%;
+  transform: translate(-50%, -50%);
+}
+.sortFilter .sortButtons label {
+  grid-column: span 3;
+  text-align: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 html {
   font-family: Roboto;
 }
@@ -261,7 +316,7 @@ body {
 
 .containerTop {
   width: 100%;
-  background-color: #011827;
+  background-color: #021928;
   display: flex;
   padding-bottom: 1rem;
   align-items: center;
@@ -308,7 +363,7 @@ body {
     margin: 0.4em auto 0.4em auto;
     position: fixed;
     inset: 0;
-    background-color: #011827;
+    background-color: #021928;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
@@ -388,8 +443,8 @@ main a:link .onsiteBtn,
 main a:visited .onsiteBtn,
 main a:active .onsiteBtn {
   display: inline-block;
-  background-color: #8acfe5;
-  color: #011827;
+  background-color: #8ACFE5;
+  color: #021928;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: bold;
@@ -407,8 +462,8 @@ main a:active .onsiteBtn:hover {
 }
 main .onsiteBtn {
   display: inline-block;
-  background-color: #8acfe5;
-  color: #011827;
+  background-color: #8ACFE5;
+  color: #021928;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: bold;
@@ -425,7 +480,7 @@ main .onsiteBtn:hover {
 main .onsiteBtn a:link,
 main .onsiteBtn a:visited,
 main .onsiteBtn a:active {
-  color: #011827;
+  color: #021928;
   text-decoration: none;
 }
 main .onlineLink:link,
@@ -672,7 +727,7 @@ main .onlineLink:active:hover {
 }
 
 .storyContainer {
-  background-color: #011827;
+  background-color: #021928;
   margin: auto;
   padding: 2rem;
   color: #ffffff;
@@ -682,8 +737,8 @@ main .onlineLink:active:hover {
 .storyContainer a:visited,
 .storyContainer a:active {
   display: inline-block;
-  background-color: #011827;
-  color: #8acfe5;
+  background-color: #021928;
+  color: #8ACFE5;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: bold;
@@ -781,7 +836,7 @@ main .onlineLink:active:hover {
 footer {
   padding: 2rem 2.5rem 4rem 1rem;
   margin-top: 5rem;
-  background-color: #011827;
+  background-color: #021928;
   text-align: left;
   color: #ffffff;
 }
@@ -913,7 +968,7 @@ footer ul .aTopMargin {
   .storyContainer {
     height: auto;
     margin: 2rem auto 0 auto;
-    background-color: #011827;
+    background-color: #021928;
   }
   .storyContainer p {
     max-width: 550px;
@@ -941,13 +996,13 @@ footer ul .aTopMargin {
 }
 @media screen and (min-width: 1280px) {
   header {
-    background-color: #011827;
+    background-color: #021928;
   }
   .containerTop {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    background-color: #011827;
+    background-color: #021928;
   }
   .containerTop div {
     max-width: 100%;
@@ -996,8 +1051,7 @@ footer ul .aTopMargin {
   }
   main #absoluteBtn {
     display: inline-block;
-    background-color: #8acfe5;
-    color: #011827;
+    background-color: #8ACFE5;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: bold;
@@ -1118,7 +1172,7 @@ footer ul .aTopMargin {
     margin: 0;
   }
   .btnContainer .onsiteBtn:hover {
-    color: #011827;
+    color: #021928;
   }
   .playOrBuildContainer {
     display: flex;
@@ -1199,7 +1253,7 @@ footer ul .aTopMargin {
   }
   footer {
     padding: 8rem 2rem;
-    background-color: #011827;
+    background-color: #021928;
     text-align: center;
   }
   .footerWrap {
@@ -1481,5 +1535,6 @@ footer ul .aTopMargin {
     object-fit: cover;
   }
 }
+
 
 /*# sourceMappingURL=main.css.map */

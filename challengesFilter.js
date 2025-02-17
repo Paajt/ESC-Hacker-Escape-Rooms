@@ -135,6 +135,29 @@ function filterByLabels(dataArray) {
 
     return filtered;
 }
+// Sorting options
+const sortDefault = document.querySelector('#sortDefault');
+const sortTitleAlphabet = document.querySelector('#sortTitleAlphabet');
+const sortMaxRating = document.querySelector('#sortMaxRating');
+const sortMinRating = document.querySelector('#sortMinRating');
+
+sortDefault.addEventListener('change', applyFilter);
+sortTitleAlphabet.addEventListener('change', applyFilter);
+sortMaxRating.addEventListener('change', applyFilter);
+sortMinRating.addEventListener('change', applyFilter);
+
+function sortChallenges(dataArray) {
+    if (sortTitleAlphabet.checked) {
+        return dataArray.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortMaxRating.checked) {
+        return dataArray.sort((a, b) => b.rating - a.rating);
+    } else if (sortMinRating.checked) {
+        return dataArray.sort((a, b) => a.rating - b.rating);
+    } else if (sortDefault.checked) {
+        return dataArray.sort((a, b) => a.id - b.id);
+    }
+    return dataArray;
+}
 
 // Apply filters to challenges
 function applyFilter() {
@@ -173,6 +196,8 @@ function applyFilter() {
             challenge.description.toLowerCase().includes(searchValue)
         );
     }
+
+    filtered = sortChallenges(filtered);
 
     filteredDataArray = filtered;
 
