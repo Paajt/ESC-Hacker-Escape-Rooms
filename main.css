@@ -1354,6 +1354,16 @@ footer ul .aTopMargin {
   margin-right: auto;
   padding: 5rem 1rem 1rem 1rem;
 }
+.card-container .loading-text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #021928;
+  margin-bottom: 3rem;
+}
 .card-container .roomIndividual {
   display: flex;
   flex-direction: column;

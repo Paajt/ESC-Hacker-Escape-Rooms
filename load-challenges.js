@@ -1,18 +1,27 @@
 async function cardAPI() {
+    const container = document.querySelector(".card-container");
+
+    const loadingText = document.createElement("p");
+    loadingText.textContent = "Laddar challenges...";
+    loadingText.classList.add("loading-text");
+    container.appendChild(loadingText);
+
     try {
         const response = await fetch("https://lernia-sjj-assignments.vercel.app/api/challenges");
         const data = await response.json();
 
         originalData = data;
         filteredDataArray = [...data.challenges];
+
         setTimeout(() => {
+            loadingText.remove();
             createCards(filteredDataArray);
-            }, 500);
+        }, 500);
     } catch (error) {
         console.error("error", error);
+        loadingText.textContent = "Kunde inte ladda challenges. Försök igen senare.";
     }
-};
-
+}
 function createCards(challenges) {
     const template = document.querySelector(".card-template");
     const container = document.querySelector(".card-container");
