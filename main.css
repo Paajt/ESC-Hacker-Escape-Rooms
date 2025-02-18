@@ -861,6 +861,9 @@ footer a {
   color: #FFFFFF;
   text-decoration: none;
 }
+footer img {
+  max-width: 2rem;
+}
 footer .currentPage {
   color: #8ACFE5;
   text-decoration: underline;
@@ -1336,6 +1339,9 @@ footer ul .aTopMargin {
   }
   footer .H5SoMe ul {
     margin-left: 6rem;
+  }
+  footer .H5SoMe img {
+    margin-left: 2.5rem;
   }
 }
 .card-container {

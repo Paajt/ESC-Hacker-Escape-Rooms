@@ -515,6 +515,10 @@ footer {
         text-decoration: none;
     }
 
+    img {
+        max-width: 2rem;
+    }
+
     .currentPage {
         color: #8ACFE5;
         text-decoration: underline;
@@ -1011,6 +1015,7 @@ footer {
             margin-top: 0.5rem;
         }
 
+
         .currentPage {
             color: #8ACFE5;
             text-decoration: underline;
@@ -1036,6 +1041,11 @@ footer {
         ul {
             margin-left: 6rem;
         }
+
+        img {
+            margin-left: 2.5rem;
+        }
+
     }
 
 }
