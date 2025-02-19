@@ -1062,9 +1062,7 @@ footer {
     padding: 5rem 1rem 1rem 1rem;
 
     .loading-text {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        grid-column: 2;
         text-align: center;
         font-size: 2rem;
         font-weight: bold;
