@@ -105,6 +105,11 @@ body {
             padding: 0;
         }
 
+        #mobileClickedLink {
+            color: #8ACFE5;
+            text-decoration: underline;
+        }
+
         .mobileItem {
             list-style-type: none;
         }
@@ -485,7 +490,6 @@ main {
 
 footer {
     padding: 2rem 2.5rem 4rem 1rem;
-    margin-top: 5rem;
     background-color: #021928;
     text-align: left;
     color: #FFFFFF;
@@ -508,6 +512,15 @@ footer {
     a {
         color: #FFFFFF;
         text-decoration: none;
+    }
+
+    img {
+        max-width: 2rem;
+    }
+
+    .currentPage {
+        color: #8ACFE5;
+        text-decoration: underline;
     }
 
     ul {
@@ -565,6 +578,11 @@ footer {
 
         .topNavLink:hover {
             color: #8ACFE5;
+        }
+
+        #clickedLink {
+            color: #8ACFE5;
+            text-decoration: underline;
         }
     }
 
@@ -995,6 +1013,12 @@ footer {
             padding-left: 0;
             margin-top: 0.5rem;
         }
+
+
+        .currentPage {
+            color: #8ACFE5;
+            text-decoration: underline;
+        }
     }
 
     footer .h5Map h5,
@@ -1016,12 +1040,16 @@ footer {
         ul {
             margin-left: 6rem;
         }
+
+        img {
+            margin-left: 2.5rem;
+        }
+
     }
 
 }
 
 //challenges i challenges.html
-
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1032,6 +1060,15 @@ footer {
     margin-left: auto;
     margin-right: auto;
     padding: 5rem 1rem 1rem 1rem;
+
+    .loading-text {
+        grid-column: 2;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color:#021928;
+        margin-bottom: 3rem;
+    }
 
     .roomIndividual {
         @include flexWrapColumn();
@@ -1165,3 +1202,82 @@ footer {
     }
 }
 
+.theStory {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.theStoryContainer {
+    display: grid;
+    grid: repeat(3);
+    grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+    margin-right: auto;
+    margin-left: auto;
+
+    .firstImg {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .history {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.2rem;
+    }
+    
+    .ourHistoryText{
+    text-align: start;
+    margin: 1rem 1rem;
+    }
+
+    .secondImg {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+    }
+
+    .vision {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 1.2rem;
+    }
+
+    .ourVisionText{
+    text-align: start;
+    margin: auto 1rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    
+    .theStoryContainer {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    .theStoryContainer {
+        display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
+    }
+}

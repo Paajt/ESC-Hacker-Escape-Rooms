@@ -127,8 +127,8 @@
 }
 .filterBtn {
   background-color: white;
-  border-color: #36769d;
-  color: #36769d;
+  border-color: #36769D;
+  color: #36769D;
   padding: 1rem;
   border-radius: 3px;
   margin: 2rem auto 1rem;
@@ -309,7 +309,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   text-align: center;
   width: 100%;
 }
@@ -336,7 +336,7 @@ body {
 }
 .containerTop h1 {
   max-width: 5rem;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 1.3rem;
   margin-top: 1.4rem;
   font-weight: bold;
@@ -353,7 +353,7 @@ body {
     border: none;
     padding-right: 1em;
   }
-  .containerTop .mobileOpenBtn[aria-expanded="true"] + .mobileMenu {
+  .containerTop .mobileOpenBtn[aria-expanded=true] + .mobileMenu {
     translate: 0;
     opacity: 1;
   }
@@ -392,6 +392,10 @@ body {
     margin: 0;
     padding: 0;
   }
+  .containerTop #mobileClickedLink {
+    color: #8ACFE5;
+    text-decoration: underline;
+  }
   .containerTop .mobileItem {
     list-style-type: none;
   }
@@ -402,7 +406,7 @@ body {
   .containerTop .mobileLink:link,
   .containerTop .mobileLink:visited,
   .containerTop .mobileLink:active {
-    color: #ffffff;
+    color: #FFFFFF;
     text-decoration: none;
     font-family: Roboto;
     font-size: 2.5rem;
@@ -488,7 +492,7 @@ main .onlineLink:visited,
 main .onlineLink:active {
   display: block;
   margin-bottom: 3rem;
-  color: #36769d;
+  color: #36769D;
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: underline;
@@ -688,8 +692,8 @@ main .onlineLink:active:hover {
 .roomContainer .roomIndividual a:active {
   display: block;
   margin: 1rem 1.2rem;
-  background-color: #e3170a;
-  color: #ffffff;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
   font-size: 1rem;
   font-weight: 500;
@@ -699,7 +703,7 @@ main .onlineLink:active:hover {
   border-radius: 4px;
   text-decoration: none;
   align-self: flex-end;
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
 }
 .roomContainer .roomIndividual a:link:hover,
@@ -730,7 +734,7 @@ main .onlineLink:active:hover {
   background-color: #021928;
   margin: auto;
   padding: 2rem;
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 1.6rem;
 }
 .storyContainer a:link,
@@ -743,12 +747,12 @@ main .onlineLink:active:hover {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  border: 2px solid #8acfe5;
+  border: 2px solid #8ACFE5;
   border-radius: 3px;
   padding: 1rem 3rem;
   margin: 2.5rem;
   text-decoration: none;
-  color: #8acfe5;
+  color: #8ACFE5;
   text-decoration: none;
 }
 .storyContainer a:link:hover,
@@ -813,8 +817,8 @@ main .onlineLink:active:hover {
 .playOrBuildContainer a:visited,
 .playOrBuildContainer a:active {
   display: inline-block;
-  background-color: #e3170a;
-  color: #ffffff;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
   font-size: 1.5rem;
   font-weight: 500;
@@ -824,7 +828,7 @@ main .onlineLink:active:hover {
   margin: 1rem 1.2rem;
   padding: 1rem 3.6rem;
   text-decoration: none;
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
 }
 .playOrBuildContainer a:link:hover,
@@ -835,10 +839,9 @@ main .onlineLink:active:hover {
 
 footer {
   padding: 2rem 2.5rem 4rem 1rem;
-  margin-top: 5rem;
   background-color: #021928;
   text-align: left;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 footer h5 {
   margin-bottom: 0;
@@ -854,8 +857,15 @@ footer p {
   font-weight: 300;
 }
 footer a {
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
+}
+footer img {
+  max-width: 2rem;
+}
+footer .currentPage {
+  color: #8ACFE5;
+  text-decoration: underline;
 }
 footer ul {
   margin-top: 0.5em;
@@ -894,7 +904,7 @@ footer ul .aTopMargin {
     text-align: center;
   }
   .containerTop .topNavLink {
-    color: #ffffff;
+    color: #FFFFFF;
     text-decoration: none;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
@@ -902,7 +912,11 @@ footer ul .aTopMargin {
     font-size: 1.5rem;
   }
   .containerTop .topNavLink:hover {
-    color: #8acfe5;
+    color: #8ACFE5;
+  }
+  .containerTop #clickedLink {
+    color: #8ACFE5;
+    text-decoration: underline;
   }
   .mobileNav {
     display: none;
@@ -991,7 +1005,7 @@ footer ul .aTopMargin {
     margin: auto;
   }
   footer a:hover {
-    color: #8acfe5;
+    color: #8ACFE5;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1032,8 +1046,8 @@ footer ul .aTopMargin {
   }
   main #toggleBtn {
     display: inline-block;
-    background-color: #e3170a;
-    color: #ffffff;
+    background-color: #E3170A;
+    color: #FFFFFF;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: 500;
@@ -1052,6 +1066,7 @@ footer ul .aTopMargin {
   main #absoluteBtn {
     display: inline-block;
     background-color: #8ACFE5;
+    color: #021928;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: bold;
@@ -1151,8 +1166,8 @@ footer ul .aTopMargin {
     gap: 1.1rem;
   }
   .btnContainer .onlineBtn {
-    background-color: #e3170a;
-    color: #ffffff;
+    background-color: #E3170A;
+    color: #FFFFFF;
     font-family: "Roboto";
     font-size: 1.5rem;
     font-weight: 500;
@@ -1301,6 +1316,12 @@ footer ul .aTopMargin {
     padding-left: 0;
     margin-top: 0.5rem;
   }
+  footer .h5P .currentPage,
+  footer .h5Map .currentPage,
+  footer .H5SoMe .currentPage {
+    color: #8ACFE5;
+    text-decoration: underline;
+  }
   footer .h5Map h5,
   ul {
     margin-left: 15rem;
@@ -1318,6 +1339,9 @@ footer ul .aTopMargin {
   footer .H5SoMe ul {
     margin-left: 6rem;
   }
+  footer .H5SoMe img {
+    margin-left: 2.5rem;
+  }
 }
 .card-container {
   display: grid;
@@ -1328,6 +1352,14 @@ footer ul .aTopMargin {
   margin-left: auto;
   margin-right: auto;
   padding: 5rem 1rem 1rem 1rem;
+}
+.card-container .loading-text {
+  grid-column: 2;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #021928;
+  margin-bottom: 3rem;
 }
 .card-container .roomIndividual {
   display: flex;
@@ -1434,8 +1466,8 @@ footer ul .aTopMargin {
 .card-container .roomIndividual a:active {
   display: block;
   margin: 1rem 1.2rem;
-  background-color: #e3170a;
-  color: #ffffff;
+  background-color: #E3170A;
+  color: #FFFFFF;
   font-family: "Roboto";
   font-size: 1rem;
   font-weight: 500;
@@ -1445,7 +1477,7 @@ footer ul .aTopMargin {
   border-radius: 4px;
   text-decoration: none;
   align-self: flex-end;
-  color: #ffffff;
+  color: #FFFFFF;
   text-decoration: none;
 }
 .card-container .roomIndividual a:link:hover,
@@ -1472,17 +1504,10 @@ footer ul .aTopMargin {
     opacity: 1;
   }
 }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.theStory {
+  font-size: 2.5rem;
+  font-weight: 400;
 }
-
-
 
 .theStoryContainer {
   display: grid;
@@ -1491,38 +1516,41 @@ footer ul .aTopMargin {
   margin-right: auto;
   margin-left: auto;
 }
-
-.firstImg {
+.theStoryContainer .firstImg {
   grid-column: 1;
   grid-row: 1;
   width: 100%;
   height: auto;
 }
-
-.history {
+.theStoryContainer h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.theStoryContainer p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.theStoryContainer .history {
   grid-column: 2;
   grid-row: 1;
   font-size: 1.2rem;
 }
-.ourHistoryText{
+.theStoryContainer .ourHistoryText {
   text-align: start;
-  margin: auto 1rem;
+  margin: 1rem 1rem;
 }
-
-.secondImg {
+.theStoryContainer .secondImg {
   grid-column: 2;
   grid-row: 2;
   width: 100%;
   height: auto;
 }
-
-.vision {
+.theStoryContainer .vision {
   grid-column: 1;
   grid-row: 2;
   font-size: 1.2rem;
 }
-
-.ourVisionText{
+.theStoryContainer .ourVisionText {
   text-align: start;
   margin: auto 1rem;
 }
@@ -1535,6 +1563,14 @@ footer ul .aTopMargin {
     object-fit: cover;
   }
 }
-
+@media screen and (max-width: 800px) {
+  .theStoryContainer {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
