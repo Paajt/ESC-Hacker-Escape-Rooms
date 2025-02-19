@@ -41,7 +41,7 @@ async function highestRanking() {
         } else {
           card.querySelector(".iconRoom").src = "./img/laptop.png";
           card.querySelector(".bookBtn").textContent = "Take challenge online";
-          card.querySelector(".typeRoom").textContent = "";
+          card.querySelector(".typeRoom").textContent = `(${challenge.type})`;
         }
 
         const cardButton = card.querySelector(".bookBtn");
