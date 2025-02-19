@@ -41,7 +41,7 @@ function createCards(challenges) {
         } else {
             clone.querySelector(".iconRoom").src = "./img/laptop.png";
             clone.querySelector(".bookBtn").textContent = "Take challenge online";
-            clone.querySelector(".typeRoom").textContent = "";
+            clone.querySelector(".typeRoom").textContent = `(${challenge.type})`;
         }
 
         cardButton.addEventListener("click", () => {
