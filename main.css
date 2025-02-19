@@ -839,7 +839,6 @@ main .onlineLink:active:hover {
 
 footer {
   padding: 2rem 2.5rem 4rem 1rem;
-  margin-top: 5rem;
   background-color: #021928;
   text-align: left;
   color: #FFFFFF;
@@ -1505,6 +1504,74 @@ footer ul .aTopMargin {
   }
   100% {
     opacity: 1;
+  }
+}
+.theStory {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.theStoryContainer {
+  display: grid;
+  grid: repeat(3);
+  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+  margin-right: auto;
+  margin-left: auto;
+}
+.theStoryContainer .firstImg {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+}
+.theStoryContainer h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.theStoryContainer p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.theStoryContainer .history {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.2rem;
+}
+.theStoryContainer .ourHistoryText {
+  text-align: start;
+  margin: 1rem 1rem;
+}
+.theStoryContainer .secondImg {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: auto;
+}
+.theStoryContainer .vision {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 1.2rem;
+}
+.theStoryContainer .ourVisionText {
+  text-align: start;
+  margin: auto 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .theStoryContainer {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 800px) {
+  .theStoryContainer {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
   }
 }
 
